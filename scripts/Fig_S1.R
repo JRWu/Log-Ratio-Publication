@@ -1,12 +1,13 @@
 ################################################################################ 
-##### FigX.R
+##### Fig_S1.R
 ##### Author: Jia Rong Wu
 ##### jwu424 (at) gmail.com 
 #####
 ##### DESCRIPTION: Generalized R script in order to generate supporting figures 
-##### for the paper (insert name here). Generates miscellaneous figures.
+##### for the paper IQLR. Generates figures that depict how the 
+##### Geometric mean is influenced by sparse data. 
 ##### 
-##### USAGE: Rscript --vanilla FigX.R
+##### USAGE: Rscript --vanilla Fig_S1.R
 ##### 
 ##### LICENSE 
 ##### Copyright (c) 2016 Jia Rong Wu
@@ -30,11 +31,18 @@
 ##### DEALINGS IN THE SOFTWARE.
 ################################################################################ 
 
+##### Load Required Libraries 
 library(psych)
 
+################################### FIGURE S1a #################################
+##### Generate a dataset of 150 random variates. 10% of these variates are 0's.
+##### Used to illustrate the difference in geometric means by computing with the
+##### entire set of 150 variates, or only the variates that fall within the IQR 
+##### of the dataset. 
+################################### FIGURE S1a #################################
 
 figs.dir <- "../figures/"
-gm.name <- paste(figs.dir, "Fig_Xa_gmeans_comparison.png",sep="")
+gm.name <- paste(figs.dir, "Fig_S1a.png",sep="")
 png(gm.name)			# Save file in figures directory
 
 ##### Generate randomly drawn data 135 variates, mean of 20, std. dev of 3
@@ -77,7 +85,13 @@ arrows(x0=org.gmean, y0=len+arrow.len, x1=org.gmean, y1=len,length = 0.2, col="r
 arrows(x0=iqr.gmean, y0=len+arrow.len, x1=iqr.gmean, y1=len,length = 0.2, col="blue", lwd=4)
 dev.off()
 
-bp.name <- paste(figs.dir, "Fig_Xb_boxplot_variables.png",sep="")
+################################### FIGURE S1b #################################
+##### Generate the corresponding boxplot of the 150 variates.
+##### Blue represents the IQR- geometric mean. Red represents the geometric mean 
+##### of the entire set.
+################################### FIGURE S1b #################################
+
+bp.name <- paste(figs.dir, "Fig_S1b.png",sep="")
 png(bp.name)
 boxplot(combined, col="blue")
 abline(iqr.gmean,0,col="blue", lwd=2)

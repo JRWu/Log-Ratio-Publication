@@ -4,9 +4,9 @@
 ##### jwu424 (at) gmail.com 
 #####
 ##### DESCRIPTION: Generalized R script in order to generate supporting figures 
-##### for the paper (insert name here). Code for Figure 1 a/b.
+##### for the paper IQLR. Code for Figure 1 a/b.
 ##### 
-##### USAGE: Rscript --vanilla Analyze.R filename
+##### USAGE: Rscript --vanilla Fig1.R
 ##### 
 ##### LICENSE 
 ##### Copyright (c) 2016 Jia Rong Wu
@@ -30,96 +30,93 @@
 ##### DEALINGS IN THE SOFTWARE.
 ################################################################################ 
 
-file.name <- "reads_A_500_0"
-data.dir <- "../data/"
-figs.dir <- "../figures/"
+##### Load Required Libraries
+source("Variables.R")
 
+################################### FIGURE 1a ##################################
+##### This figure is generated off dataset reads
+##### It is the original unmodified base dataset with 40 positive controls
+##### This is original ALDEx2 CLR
+################################### FIGURE 1a ##################################
+##### Read file and ensure it exists
+file.name <- "reads"
 read.file <- paste(data.dir, file.name, sep="")
 if (!file.exists(read.file)){
 	stop(paste("File: '",file.name,"' does not exist.",sep=""), call.=FALSE)}
 
-
-##### Load Required Libraries
-library(ALDEx2)
-library(psych)
-library(png)
-
-##### Function Declarations
-rdirichlet <- function (n, alpha)
-{
-  if(length(n) > 1) n <- length(n)
-  if(length(n) == 0 || as.integer(n) == 0) return(numeric(0))
-  n <- as.integer(n)
-  if(n < 0) stop("integer(n) can not be negative in rtriang")
-  if(is.vector(alpha)) alpha <- t(alpha)
-  l <- dim(alpha)[2]
-  x <- matrix(rgamma(l * n, t(alpha)), ncol = l, byrow=TRUE)  # Gere le recycling
-  return(x / rowSums(x))
-}
-
-#################### Read Tables and Variable Declarations  ####################
+##### Read table and generate conditions
 reads <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=F)
-reads[reads==0] <- 0.5
+x.clr.o <- aldex.clr(reads, conds, mc.samples, zero=FALSE, verbose=FALSE, useMC=FALSE)
 conds <- c(rep("A", 10), rep("B", 10))
-
-upper.bound <- 4
-lower.bound <- 2
-
-verbose <- FALSE
-has.BiocParallel <- FALSE
-has.parallel <- FALSE
-include.sample.summary <- FALSE
-useMC <- FALSE
-zero <- TRUE
-mc.samples <- 128
-as.numeric(as.integer(mc.samples))
-minsum <- 0
-prior <- 0.5
-nr <- nrow( reads )
-rn <- rownames( reads )
-thres.line.col="darkgrey"
-thres.lwd=1.5
-
-
-################################### FIGURE 1a ##################################
-################################### FIGURE 1a ##################################
-################################### FIGURE 1a ##################################
-################################### FIGURE 1a ##################################
-################################### FIGURE 1a ##################################
-reads <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=F)
-conds <- c(rep("A", 10), rep("B", 10))
-x.clr.o <- aldex.clr(reads, conds, 128, FALSE, FALSE, FALSE)
 x.e.o <- aldex.effect(x.clr.o, conds, useMC=TRUE) 
 x.t.o  <- aldex.ttest(x.clr.o, conds)
 x.all.o <- data.frame(x.e.o, x.t.o)
 
 
-f1a <- paste(figs.dir,"Fig_1a_EffectPlot.png", sep="")
-
+f1a <- paste(figs.dir, "Fig_1a.png",sep="")
 png(f1a)
-plot(x.all.o$diff.win, x.all.o$diff.btw, pch=19, col=c(rgb(0,0,0,0.2)), main="Mean Expression Effect Plot",xlab=expression( "Median" ~~ Log[2] ~~ "win-Condition diff" ), ylab=expression( "Median" ~~ Log[2] ~~ "btw-Condition diff" ))
-abline(0,0, col=thres.line.col, lty=2, lwd=thres.lwd)
+
+plot.new()
+	pushViewport(viewport())
+	called <- x.all.o$we.eBH <= cutoff
+	plot(x.all.o$diff.win, x.all.o$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="IQR-Unadjusted Effect Plot", ylim=c(ymin,ymax))
+	points(x.all.o$diff.win[x.all.o$rab.all < rare], x.all.o$diff.btw[x.all.o$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.all.o$diff.win[called], x.all.o$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,0, col="black")
+	abline(0,0, col="white", lwd=thres.lwd, lty=2)
+	pushViewport(viewport(x=.2,y=.8,width=.25,height=.25,just=c("left","top")))
+	grid.rect()
+	par(plt = gridPLT(), new=TRUE)
+	hist(x.all.o$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Median" ~~ Log[2] ~~ "btw-Condition diff" ), xlab="", ylab="", cex.main=0.8)
+	abline(v=0, col="black", lwd=thres.lwd)
+	abline(v=0, col="white", lwd=thres.lwd, lty=2)
+popViewport(2)
+
 dev.off()
 
+################################### FIGURE 1b ##################################
+##### This figure is generated off dataset reads_2
+##### It is a dataset with 120 features in condition A that have 0's introduced
+##### This is the original ALDEx2 CLR 
+################################### FIGURE 1b ##################################
+##### Read file and ensure it exists
+file.name <- "reads_2"
+read.file <- paste(data.dir, file.name, sep="")
+if (!file.exists(read.file)){
+	stop(paste("File: '",file.name,"' does not exist.",sep=""), call.=FALSE)}
 
-################################### FIGURE 1b ##################################
-################################### FIGURE 1b ##################################
-################################### FIGURE 1b ##################################
-################################### FIGURE 1b ##################################
-################################### FIGURE 1b ##################################
+##### Read table and generate conditions
+reads <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=F)
+conds <- c(rep("A", 10), rep("B", 10))
+x.clr.o <- aldex.clr(reads, conds, mc.samples, zero=FALSE, verbose=FALSE, useMC=FALSE)
+x.e.o <- aldex.effect(x.clr.o, conds, useMC=TRUE) 
+x.t.o  <- aldex.ttest(x.clr.o, conds)
+x.all.o <- data.frame(x.e.o, x.t.o)
 
-f1b <- paste(figs.dir,"Fig_1b_EffectHistogram.png", sep="")
 
+f1b <- paste(figs.dir, "Fig_1b.png",sep="")
 png(f1b)
-hist(x.all.o$diff.btw, breaks=800, xlim=c(-1,1), main="Histogram of Mean Expression", xlab="Mean Expression Per Sample")
-abline(v=0, col=thres.line.col, lty=2, lwd=thres.lwd)
+
+plot.new()
+	pushViewport(viewport())
+	called <- x.all.o$we.eBH <= cutoff
+	plot(x.all.o$diff.win, x.all.o$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="IQR-Unadjusted Effect Plot", ylim=c(ymin,ymax))
+	points(x.all.o$diff.win[x.all.o$rab.all < rare], x.all.o$diff.btw[x.all.o$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.all.o$diff.win[called], x.all.o$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,0, col="black")
+	abline(0,0, col="white", lwd=thres.lwd, lty=2)
+	pushViewport(viewport(x=.2,y=.8,width=.25,height=.25,just=c("left","top")))
+	grid.rect()
+	par(plt = gridPLT(), new=TRUE)
+	hist(x.all.o$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Median" ~~ Log[2] ~~ "btw-Condition diff" ), xlab="", ylab="", cex.main=0.8)
+	abline(v=0, col="black", lwd=thres.lwd)
+	abline(v=0, col="white", lwd=thres.lwd, lty=2)
+popViewport(2)
+
 dev.off()
-
-
-
-
-
-
-
 
 

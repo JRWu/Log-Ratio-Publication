@@ -143,6 +143,156 @@ Add dashed white line ontop of the ablines
 
 
 
+	
+supplementary:
+Includde the variance across DATA or the variance across the MC instances
+
+expected value of variance
+
+
+SI:
+	- Histograms
+		Variance distribution is wide with a negative log ratio value for count
+		low counts; variance for a given OTU/feature will be variable 
+		
+		get CLR of the data
+		what's the mean CLR across each otu (plot that as histogram)
+		
+		Which is better; instances or just the data?
+		variance of data is less than variance of instance on SPARSE OTUs
+		Plot a histogram of the variances* 
+		
+
+
+Compare the midpoints of the differnces between for different levels of sparsity
+Compare zero removal and the IQR
+
+Simulate more sparsity in reads_A_500_0 in order to see where the IQR adjustment fails
+
+
+	
+
+June 29:
+	- Find Variance per instance
+	- Find Invariant set per instance
+	- Find the intersection of the invariant set per instance
+
+
+- Add abline h=25
+- Overplot the UNADJUSTED onto the BEtween_Median figures
+- Add supplimentary figure, use Data vs MC Instances of the CLR 
+	- Found no real difference between the metrics in terms of ability to correct for this shift
+	- Both start to fail at ~25%, for efficiency, a single CLR transformed instance is good
+	- Could experiment with IQR picking but then 
+	- Stop the cutoff at 50% 
+	- For the overplot of zero removal could experiment up to 100%
+	
+	1) Run on the point estimate of the data
+	2) What's the diff between zero removal and this
+	3) 
+TODO:
+	- Overplot the median difference of the data between conditions
+	- Use figure in paper***
+	- Run with 16 instances
+	
+Estimating a midpoint is ok with 8 MC instances
+
+
+
+June 30th:
+Generalize it more, not just ALDEx2 and more CLR
+
+Start With:
+		Change the figures around
+	- Simulated no difference (figure 4a) 	is 1a
+	- Simulated asymmetric (figure 1)		is 1b
+	
+First ref should be to figure 1
+	- Remove figure 2a
+	- Make figure 2b standalone 
+	
+Figure 1 (could be 4 panel)
+	- 4a becomes 1a
+	- 1 becomes 1b
+	- 2b becomes 2a
+	- comparing it to 1b
+	- figure 4b can be figure 2b
+		- in simulated data w/ no difference you don't change the answer
+
+Figure 3 is fine
+Figure 4 becomes 1a and 2b *
+
+Figure 7 becomes Figure 3
+
+Selex is figure 4
+Comparisons become Figure 5
+
+DO ALL SIMUlATED DATA FIRST
+
+Figure 6: would be effect vs pvalue in this dataset (# of subgroup size)
+
+outside dashed line is false positive
+appropriate location for effect size estimation**
+
+In "fig6" talk about 2% asymmetry
+dada2 generates asymmetric distribution
+
+don't talk about transcriptomics dataset; but a simulated dataset where we understand params
+selex w/ asymmetry 
+
+	- ability for an endonuclease to cut DNA
+	- start w/ supercoil DNA, added endonuclease
+	- isolated the supercoiled band
+	- if you isolate the band with no endonuclease, you get random pool
+	- if you cut the NDA,you lose the ones that are cut efficiently, the ones are uncut are left (depletion experiment)
+	- high count variants are less efficiently cut
+	
+	- add tom + dave as sources of data
+	- jia, briana, michael, tom, dave, 
+	
+
+Make 4a into 1a
+Make 2a into 1b
+Make figure 2b standalone 
+Make figure 6 into figure 3 (works whether or not asymmetry is due to 0 or not)
+Make selex into figure 4
+	Add the legend scale information
+Figure 5 stays
+
+Michael's figure is supplimentary
+
+
+
+^^ Put the histograms in the same spot
+	
+
+
+provide offset
+IQLR
+Zero
+List of Rows for centering
+
+Have a step before the
+aldex.clr
+Return a set of features that you can pass on
+
+
+Default vector is "all" (CLR)
+Defualt vector is given, then subset log-ratio
+Default vector could be a IQLR
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
