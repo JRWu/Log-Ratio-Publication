@@ -37,10 +37,10 @@ figs.dir <- "figures/"
 
 ##### Load Required Libraries
 library(ALDEx2)
-library(psych)
-library(lattice)
-library(gridBase)
-library(grid)
+#library(psych)
+#library(lattice)
+#library(gridBase)
+#library(grid)
 
 ##### Function Declarations
 rdirichlet <- function (n, alpha)
@@ -69,9 +69,39 @@ read.file <- paste(data.dir, file.name, sep="")
 if (!file.exists(read.file)){
 	stop(paste("File: '",file.name,"' does not exist.",sep=""), call.=FALSE)}
 
-reads <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=F)
+reads.all <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=F)
+
+# reduce to first 1000 lines
+reads <- reads.all[1:1000,]
+
 true.set <- rownames(reads[47:86,])
-fp.set <- rownames(reads[c(108,1679,3671),])
+
+
+# reads with 2% of genes with large assymmetry as 0 values
+reads.0 <- reads
+reads.0[980:1000,1:10] <- 0
+
+# reads with 30% assymmetry as 0 values
+reads.30 <- reads
+reads.30[940:1000,1:10] <- 0
+
+
+# reads with 2% assymmetry as 1 values
+reads.1 <- reads
+reads.1[980:1000,1:10] <- 1
+
+# reads with 2% assymmetry as 10 values
+reads.10 <- reads
+reads.10[980:1000,1:10] <- 10
+
+# reads with 2% assymmetry as 0 values, orthogonal to real difference
+reads.orth <- reads
+reads.orth[940:1000,5:15] <- 0
+
+# reads with 2% assymmetry as 0 values, 45 degrees to real difference
+reads.diag <- reads
+reads.diag[940:1000,3:13] <- 0
+
 
 upper.bound <- 4
 lower.bound <- 2
@@ -91,6 +121,9 @@ all.cex=0.4
 called.col="red"
 called.pch=20
 called.cex=0.6
+true.col="blue"
+true.pch=1
+true.cex=0.7
 thres.line.col="darkgrey"
 thres.lwd=1.5
 test="wilcox"

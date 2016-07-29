@@ -238,11 +238,36 @@ Text for this section.
 %%%%%%%%%%%%%%%%
 %% Background %%
 %%
-\section*{Content}
-Text and results for this section, as per the individual journal's instructions for authors. %\cite{koon,oreg,khar,zvai,xjon,schn,pond,smith,marg,hunn,advi,koha,mouse}
+
+Asymmetry can be found in many biologically relevant experimental designs: for example, an RNA-seq experiment where one group has a plasmid lacking in the other, a microbiome 16S rRNA gene sequencing experiment, or an metagenomic sequencing experiment where one group contains one or more taxa that are completely lacking in the other.
+
+\section*{Results}
+
+High throughput sequencing data are compositional data because the total number of counts returned by the instrument ...
+
+clr ...
+
+requires accurate centre of the data for purpose of denominator
+
+The R package \texttt{polyester} was used to simulate an RNA-Seq experiment for benchmarking and exploratory purposes that had 2 groups of 10 replicates using the  \emph{S. cerevisiae} reference genome. We simulated 20x sequencing coverage across the experiment and used bowtie2 to map these simulated reads  to the \textit{S. cerevisiae} reference genome. Labeling each group as A and B was arbitrary and hence samples s\_1, s\_2, ..., s\_10 were assigned to group A, and samples s\_11, s\_12, ..., s\_20  to group B. 
+
+The dataset was modified to have mild asymmetry, similar to what might be observed for a single gene knockout experiment, where a small number of genes might be expected to exhibit change in only one direction. For this, all features in group A were unchanged, and 40 features were modified to exhibit read counts with a fold difference of 2, 3, 4, 5 with respect to group A. These 40 features serve as an internal control of true positives since their fold changes were known explicitly. This dataset will be referred to as the base or control dataset and no other features are expected to be different between groups A and B in the base dataset. There were a total of 5859 features that had at least one count in these simulated data, and one average, samples in the base dataset had a read depth of approximately 870000 reads. The Symmetric dataset panel of Figure \ref{fig:base_data} shows the characteristics of this dataset as an effect plot. 
+
+The base dataset was modified to generate two asymmetric datasets by randomly changing various proportions of the features in the group B samples to 0.   or The Asymmetric 2\% dataset had 120 features from group B changed do 0, and the Asymmetric 30\% dataset had  1758 features from group B changed to 0. The remaining two panels of Figure ~\ref{fig:base_data} show a effect plots for these datasets. Note how the addition of even a small number of strongly asymmetric data to these datasets results in a change in location of the mean difference between groups, since an asymmetry that included only 2\% of the genes was sufficient to to change the location of the mean difference. We see that asymmetric data have problems in interpretation since 
+
+It is important to note that the location change is not caused by sparsity, but rather by asymmetry. Supplementary Figure 1 shows that introducing a count of 1 or 10 (or by extension) and count distributed asymmetrically introduce a similar location shift. Importantly, SupplementaryFigure 2 shows that while the introduction of asymmetric counts distributed at random between groups A and B introduced additional random variance in the data, it does not change the location of the mean difference. 
+
+% FIGURE 1 ABOUT HERE
+
+
+This random  demonstrating how the 40 internal control features are observed to be statistically significant and differentially expressed. N  
+
+
+
 
 \section*{Section title}
 Text for this section \ldots
+
 \subsection*{Sub-heading for section}
 Text for this sub-heading \ldots
 \subsubsection*{Sub-sub heading for section}

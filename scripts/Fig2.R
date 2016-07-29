@@ -1,140 +1,128 @@
-################################################################################ 
-##### Fig2.R
+################################################################################
+##### Fig1.R
 ##### Author: Jia Rong Wu
-##### jwu424 (at) gmail.com 
+##### jwu424 (at) gmail.com
 #####
-##### DESCRIPTION: Generalized R script in order to generate supporting figures 
-##### for the paper IQLR. Code for Figure 2 a/b.
-##### 
-##### USAGE: Rscript --vanilla Fig2.R
-##### 
-##### LICENSE 
+##### DESCRIPTION: Generalized R script in order to generate supporting figures
+##### for the paper IQLR. Code for Figure 1 a/b.
+#####
+##### USAGE: Rscript --vanilla Fig1.R
+#####
+##### LICENSE
 ##### Copyright (c) 2016 Jia Rong Wu
-##### 
-##### Permission is hereby granted, free of charge, to any person obtaining a 
-##### copy of this software and associated documentation files (the "Software"), 
-##### to deal in the Software without restriction, including without limitation 
-##### the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-##### and/or sell copies of the Software, and to permit persons to whom the 
+#####
+##### Permission is hereby granted, free of charge, to any person obtaining a
+##### copy of this software and associated documentation files (the "Software"),
+##### to deal in the Software without restriction, including without limitation
+##### the rights to use, copy, modify, merge, publish, distribute, sublicense,
+##### and/or sell copies of the Software, and to permit persons to whom the
 ##### Software is furnished to do so, subject to the following conditions:
-##### 
-##### The above copyright notice and this permission notice shall be included in 
+#####
+##### The above copyright notice and this permission notice shall be included in
 ##### all copies or substantial portions of the Software.
-##### 
-##### THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-##### IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-##### FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-##### THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-##### LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-##### FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+#####
+##### THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+##### IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+##### FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+##### THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+##### LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+##### FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 ##### DEALINGS IN THE SOFTWARE.
-################################################################################ 
+################################################################################
 
 ##### Load Required Libraries
-source("Variables.R")
+source("scripts/Variables.R")
 
-################################### FIGURE 2 ###################################
-##### This figure is generated off dataset reads_2
-##### It is a dataset where 120 features have their values substituted for 0's
-##### This is the IQLR transformation that FIXES the problem
-################################### FIGURE 2 ###################################
-##### Read file and ensure it exists
-file.name <- "reads_2"
-read.file <- paste(data.dir, file.name, sep="")
-if (!file.exists(read.file)){
-	stop(paste("File: '",file.name,"' does not exist.",sep=""), call.=FALSE)}
+################################### FIGURE 1a ##################################
+##### This figure is generated off dataset reads
+##### It is the original unmodified base dataset with 40 positive controls
+##### This is ALDEx2 with denom="iqlr | zero | custom"
+################################### FIGURE 1 ##################################
 
-reads <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=F)
+##### Read table and generate conditions
 conds <- c(rep("A", 10), rep("B", 10))
+denom <- seq(from=100, to=200)
+x.clr <- aldex.clr(reads, conds, mc.samples, verbose=FALSE, denom=denom)
+x.e <- aldex.effect(x.clr, conds)
+x.t  <- aldex.ttest(x.clr, conds)
+x.all <- data.frame(x.e, x.t)
 
-#####  remove all rows with reads less than the minimum set by minsum 
-minsum <- 0
+##### Use assymmetric datasets
 
-##### remove any row in which the sum of the row is 0
-z <- as.numeric(apply(reads, 1, sum))
-reads <- as.data.frame( reads[(which(z > minsum)),]  )
+x.clr.0 <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom=denom)
+x.e.0 <- aldex.effect(x.clr.0, conds)
+x.t.0  <- aldex.ttest(x.clr.0, conds)
+x.all.0 <- data.frame(x.e.0, x.t.0)
 
-##### Adjust all reads with prior of 0.5
-reads <- reads + 0.5
+x.clr.30 <- aldex.clr(reads.30, conds, mc.samples, verbose=FALSE, denom=denom)
+x.e.30 <- aldex.effect(x.clr.30, conds)
+x.t.30  <- aldex.ttest(x.clr.30, conds)
+x.all.30 <- data.frame(x.e.30, x.t.30)
 
-nr <- nrow( reads )
-rn <- rownames( reads )
+f2 <- paste(figs.dir, "Fig_2.100-200.pdf",sep="")
 
-##### Generate the CLR transformation of the DATA and get variance of the CLR
-reads.clr <- t(apply(reads, 2, function(x){log2(x) - mean(log2(x))}))
-reads.var <- apply(reads.clr, 2, function(x){var(x)})
-reads.qtl <- quantile(unlist(reads.var))
-
-##### Get the indicies of the "invariant set" features
-invariant.set <- which(
-	(reads.var < (reads.qtl[upper.bound])) & 
-	(reads.var > (reads.qtl[lower.bound]))
-)
-
-##### Setup general lists in order to store the intermediate values
-condition.list <- vector("list", length(unique(conds)))	# list to store conditions
-sample.indices <- as.numeric(seq(1, length(conds),1))	# Indicies of samples
-feature.indices <- as.numeric(seq(1, nrow(reads), 1))	# Indicies of reads 
-neg.indicies <- vector("list", length(unique(conds)))
-zero.result <- vector("list", length(unique(conds)))	# list to hold result
-
-for (i in 1:length(unique(conds)))
-{
-	condition.list[[i]] <- which(conds == unique(conds)[i]) # Condition list
-	neg.indicies[[i]] <- invariant.set
-
-}
-
-p <- lapply( reads, function(col) { 
-	q <- t( rdirichlet( mc.samples, col)); 
-	rownames(q) <- rn; q
-})
-
-##### Generate the Geometric Mean on the invariant set(s)
-for (i in 1:length(unique(conds)))
-{
-	zero.result[[i]] <- lapply( p[condition.list[[i]]], function(m) { 
-		apply(log2(m), 2, function(x){mean(x[neg.indicies[[i]]])})
-	})
-}
-set.rev <- unlist(zero.result, recursive=FALSE) # Unlist once to aggregate samples
-
-p.copy <- p
-for (i in 1:length(set.rev))
-{
-	p.copy[[i]] <- as.data.frame(p.copy[[i]])
-	p[[i]] <- apply(log2(p.copy[[i]]),1, function(x){ x - (set.rev[[i]])})
-	p[[i]] <- t(p[[i]])
-}
-l2p <- p	# Save the set in order to generate the aldex.clr variable
-
-
-##### Generate the aldex.clr object on the IQLR transformed reads
-x <- new("aldex.clr",reads=reads,mc.samples=mc.samples,verbose=verbose,useMC=useMC,analysisData=l2p)
-
-x.tt <- aldex.ttest(x, conds, paired.test=FALSE)
-x.effect <- aldex.effect(x, conds, include.sample.summary=include.sample.summary, verbose=verbose)
-x.all.z <- data.frame(x.effect, x.tt)
-
-f2 <- paste(figs.dir, "Fig_2.png",sep="")
-png(f2)
-
-plot.new()
-	pushViewport(viewport())
-	called <- x.all.z$we.eBH <= cutoff
-	plot(x.all.z$diff.win, x.all.z$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="IQR-Adjusted Effect Plot", ylim=c(ymin,ymax))
-	points(x.all.z$diff.win[x.all.z$rab.all < rare], x.all.z$diff.btw[x.all.z$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
-	points(x.all.z$diff.win[called], x.all.z$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+pdf(f2, height=6, width=16)
+par(fig=c(0,1,0,1), new=TRUE)
+par(fig=c(0,0.33,0,1), new=TRUE)
+	called <- x.all$wi.eBH <= cutoff
+	plot(x.all$diff.win, x.all$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Symmetric dataset", ylim=c(ymin,ymax))
+	points(x.all$diff.win[x.all$rab.all < rare], x.all$diff.btw[x.all$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.all$diff.win[called], x.all$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.all[true.set,"diff.win"], x.all[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	#points(x.all[set[[1]],"diff.win"], x.all[set[[1]],"diff.btw"], col=rgb(0,1,0,1), pch=true.pch, cex=true.cex)
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
-	pushViewport(viewport(x=.2,y=.8,width=.25,height=.25,just=c("left","top")))
-	grid.rect()
-	par(plt = gridPLT(), new=TRUE)
-	hist(x.all.z$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Median" ~~ Log[2] ~~ "btw-Condition diff" ), xlab="", ylab="", cex.main=0.8)
+par(fig=c(0.04,0.16, 0.4,0.9), new=TRUE)
+	hist(x.all$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
-popViewport(2)
+
+par(fig=c(0.33,0.66,0,1), new=TRUE)
+	called <- x.all.0$wi.eBH <= cutoff
+	plot(x.all.0$diff.win, x.all.0$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Assymetric 2% dataset", ylim=c(ymin,ymax))
+	points(x.all.0$diff.win[x.all.0$rab.all < rare], x.all.0$diff.btw[x.all.0$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.all.0$diff.win[called], x.all.0$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.all.0[true.set,"diff.win"], x.all.0[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+
+	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,0, col="black")
+	abline(0,0, col="white", lwd=thres.lwd, lty=2)
+
+par(fig=c(0.37,0.49, 0.4,0.9), new=TRUE)
+	hist(x.all.0$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+	abline(v=0, col="black", lwd=thres.lwd)
+	abline(v=0, col="white", lwd=thres.lwd, lty=2)
+
+
+par(fig=c(0.66,1,0,1), new=TRUE)
+	called <- x.all.30$wi.eBH <= cutoff
+	plot(x.all.30$diff.win, x.all.30$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Assymetric 30% dataset", ylim=c(-4,ymax))
+	points(x.all.30$diff.win[x.all.30$rab.all < rare], x.all.30$diff.btw[x.all.30$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.all.30$diff.win[called], x.all.30$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.all.30[true.set,"diff.win"], x.all.30[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+
+	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,0, col="black")
+	abline(0,0, col="white", lwd=thres.lwd, lty=2)
+
+par(fig=c(0.70,0.84, 0.4,0.9), new=TRUE)
+	hist(x.all.30$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+	abline(v=0, col="black", lwd=thres.lwd)
+	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 dev.off()
+
+
+######DESEQ
+#condition <- c(rep("A", 10), reap("B", 10))
+#cds <- newCountDataSet(reads.30, condition)
+# cds = estimateSizeFactors(cds)
+# cds <- estimateDispersions(cds, method="per-condition")
+#  res <- nbinomTest(cds, "A","B")
+#  plot(sqrt(x$fittedDispEsts), res$log2FoldChange)
+#  plotDispEsts( cds )
+#  plotMA(res)
