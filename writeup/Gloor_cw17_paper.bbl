@@ -1,0 +1,130 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Aitchison}{Aitchison}{1986}]{Aitchison:1986}
+Aitchison, J. (1986).
+\newblock {\em The Statistical Analysis of Compositional Data}.
+\newblock Chapman \& Hall.
+
+\bibitem[\protect\citeauthoryear{Anders, McCarthy, Chen, Okoniewski, Smyth,
+  Huber, and Robinson}{Anders et~al.}{2013}]{Anders:2013aa}
+Anders, S., D.~J. McCarthy, Y.~Chen, M.~Okoniewski, G.~K. Smyth, W.~Huber, and
+  M.~D. Robinson (2013, Sep).
+\newblock Count-based differential expression analysis of {RNA} sequencing data
+  using {R} and {Bioconductor}.
+\newblock {\em Nat Protoc\/}~{\em 8\/}(9), 1765--86.
+
+\bibitem[\protect\citeauthoryear{Auer and Doerge}{Auer and
+  Doerge}{2010}]{Auer:2010aa}
+Auer, P.~L. and R.~W. Doerge (2010, Jun).
+\newblock Statistical design and analysis of {RNA} sequencing data.
+\newblock {\em Genetics\/}~{\em 185\/}(2), 405--16.
+
+\bibitem[\protect\citeauthoryear{Barcel{\'o}-Vidal, Mart{\'\i}n-Fern{\'a}ndez,
+  and Pawlowsky-Glahn}{Barcel{\'o}-Vidal et~al.}{2001}]{barcelo:2001}
+Barcel{\'o}-Vidal, C., J.~A. Mart{\'\i}n-Fern{\'a}ndez, and V.~Pawlowsky-Glahn
+  (2001).
+\newblock Mathematical foundations of compositional data analysis.
+\newblock In {\em Proceedings of IAMG}, Volume~1, pp.\  1--20.
+
+\bibitem[\protect\citeauthoryear{Fernandes, Reid, Macklaim, McMurrough, Edgell,
+  and Gloor}{Fernandes et~al.}{2014}]{fernandes:2014}
+Fernandes, A.~D., J.~N. Reid, J.~M. Macklaim, T.~A. McMurrough, D.~R. Edgell,
+  and G.~B. Gloor (2014).
+\newblock Unifying the analysis of high-throughput sequencing datasets:
+  characterizing {RNA}-seq, 16s r{RNA} gene sequencing and selective growth
+  experiments by compositional data analysis.
+\newblock {\em Microbiome\/}~{\em 2}, 15.1--15.13.
+
+\bibitem[\protect\citeauthoryear{Gajer, Brotman, Bai, Sakamoto, Sch{\"u}tte,
+  Zhong, Koenig, Fu, Ma, Zhou, Abdo, Forney, and Ravel}{Gajer
+  et~al.}{2012}]{Gajer:2012}
+Gajer, P., R.~M. Brotman, G.~Bai, J.~Sakamoto, U.~M.~E. Sch{\"u}tte, X.~Zhong,
+  S.~S.~K. Koenig, L.~Fu, Z.~S. Ma, X.~Zhou, Z.~Abdo, L.~J. Forney, and
+  J.~Ravel (2012, May).
+\newblock Temporal dynamics of the human vaginal microbiota.
+\newblock {\em Sci Transl Med\/}~{\em 4\/}(132), 132ra52.
+
+\bibitem[\protect\citeauthoryear{Gloor, Macklaim, Vu, and Fernandes}{Gloor
+  et~al.}{2016}]{gloorAJS:2016}
+Gloor, G.~B., J.~M. Macklaim, M.~Vu, and A.~D. Fernandes (2016, September).
+\newblock Compositional uncertainty should not be ignored in high-throughput
+  sequencing data analysis.
+\newblock {\em Austrian Journal of Statistics\/}~{\em 45}, 73--87.
+
+\bibitem[\protect\citeauthoryear{Hummelen, Fernandes, Macklaim, Dickson,
+  Changalucha, Gloor, and Reid}{Hummelen et~al.}{2010}]{Hummelen:2010}
+Hummelen, R., A.~D. Fernandes, J.~M. Macklaim, R.~J. Dickson, J.~Changalucha,
+  G.~B. Gloor, and G.~Reid (2010).
+\newblock Deep sequencing of the vaginal microbiota of women with {HIV}.
+\newblock {\em PLoS One\/}~{\em 5\/}(8), e12078.
+
+\bibitem[\protect\citeauthoryear{Lang and Johnson}{Lang and
+  Johnson}{2015}]{Lang:2015aa}
+Lang, K.~S. and T.~J. Johnson (2015, Jul).
+\newblock Transcriptome modulations due to a/c2 plasmid acquisition.
+\newblock {\em Plasmid\/}~{\em 80}, 83--9.
+
+\bibitem[\protect\citeauthoryear{Macklaim, Clemente, Knight, Gloor, and
+  Reid}{Macklaim et~al.}{2015}]{Macklaim:2015aa}
+Macklaim, J.~M., J.~C. Clemente, R.~Knight, G.~B. Gloor, and G.~Reid (2015).
+\newblock Changes in vaginal microbiota following antimicrobial and probiotic
+  therapy.
+\newblock {\em Microb Ecol Health Dis\/}~{\em 26}, 27799.
+
+\bibitem[\protect\citeauthoryear{Macklaim, Fernandes, Di~Bella, Hammond, Reid,
+  and Gloor}{Macklaim et~al.}{2013}]{macklaim:2013}
+Macklaim, M.~J., D.~A. Fernandes, M.~J. Di~Bella, J.-A. Hammond, G.~Reid, and
+  G.~B. Gloor (2013).
+\newblock Comparative meta-{RNA}-seq of the vaginal microbiota and differential
+  expression by \textit{{L}actobacillus iners} in health and dysbiosis.
+\newblock {\em Microbiome\/}~{\em 1}, 15.
+
+\bibitem[\protect\citeauthoryear{McMurdie and Holmes}{McMurdie and
+  Holmes}{2014}]{McMurdie:2014a}
+McMurdie, P.~J. and S.~Holmes (2014, Apr).
+\newblock Waste not, want not: why rarefying microbiome data is inadmissible.
+\newblock {\em PLoS Comput Biol\/}~{\em 10\/}(4), e1003531.
+
+\bibitem[\protect\citeauthoryear{Peng, Hao, Liu, Wang, Ma, Yang, Xie, and
+  Li}{Peng et~al.}{2014}]{Peng:2014aa}
+Peng, J., B.~Hao, L.~Liu, S.~Wang, B.~Ma, Y.~Yang, F.~Xie, and Y.~Li (2014).
+\newblock Rna-seq and microarrays analyses reveal global differential
+  transcriptomes of mesorhizobium huakuii 7653r between bacteroids and
+  free-living cells.
+\newblock {\em PLoS One\/}~{\em 9\/}(4), e93626.
+
+\bibitem[\protect\citeauthoryear{Scott, Gunderson, Mateescu, Zhang, and
+  Hwa}{Scott et~al.}{2010}]{Scott:2010}
+Scott, M., C.~W. Gunderson, E.~M. Mateescu, Z.~Zhang, and T.~Hwa (2010, Nov).
+\newblock Interdependence of cell growth and gene expression: origins and
+  consequences.
+\newblock {\em Science\/}~{\em 330\/}(6007), 1099--102.
+
+\bibitem[\protect\citeauthoryear{Sun, Nishiyama, Shimizu, and Kadota}{Sun
+  et~al.}{2013}]{Sun:2013aa}
+Sun, J., T.~Nishiyama, K.~Shimizu, and K.~Kadota (2013).
+\newblock {TCC}: an {R} package for comparing tag count data with robust
+  normalization strategies.
+\newblock {\em BMC Bioinformatics\/}~{\em 14}, 219.1--219.13.
+
+\bibitem[\protect\citeauthoryear{Weiss, Van~Treuren, Lozupone, Faust, Friedman,
+  Deng, Xia, Xu, Ursell, Alm, Birmingham, Cram, Fuhrman, Raes, Sun, Zhou, and
+  Knight}{Weiss et~al.}{2016}]{Weiss:2016aa}
+Weiss, S., W.~Van~Treuren, C.~Lozupone, K.~Faust, J.~Friedman, Y.~Deng, L.~C.
+  Xia, Z.~Z. Xu, L.~Ursell, E.~J. Alm, A.~Birmingham, J.~A. Cram, J.~A.
+  Fuhrman, J.~Raes, F.~Sun, J.~Zhou, and R.~Knight (2016, Jul).
+\newblock Correlation detection strategies in microbial data sets vary widely
+  in sensitivity and precision.
+\newblock {\em ISME J\/}~{\em 10\/}(7), 1669--81.
+
+\bibitem[\protect\citeauthoryear{Zhao, Chen, Xiong, Xu, Lan, Wang, Yao, Bai,
+  Liu, Meng, Zhang, Sun, Zhao, Bai, Cheng, Chen, Ye, and Xu}{Zhao
+  et~al.}{2013}]{Zhao:2013aa}
+Zhao, H., C.~Chen, Y.~Xiong, X.~Xu, R.~Lan, H.~Wang, X.~Yao, X.~Bai, X.~Liu,
+  Q.~Meng, X.~Zhang, H.~Sun, A.~Zhao, X.~Bai, Y.~Cheng, Q.~Chen, C.~Ye, and
+  J.~Xu (2013).
+\newblock Global transcriptional and phenotypic analyses of {E}scherichia coli
+  {O157:H7 }strain {X}uzhou21 and its p{O}157\_{S}al cured mutant.
+\newblock {\em PLoS One\/}~{\em 8\/}(5), e65466.
+
+\end{thebibliography}

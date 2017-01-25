@@ -74,6 +74,13 @@ reads.all <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=
 # reduce to first 1000 lines
 reads <- reads.all[1:1000,]
 
+for(i in seq(47,86, by=2)){
+	r <- as.numeric(c(reads[i,11:20], reads[i,1:10]))
+	reads[i,] <- r
+}
+
+
+
 true.set <- rownames(reads[47:86,])
 
 
@@ -81,7 +88,7 @@ true.set <- rownames(reads[47:86,])
 reads.0 <- reads
 reads.0[980:1000,1:10] <- 0
 
-# reads with 30% assymmetry as 0 values
+# reads with 6% assymmetry as 0 values
 reads.30 <- reads
 reads.30[940:1000,1:10] <- 0
 
@@ -132,7 +139,7 @@ rare.col="black"
 rare=0
 rare.pch=20
 rare.cex=0.2
-xlab <- expression( "Median" ~~ Log[2] ~~ "win-Condition diff" )
-ylab <- expression( "Median" ~~ Log[2] ~~ "btw-Condition diff" )
-ymin <- -1
+xlab <- expression( "Median" ~~ Log[2] ~~ "dispersion" )
+ylab <- expression( "Median" ~~ Log[2] ~~ "difference" )
+ymin <- -3
 ymax <- 12

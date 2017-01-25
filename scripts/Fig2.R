@@ -42,87 +42,88 @@ source("scripts/Variables.R")
 ##### Read table and generate conditions
 conds <- c(rep("A", 10), rep("B", 10))
 denom <- seq(from=100, to=200)
+denom <- "iqlr"
 x.clr <- aldex.clr(reads, conds, mc.samples, verbose=FALSE, denom=denom)
 x.e <- aldex.effect(x.clr, conds)
 x.t  <- aldex.ttest(x.clr, conds)
-x.all <- data.frame(x.e, x.t)
+x.iqlr <- data.frame(x.e, x.t)
 
 ##### Use assymmetric datasets
 
 x.clr.0 <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom=denom)
 x.e.0 <- aldex.effect(x.clr.0, conds)
 x.t.0  <- aldex.ttest(x.clr.0, conds)
-x.all.0 <- data.frame(x.e.0, x.t.0)
+x.iqlr.0 <- data.frame(x.e.0, x.t.0)
 
 x.clr.30 <- aldex.clr(reads.30, conds, mc.samples, verbose=FALSE, denom=denom)
 x.e.30 <- aldex.effect(x.clr.30, conds)
 x.t.30  <- aldex.ttest(x.clr.30, conds)
-x.all.30 <- data.frame(x.e.30, x.t.30)
+x.iqlr.30 <- data.frame(x.e.30, x.t.30)
 
-f2 <- paste(figs.dir, "Fig_2.100-200.pdf",sep="")
+f2 <- paste(figs.dir, "Fig_2.pdf",sep="")
 
-pdf(f2, height=6, width=16)
+pdf(f2, height=5, width=12)
 par(fig=c(0,1,0,1), new=TRUE)
 par(fig=c(0,0.33,0,1), new=TRUE)
-	called <- x.all$wi.eBH <= cutoff
-	plot(x.all$diff.win, x.all$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Symmetric dataset", ylim=c(ymin,ymax))
-	points(x.all$diff.win[x.all$rab.all < rare], x.all$diff.btw[x.all$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
-	points(x.all$diff.win[called], x.all$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
-	points(x.all[true.set,"diff.win"], x.all[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	#points(x.all[set[[1]],"diff.win"], x.all[set[[1]],"diff.btw"], col=rgb(0,1,0,1), pch=true.pch, cex=true.cex)
+	called <- x.iqlr$wi.eBH <= cutoff
+	plot(x.iqlr$diff.win, x.iqlr$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Symmetric dataset", ylim=c(ymin,ymax))
+	points(x.iqlr$diff.win[x.iqlr$rab.all < rare], x.iqlr$diff.btw[x.iqlr$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.iqlr$diff.win[called], x.iqlr$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.iqlr[true.set,"diff.win"], x.iqlr[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	#points(x.iqlr[set[[1]],"diff.win"], x.iqlr[set[[1]],"diff.btw"], col=rgb(0,1,0,1), pch=true.pch, cex=true.cex)
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
-par(fig=c(0.04,0.16, 0.4,0.9), new=TRUE)
-	hist(x.all$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+par(fig=c(0.04,0.20, 0.4,0.9), new=TRUE)
+	hist(x.iqlr$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.33,0.66,0,1), new=TRUE)
-	called <- x.all.0$wi.eBH <= cutoff
-	plot(x.all.0$diff.win, x.all.0$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Assymetric 2% dataset", ylim=c(ymin,ymax))
-	points(x.all.0$diff.win[x.all.0$rab.all < rare], x.all.0$diff.btw[x.all.0$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
-	points(x.all.0$diff.win[called], x.all.0$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
-	points(x.all.0[true.set,"diff.win"], x.all.0[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+par(fig=c(0.33,0.66,00,1), new=TRUE)
+	called <- x.iqlr.0$wi.eBH <= cutoff
+	plot(x.iqlr.0$diff.win, x.iqlr.0$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 2% dataset", ylim=c(ymin,ymax))
+	points(x.iqlr.0$diff.win[x.iqlr.0$rab.all < rare], x.iqlr.0$diff.btw[x.iqlr.0$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.iqlr.0$diff.win[called], x.iqlr.0$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.iqlr.0[true.set,"diff.win"], x.iqlr.0[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.37,0.49, 0.4,0.9), new=TRUE)
-	hist(x.all.0$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+par(fig=c(0.37,0.53, 0.4,0.9), new=TRUE)
+	hist(x.iqlr.0$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 
 par(fig=c(0.66,1,0,1), new=TRUE)
-	called <- x.all.30$wi.eBH <= cutoff
-	plot(x.all.30$diff.win, x.all.30$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Assymetric 30% dataset", ylim=c(-4,ymax))
-	points(x.all.30$diff.win[x.all.30$rab.all < rare], x.all.30$diff.btw[x.all.30$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
-	points(x.all.30$diff.win[called], x.all.30$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
-	points(x.all.30[true.set,"diff.win"], x.all.30[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	called <- x.iqlr.30$wi.eBH <= cutoff
+	plot(x.iqlr.30$diff.win, x.iqlr.30$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 6% dataset", ylim=c(ymin,ymax))
+	points(x.iqlr.30$diff.win[x.iqlr.30$rab.all < rare], x.iqlr.30$diff.btw[x.iqlr.30$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.iqlr.30$diff.win[called], x.iqlr.30$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.iqlr.30[true.set,"diff.win"], x.iqlr.30[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.70,0.84, 0.4,0.9), new=TRUE)
-	hist(x.all.30$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+par(fig=c(0.70,0.86, 0.4,0.9), new=TRUE)
+	hist(x.iqlr.30$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 dev.off()
 
 
-######DESEQ
+#######DESEQ
 #condition <- c(rep("A", 10), reap("B", 10))
 #cds <- newCountDataSet(reads.30, condition)
 # cds = estimateSizeFactors(cds)
 # cds <- estimateDispersions(cds, method="per-condition")
 #  res <- nbinomTest(cds, "A","B")
-#  plot(sqrt(x$fittedDispEsts), res$log2FoldChange)
+#  plot(sqrt(res$fittedDispEsts), res$log2FoldChange)
 #  plotDispEsts( cds )
 #  plotMA(res)

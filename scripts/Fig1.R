@@ -58,6 +58,7 @@ x.e.30 <- aldex.effect(x.clr.30, conds)
 x.t.30  <- aldex.ttest(x.clr.30, conds)
 x.all.30 <- data.frame(x.e.30, x.t.30)
 
+
 f1 <- paste(figs.dir, "Fig_1.pdf",sep="")
 
 pdf(f1, height=6, width=16)
@@ -73,13 +74,13 @@ par(fig=c(0,0.33,0,1), new=TRUE)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 par(fig=c(0.04,0.16, 0.4,0.9), new=TRUE)
-	hist(x.all$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+	hist(x.all$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 par(fig=c(0.33,0.66,0,1), new=TRUE)
 	called <- x.all.0$wi.eBH <= cutoff
-	plot(x.all.0$diff.win, x.all.0$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Assymetric 2% dataset", ylim=c(ymin,ymax))
+	plot(x.all.0$diff.win, x.all.0$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 2% dataset", ylim=c(ymin,ymax))
 	points(x.all.0$diff.win[x.all.0$rab.all < rare], x.all.0$diff.btw[x.all.0$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.all.0$diff.win[called], x.all.0$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.all.0[true.set,"diff.win"], x.all.0[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
@@ -90,14 +91,14 @@ par(fig=c(0.33,0.66,0,1), new=TRUE)
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
 par(fig=c(0.37,0.49, 0.4,0.9), new=TRUE)
-	hist(x.all.0$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+	hist(x.all.0$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 
 par(fig=c(0.66,1,0,1), new=TRUE)
 	called <- x.all.30$wi.eBH <= cutoff
-	plot(x.all.30$diff.win, x.all.30$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Assymetric 30% dataset", ylim=c(-4,ymax))
+	plot(x.all.30$diff.win, x.all.30$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 6% dataset", ylim=c(-4,ymax))
 	points(x.all.30$diff.win[x.all.30$rab.all < rare], x.all.30$diff.btw[x.all.30$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.all.30$diff.win[called], x.all.30$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.all.30[true.set,"diff.win"], x.all.30[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
@@ -108,19 +109,58 @@ par(fig=c(0.66,1,0,1), new=TRUE)
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
 par(fig=c(0.70,0.84, 0.4,0.9), new=TRUE)
-	hist(x.all.30$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "btw-Condition diff" ), xlab="", ylab="", cex.main=0.6)
+	hist(x.all.30$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 dev.off()
 
+#######
+#### SUPPLEMENTARY FIGURE 1 BIPLOTS
 
-######DESEQ
-#condition <- c(rep("A", 10), reap("B", 10))
-#cds <- newCountDataSet(reads.30, condition)
+Sf1 <- paste(figs.dir, "Sup_Fig_1.pdf",sep="")
+
+pdf(Sf1, height=6, width=16)
+
+par(mfrow=c(1,3))
+library(zCompositions)
+reads.n0 <- cmultRepl(t(reads), label=0, method="CZM")
+reads.clr <- t(apply(reads.n0, 1, function(x) log(x) - mean(log(x))))
+reads.pcx <- prcomp(reads.clr)
+mvar.0 <- sum(reads.pcx$sdev^2)
+PC1 <- paste("PC1 ", round(reads.pcx$sdev[1]^2/mvar.0,2), sep="")
+PC2 <- paste("PC1 ", round(reads.pcx$sdev[2]^2/mvar.0,2), sep="")
+biplot(reads.pcx, cex=c(0.5,0.1), var.axes=F, scale=0, xlab=PC1, ylab=PC2, main="Symmetric data")
+abline(v=0,lty=2, col=rgb(0,0,0,0.2))
+abline(h=0,lty=2, col=rgb(0,0,0,0.2))
+
+reads.0.n0 <- cmultRepl(t(reads.0), label=0, method="CZM")
+reads.0.clr <- t(apply(reads.0.n0, 1, function(x) log(x) - mean(log(x))))
+reads.0.pcx <- prcomp(reads.0.clr)
+mvar.1 <- sum(reads.0.pcx$sdev^2)
+PC1 <- paste("PC1 ", round(reads.0.pcx$sdev[1]^2/mvar.1,2), sep="")
+PC2 <- paste("PC1 ", round(reads.0.pcx$sdev[2]^2/mvar.1,2), sep="")
+biplot(reads.0.pcx, cex=c(0.5,0.1), var.axes=F, scale=0, xlab=PC1, ylab=PC2, main="Asymmetric 2% data")
+abline(v=0,lty=2, col=rgb(0,0,0,0.2))
+abline(h=0,lty=2, col=rgb(0,0,0,0.2))
+
+reads.30.n0 <- cmultRepl(t(reads.30), label=0, method="CZM")
+reads.30.clr <- t(apply(reads.30.n0, 1, function(x) log(x) - mean(log(x))))
+reads.30.pcx <- prcomp(reads.30.clr)
+mvar.30 <- sum(reads.30.pcx$sdev^2)
+PC1 <- paste("PC1 ", round(reads.30.pcx$sdev[1]^2/mvar.30, 2), sep="")
+PC2 <- paste("PC1 ", round(reads.30.pcx$sdev[2]^2/mvar.30, 2),  sep="")
+biplot(reads.30.pcx, cex=c(0.5,0.1), var.axes=F, scale=0, xlab=PC1, ylab=PC2, main="Asymmetric 6% data")
+abline(v=0,lty=2, col=rgb(0,0,0,0.2))
+abline(h=0,lty=2, col=rgb(0,0,0,0.2))
+dev.off()
+
+#######DESEQ
+#condition <- c(rep("A", 10), rep("B", 10))
+#cds <- newCountDataSet(reads.10, condition)
 # cds = estimateSizeFactors(cds)
 # cds <- estimateDispersions(cds, method="per-condition")
 #  res <- nbinomTest(cds, "A","B")
-#  plot(sqrt(x$fittedDispEsts), res$log2FoldChange)
+#  plot(sqrt(res$fittedDispEsts), res$log2FoldChange)
 #  plotDispEsts( cds )
 #  plotMA(res)
