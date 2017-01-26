@@ -70,7 +70,7 @@ These data are often analyzed by count based methods, such as negative binomial 
 
 Formally, \shortciteN{Aitchison:1986} defined a composition as a vector \textit{\textbf{x}}  of positive values \textit{x1}\ldots\textit{xD} whose components  sum to an arbitrary constrained constant \textit{c}. The constant sum is usually set to 1, leading to these vectors being of unit length. Absolute values of components in a composition are uninformative, and the only information provided in compositional data are the relative magnitudes of the ratios between the pairs of components, and Aitchison demonstrated that compositional data  can be efficiently analyzed by log-ratios between the parts, since these data carry only relative information between components \shortcite{Aitchison:1986}.
 
-One way of satisfying the need to examine the ratios between parts is to use the centered-log-ratio (CLR) transformation proposed by Aitchison, defined as: 
+One way of satisfying the need to examine the ratios between parts is to use the centred-log-ratio (CLR) transformation proposed by Aitchison, defined as: 
 
 \begin{equation}
 \begin{split}
@@ -85,10 +85,27 @@ clr_x &= log  \big( \frac{x_i}{g(x)}   \big)_{i=1,\dots,D} \\
 \end{equation}
 
 Since all arbitrary sums are the same this led to the concept of a composition as an equivalence class where composition \textit{\bf{x}} can be scaled into an identical composition \textit{\textbf{y}} by multiplication of a constant $\alpha$ \shortcite{barcelo:2001}. Thus, we can discuss any composition as being a proportion scaled by $\alpha$ without loss of precision. The CLR, and indeed any ratio-based method is scale-invariant because if the parts of \textit{\textbf{x}} are counts with $\alpha=$\textit{N} reads, then: 
+
 \begin{equation}
 	clr_x= log\big( \frac{Nx_i}{g(Nx)}   \big) =  log\big( \frac{x_i}{g(x)}  \big).
 \label{eq:equip}
 \end{equation}
+
+Aitchison \citeyear{Aitchison:1986} also defined the ALR, the additive log-ratio as: 
+
+\begin{equation}
+\begin{split}
+alr_x &= log  \big( \frac{x_i}{x_D}   \big)_{i=1,\dots,D-1} \\
+\text{where}~
+	alr_x &= \text{A composition transformed by CLR} \\
+	x_i &= \text{A feature of the non-transformed composition (x)} \\
+	D &= \text{The number of features of x} \\ 
+	x_D &= \text{The D\textsuperscript{th} feature of x}
+\end{split}
+\label{eq:ALR}
+\end{equation}
+
+In the ALR, the log-ratio is determined by using one, presumed invariant, feature as the denominator, and by convention this is written as the last feature. The ALR is surprisingly similar to the qPCR approach in common use in molecular biology to measure relative abundance of molecules in a mixture. Here, the species of unknown abundance is determined relative to the abundance of a species of known abundance, which can be a housekeeping gene or can be a DNA molecule of known amount added to the mixture. It is well known that the relative abundance measure will change when a different DNA species is used as the denominator, leading to the use of multiple species in some cases. In some ways, the ALR and CLR can be viewed as the two limits of a continuum of incomplete knowledge about the proper internal standard by which relative abundance should be judged. The ALR uses one presumed constant feature as the internal standard; while the CLR  presumes that the majority of features are not changed, leading to the geometric mean of all features as the internal standard. We can however, choose to use combinations of other features as presumed invariant features.
 
 For convenience, the analyses and discussion here are drawn from RNA-seq, or transcriptome, experiments where the data are exploring the relative abundance of gene species that are found in cells in an environment. However, the results and conclusions apply without restriction to metagenomic sequencing, microbial diversity sampling (by 16S rRNA gene sequencing) or to in-vitro selection experiments \shortcite{fernandes:2014}. 
 
@@ -111,25 +128,59 @@ RNA-Seq data was simulated for benchmarking purposes. Assemblies from \textit{Sa
 
 An additional 98 datasets derived from the base dataset are generated in order to benchmark how well the IQR (robust?) log-ratio transformation supports the assumption that most features are invariant and unchanging. As the original dataset has approximately 6000 nonzero features, 60 features are incrementally removed from the samples of condition A in each simulated dataset for a resultant set of datasets with sparsity ranging from 0\% to 98\% sparse in condition A. 
 
+\begin{figure}[ht]
+\includegraphics[width=6in]{../figures/Fig_1.pdf}
+\vspace{3mm} \caption{Effect plots of simulated asymmetric data that illustrates the problem. The effect plots show the difference between two conditions simulated RNA-seq data with 1000 genes where 40 are modelled to have true difference between groups. Each point is a feature (gene), they are coloured in black if not different between groups, red if identified as being statistically significantly different between groups, and red with a blue circle if they are one of the 40  genes modelled to be  `true positives'. The red points in the top right quadrant are the genes modelled to be asymmetrically variable between groups. These are also true positive features, but are not part of the initial modelled true positives. The inset histograms show the distribution of differences between groups as calculated by ALDEx2, and the vertical line shows a difference of 0.}
+\label{Fig:f1a}
+\end{figure}
+
 \subsection{An illustration}
 \vskip-0.25cm
 In its current implementation, ALDEx2 computes a per-sample geometric mean for the features and declares this as the baseline for feature comparisons. Figure~\ref{Fig:f1a}:symmetric is an effect plot demonstrating that the 40 internal control features are found to be both statistically significant and to have an effect size greater than 1 between the two groups, and the remainder of the features have very small difference, and correspondingly have an effect size much less than 1. The inset histogram shows the distribution of difference values between groups A and B, and it is clear that it is symmetric and has a location of 0. However, the introduction of small amounts of asymmetry strongly affect the results. The asymmetric 2\% dataset is the base dataset modified by setting the count value to 0 for 20 features chosen at random from Group A, and likewise the asymmetric 6\% dataset has 60 features from group A set to 0. It is apparent from the two right panels of Figure ~\ref{Fig:f1b} that this low level of simulated asymmetry breaks the assumption that most features are invariant, and the location of the difference between groups is no longer at the origin. Supplementary Figure 1 shows compositional biplots of the same data, and here it is obvious that the centre of the data is not at the origin. Thus, the small amount of asymmetry is shifting the geometric mean of the data, causing bias. Thus, if there are a large proportion of features in a sample that do not follow the central tendency of the data, the geometric mean can be unreliable as a baseline. It is unlikely that the problem will be as easy to diagnose in real data as in simulated data. 
 
-\begin{figure}[ht]
-\includegraphics[width=6in]{../figures/Fig_1.pdf}
-\vspace{3mm} \caption{Effect plots of simulated asymmetric data that illustrates the problem. The effect plots show the difference between two conditions simulated RNA-seq data with 1000 genes and 40   }
-\label{Fig:f1a}
-\end{figure}
+As can be seen in Equation \ref{eq:CLR}, the major determinant of the centre of a sample is the denominator, or basis, used to compute the CLR. Thus, one obvious approach to solving the problem is to compute the geometric mean of a subset of features that are more representative of the central tendency of the data, and to use this value as the denominator in the equation. We next examined three different approaches to identifying the features to include in the denominator. 
 
-As can be seen in Equation \ref{eq:CLR}, the major determinant of the centre of a sample is the denominator, or basis, used to compute the CLR. Thus, one obvious approach to solving the problem is to compute the geometric mean of a subset of features that are better representative of the central tendency of the data, and to use this value as the denominator in the equation. We next examined four different approaches to identifying the features to include in the denominator. 
+The first approach was to identify those features that have variance which is most typical across all the samples. This was  done by calculating the variance of each feature after CLR transformation of the data, then identify tin those features with a variance between the first and third quartiles of the datase: this is referred to as the \textit{iqlr} set of features. Thus, equation 1 becomes modified to be:
 
-The first approach was to identify those features that have variance that is most typical across all the samples. This was  done by calculating the variance of each feature after CLR transformation of the data, then using those features with a variance between the first and third quartiles of the dataset when calculating the geometric mean of the features. This transformation is termed the CLR\textsubscript{iqlr}, transformation, since the denominator for Equation \ref{eq:CLR} is the features from the inter-quartile range of the variance. The results of this method are shown in Figure \ref{Fig:f2a}:IQLR, for the sake of brevity, only the effect on the Asymmetric 2\% dataset is illustrated, but below, we explore the limitations of this, and other transformations. 
+\begin{equation}
+\begin{split}
+IQLR_x &= log  \big( \frac{x_i}{g(iqlr)}   \big)_{i=1,\dots,D} \\
+\text{where}~
+	IQLR_x &= \text{The transformed composition} \\
+	x_i &= \text{A feature of the non-transformed composition (x)} \\
+	D &= \text{The number of features of x} \\ 
+	g(iqlr) &= \text{Geometric mean of the iqlr features of x}
+\end{split}
+\label{eq:iqlr}
+\end{equation}
+
+
+
+This transformation in Equation \ref{eq:iqlr} is termed the IQLR, transformation, since the denominator for Equation \ref{eq:CLR} is the features from the inter-quartile range of the variance. The results of this method are shown in Figure \ref{Fig:f2a}:IQLR on the Asymmetric 2\% dataset. The IQLR transformation restores the centre of the dataset to the origin, and the proper set of features is identified as being both significant, and having an effect size greater than 1.
 
 \begin{figure}[ht]
 \includegraphics[width=6in]{../figures/Fig_2.pdf}
 \vspace{3mm} \caption{Effect plots of simulated asymmetric data with transformations, based on the CLR that can result in a more accurate centring of the data.   }
 \label{Fig:f2a}
 \end{figure}
+
+The second approach uses as the denominator the set of non-zero features in each group.  Thus, in this case the geometric mean of group A and group B are based on different, but potentially overlapping, sets of features. As shown in Figure \ref{Fig:f2a}:non-zero, this method also restores the centre of the data to the origin and identifies the proper set of features as differential. 
+
+The  final approach uses as the denominator a set of user-defined features. Thus, the user could choose to use one feature, in which case the approach will be the same as the ALR, or all features, in which case the result would be the same as the CLR, or a subset chosen based upon prior information. In the case of RNA-seq, this could include the set of genes involved in translation as these have been shown to be relatively stable across multiple conditions \shortcite{Scott:2010}, and can be presumed to represent a set of genes that are representative of the overall growth state of the cell.
+
+\subsection{Limitations of the approaches}
+\vskip-0.25cm
+We next explored the limitations of these approaches in two ways. First, we examined how the sparsity affected the ability of the approaches to properly centre the data when dealing with asymmetric sparse data. Figure \ref{fig:failure_fig}:All shows that the centre of the CLR-transformed data deviates from 0 when the data have even very small amounts of asymmetric sparsity. However, both the IQLR and Zero approaches are able to properly centre the data when large amounts of asymmetric sparsity are present. The breakdown point for the IQLR method is 25\% sparsity in this dataset, and is approximately  45\% sparsity for the Zero basis approach. Both, are obviously better choices that is the CLR when asymmetric sparsity is present. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{../figures/Fig_failure.pdf}
+\caption{A figure depicting the behaviour of the transformations for datasets with varying sparsity. Each point represents the median between condition difference for a given transformation given a dataset with a specified sparsity. Points closer to the location y=0 are favourable as it implies that the transformations support the assumption that the majority of features are invariant and unchanging. The original ALDEx2 transformation fails as soon as sparsity is introduced. Inter Quantile Log Ratio transformation is effective on datasets with up to 25\% sparsity from zeroes or extreme count features. Zero-removal transformation is effective on datasets with up to 50\% sparsity exclusively from zeroes. Zero removal is an extended special case of IQR centering as it only affects datasets whose sparsity is due to zeroes.}
+\label{Fig:failure_fig}
+\end{figure}
+
+Next, rather than modelling sparsity, we modelled low-count asymmetry by changing the asymmetry to a defined count of 1: note that any defined count will behave similarly. In a biological context is entirely reasonable that a low-count asymmetry could occur rather than a sparsity asymmetry. For example, the default gene expression condition for many genes is low-level expression, and the inclusion of a transcriptional activator could increase expression of many genes from very low expression to very high expression. Thus, we would have a low-count asymmetry where expression of many genes changes from very low to very high.  
+
 
 Remember that the final electronic paper --without limit in the number of pages-- will be due {\bf before May 4,
 2017}. It will be sent in PDF format. It will be published in the CoDaWork'17 CD (with ISBN) and will be available in

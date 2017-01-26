@@ -41,79 +41,89 @@ source("scripts/Variables.R")
 
 ##### Read table and generate conditions
 conds <- c(rep("A", 10), rep("B", 10))
-denom <- seq(from=100, to=200)
-denom <- "iqlr"
-x.clr <- aldex.clr(reads, conds, mc.samples, verbose=FALSE, denom=denom)
-x.e <- aldex.effect(x.clr, conds)
-x.t  <- aldex.ttest(x.clr, conds)
-x.iqlr <- data.frame(x.e, x.t)
 
 ##### Use assymmetric datasets
 
-x.clr.0 <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom=denom)
-x.e.0 <- aldex.effect(x.clr.0, conds)
-x.t.0  <- aldex.ttest(x.clr.0, conds)
-x.iqlr.0 <- data.frame(x.e.0, x.t.0)
+x.clr.iqlr <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="iqlr")
+x.e.iqlr <- aldex.effect(x.clr.iqlr, conds)
+x.t.iqlr  <- aldex.ttest(x.clr.iqlr, conds)
+x.iqlr.iqlr <- data.frame(x.e.iqlr, x.t.iqlr)
 
-x.clr.30 <- aldex.clr(reads.30, conds, mc.samples, verbose=FALSE, denom=denom)
-x.e.30 <- aldex.effect(x.clr.30, conds)
-x.t.30  <- aldex.ttest(x.clr.30, conds)
-x.iqlr.30 <- data.frame(x.e.30, x.t.30)
+# get the feature subset from ALDEx2
+iqlr.feature.subset <- aldex.set.mode(reads.0, conds, denom="iqlr")
+
+x.clr.zero <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="zero")
+x.e.zero <- aldex.effect(x.clr.zero, conds)
+x.t.zero  <- aldex.ttest(x.clr.zero, conds)
+x.zero.zero <- data.frame(x.e.zero, x.t.zero)
+zero.feature.subset <- aldex.set.mode(reads.0, conds, denom="zero")
+
+
+x.clr.user <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom=c(100:200))
+x.e.user <- aldex.effect(x.clr.user, conds)
+x.t.user  <- aldex.ttest(x.clr.user, conds)
+x.user.user <- data.frame(x.e.user, x.t.user)
+denom=c(100:200)
 
 f2 <- paste(figs.dir, "Fig_2.pdf",sep="")
 
 pdf(f2, height=5, width=12)
 par(fig=c(0,1,0,1), new=TRUE)
+
 par(fig=c(0,0.33,0,1), new=TRUE)
-	called <- x.iqlr$wi.eBH <= cutoff
-	plot(x.iqlr$diff.win, x.iqlr$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Symmetric dataset", ylim=c(ymin,ymax))
-	points(x.iqlr$diff.win[x.iqlr$rab.all < rare], x.iqlr$diff.btw[x.iqlr$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
-	points(x.iqlr$diff.win[called], x.iqlr$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
-	points(x.iqlr[true.set,"diff.win"], x.iqlr[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	#points(x.iqlr[set[[1]],"diff.win"], x.iqlr[set[[1]],"diff.btw"], col=rgb(0,1,0,1), pch=true.pch, cex=true.cex)
-	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
-	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
-	abline(0,0, col="black")
-	abline(0,0, col="white", lwd=thres.lwd, lty=2)
-par(fig=c(0.04,0.20, 0.4,0.9), new=TRUE)
-	hist(x.iqlr$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
-	abline(v=0, col="black", lwd=thres.lwd)
-	abline(v=0, col="white", lwd=thres.lwd, lty=2)
-
-par(fig=c(0.33,0.66,00,1), new=TRUE)
-	called <- x.iqlr.0$wi.eBH <= cutoff
-	plot(x.iqlr.0$diff.win, x.iqlr.0$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 2% dataset", ylim=c(ymin,ymax))
-	points(x.iqlr.0$diff.win[x.iqlr.0$rab.all < rare], x.iqlr.0$diff.btw[x.iqlr.0$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
-	points(x.iqlr.0$diff.win[called], x.iqlr.0$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
-	points(x.iqlr.0[true.set,"diff.win"], x.iqlr.0[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	called <- x.iqlr.iqlr$wi.eBH <= cutoff
+	plot(x.iqlr.iqlr$diff.win, x.iqlr.iqlr$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="IQLR set", ylim=c(ymin,ymax))
+	points(x.iqlr.iqlr$diff.win[x.iqlr.iqlr$rab.all < rare], x.iqlr.iqlr$diff.btw[x.iqlr.iqlr$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.iqlr.iqlr$diff.win[called], x.iqlr.iqlr$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.iqlr.iqlr[true.set,"diff.win"], x.iqlr.iqlr[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	points(x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.win"], x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.btw"], col="cyan", pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.37,0.53, 0.4,0.9), new=TRUE)
-	hist(x.iqlr.0$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
+par(fig=c(0.04,0.18, 0.4,0.9), new=TRUE)
+	hist(x.iqlr.iqlr$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.5)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
+par(fig=c(0.33,0.66,0,1), new=TRUE)
+	called <- x.zero.zero$wi.eBH <= cutoff
+	plot(x.zero.zero$diff.win, x.zero.zero$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="non-zero set", ylim=c(ymin,ymax))
+	points(x.zero.zero$diff.win[x.zero.zero$rab.all < rare], x.zero.zero$diff.btw[x.zero.zero$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.zero.zero$diff.win[called], x.zero.zero$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.zero.zero[true.set,"diff.win"], x.zero.zero[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	points(x.zero.zero[zero.feature.subset[[1]],"diff.win"], x.zero.zero[zero.feature.subset[[1]],"diff.btw"], col="cyan", pch=true.pch, cex=true.cex)
+
+	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,0, col="black")
+	abline(0,0, col="white", lwd=thres.lwd, lty=2)
+
+par(fig=c(0.37,0.51, 0.4,0.9), new=TRUE)
+	hist(x.zero.zero$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.5)
+	abline(v=0, col="black", lwd=thres.lwd)
+	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 par(fig=c(0.66,1,0,1), new=TRUE)
-	called <- x.iqlr.30$wi.eBH <= cutoff
-	plot(x.iqlr.30$diff.win, x.iqlr.30$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 6% dataset", ylim=c(ymin,ymax))
-	points(x.iqlr.30$diff.win[x.iqlr.30$rab.all < rare], x.iqlr.30$diff.btw[x.iqlr.30$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
-	points(x.iqlr.30$diff.win[called], x.iqlr.30$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
-	points(x.iqlr.30[true.set,"diff.win"], x.iqlr.30[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	called <- x.user.user$wi.eBH <= cutoff
+	plot(x.user.user$diff.win, x.user.user$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="user set", ylim=c(ymin,ymax))
+	points(x.user.user$diff.win[x.user.user$rab.all < rare], x.user.user$diff.btw[x.user.user$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.user.user$diff.win[called], x.user.user$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.user.user[true.set,"diff.win"], x.user.user[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+	points(x.user.user[denom,"diff.win"], x.user.user[denom,"diff.btw"], col="cyan", pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.70,0.86, 0.4,0.9), new=TRUE)
-	hist(x.iqlr.30$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.6)
+par(fig=c(0.70,0.84, 0.4,0.9), new=TRUE)
+	hist(x.user.user$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.5)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
+
 
 dev.off()
 

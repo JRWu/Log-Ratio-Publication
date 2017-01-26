@@ -7,30 +7,37 @@
 \citation{Aitchison:1986}
 \citation{Aitchison:1986}
 \citation{barcelo:2001}
-\citation{fernandes:2014}
-\citation{Scott:2010}
+\citation{Aitchison:1986}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}}
 \newlabel{eq:CLR}{{1}{2}}
 \newlabel{eq:equip}{{2}{2}}
+\citation{fernandes:2014}
+\citation{Scott:2010}
 \citation{Macklaim:2015aa,Hummelen:2010,Gajer:2012}
 \citation{macklaim:2013}
 \citation{Lang:2015aa,Peng:2014aa,Zhao:2013aa}
+\newlabel{eq:ALR}{{3}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.0.1}Sparsity and asymmetry in HTS data}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Statement of the Problem}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Simulated Data}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Statement of the Problem}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Simulated Data}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}An illustration}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Effect plots of simulated asymmetric data that illustrates the problem. The effect plots show the difference between two conditions simulated RNA-seq data with 1000 genes and 40 }}{4}}
-\newlabel{Fig:f1a}{{1}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Effect plots of simulated asymmetric data with transformations, based on the CLR that can result in a more accurate centring of the data. }}{5}}
-\newlabel{Fig:f2a}{{2}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}First level headings}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Second level headings}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Third level headings}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Citations, figures and references}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Citations in text}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Figures}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces This is a figure caption.}}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Density functions: (A) Permeability; (B) Porosity.}}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Effect plots of simulated asymmetric data that illustrates the problem. The effect plots show the difference between two conditions simulated RNA-seq data with 1000 genes where 40 are modelled to have true difference between groups. Each point is a feature (gene), they are coloured in black if not different between groups, red if identified as being statistically significantly different between groups, and red with a blue circle if they are one of the 40 genes modelled to be `true positives'. The red points in the top right quadrant are the genes modelled to be asymmetrically variable between groups. These are also true positive features, but are not part of the initial modelled true positives. The inset histograms show the distribution of differences between groups as calculated by ALDEx2, and the vertical line shows a difference of 0.}}{5}}
+\newlabel{Fig:f1a}{{1}{5}}
+\newlabel{eq:iqlr}{{4}{5}}
+\citation{Scott:2010}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Effect plots of simulated asymmetric data with transformations, based on the CLR that can result in a more accurate centring of the data. }}{6}}
+\newlabel{Fig:f2a}{{2}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Limitations of the approaches}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A figure depicting the behaviour of the transformations for datasets with varying sparsity. Each point represents the median between condition difference for a given transformation given a dataset with a specified sparsity. Points closer to the location y=0 are favourable as it implies that the transformations support the assumption that the majority of features are invariant and unchanging. The original ALDEx2 transformation fails as soon as sparsity is introduced. Inter Quantile Log Ratio transformation is effective on datasets with up to 25\% sparsity from zeroes or extreme count features. Zero-removal transformation is effective on datasets with up to 50\% sparsity exclusively from zeroes. Zero removal is an extended special case of IQR centering as it only affects datasets whose sparsity is due to zeroes.}}{7}}
+\newlabel{Fig:failure_fig}{{3}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}First level headings}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Second level headings}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Third level headings}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Citations, figures and references}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Citations in text}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Figures}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces This is a figure caption.}}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Density functions: (A) Permeability; (B) Porosity.}}{8}}
 \bibdata{bibdesk_refs}
 \bibcite{Aitchison:1986}{\citeauthoryear {Aitchison}{Aitchison}{1986}}
 \bibcite{Anders:2013aa}{\citeauthoryear {Anders, McCarthy, Chen, Okoniewski, Smyth, Huber, and Robinson}{Anders et\nobreakspace  {}al.}{2013}}
@@ -40,9 +47,9 @@
 \bibcite{Gajer:2012}{\citeauthoryear {Gajer, Brotman, Bai, Sakamoto, Sch{\"u}tte, Zhong, Koenig, Fu, Ma, Zhou, Abdo, Forney, and Ravel}{Gajer et\nobreakspace  {}al.}{2012}}
 \bibcite{gloorAJS:2016}{\citeauthoryear {Gloor, Macklaim, Vu, and Fernandes}{Gloor et\nobreakspace  {}al.}{2016}}
 \bibcite{Hummelen:2010}{\citeauthoryear {Hummelen, Fernandes, Macklaim, Dickson, Changalucha, Gloor, and Reid}{Hummelen et\nobreakspace  {}al.}{2010}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Tables}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces This is an example of a table.}}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Equations}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Tables}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces This is an example of a table.}}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Equations}{9}}
 \bibcite{Lang:2015aa}{\citeauthoryear {Lang and Johnson}{Lang and Johnson}{2015}}
 \bibcite{Macklaim:2015aa}{\citeauthoryear {Macklaim, Clemente, Knight, Gloor, and Reid}{Macklaim et\nobreakspace  {}al.}{2015}}
 \bibcite{macklaim:2013}{\citeauthoryear {Macklaim, Fernandes, Di\nobreakspace  {}Bella, Hammond, Reid, and Gloor}{Macklaim et\nobreakspace  {}al.}{2013}}
