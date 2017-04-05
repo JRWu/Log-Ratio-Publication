@@ -5,6 +5,20 @@ Aitchison, J. (1986).
 \newblock {\em The Statistical Analysis of Compositional Data}.
 \newblock Chapman \& Hall.
 
+\bibitem[\protect\citeauthoryear{Aitchison and Greenacre}{Aitchison and
+  Greenacre}{2002}]{aitchison2002biplots}
+Aitchison, J. and M.~Greenacre (2002).
+\newblock Biplots of compositional data.
+\newblock {\em Journal of the Royal Statistical Society: Series C (Applied
+  Statistics)\/}~{\em 51\/}(4), 375--392.
+
+\bibitem[\protect\citeauthoryear{Altman and Bland}{Altman and
+  Bland}{1983}]{altman:1983}
+Altman, D.~G. and J.~M. Bland (1983).
+\newblock Measurement in medicine: The analysis of method comparison studies.
+\newblock {\em Journal of the Royal Statistical Society. Series D (The
+  Statistician)\/}~{\em 32\/}(3), pp. 307--317.
+
 \bibitem[\protect\citeauthoryear{Anders, McCarthy, Chen, Okoniewski, Smyth,
   Huber, and Robinson}{Anders et~al.}{2013}]{Anders:2013aa}
 Anders, S., D.~J. McCarthy, Y.~Chen, M.~Okoniewski, G.~K. Smyth, W.~Huber, and
@@ -26,6 +40,20 @@ Barcel{\'o}-Vidal, C., J.~A. Mart{\'\i}n-Fern{\'a}ndez, and V.~Pawlowsky-Glahn
 \newblock Mathematical foundations of compositional data analysis.
 \newblock In {\em Proceedings of IAMG}, Volume~1, pp.\  1--20.
 
+\bibitem[\protect\citeauthoryear{Cumming}{Cumming}{2008}]{Cumming:2008aa}
+Cumming, G. (2008, Jul).
+\newblock Replication and p intervals: p values predict the future only
+  vaguely, but confidence intervals do much better.
+\newblock {\em Perspect Psychol Sci\/}~{\em 3\/}(4), 286--300.
+
+\bibitem[\protect\citeauthoryear{Fernandes, Macklaim, Linn, Reid, and
+  Gloor}{Fernandes et~al.}{2013}]{fernandes:2013}
+Fernandes, A.~D., J.~M. Macklaim, T.~Linn, G.~Reid, and G.~B. Gloor (2013,
+  July).
+\newblock {ANOVA}-like differential expression ({ALDEx}) analysis for mixed
+  population {RNA}-seq.
+\newblock {\em PLoS ONE\/}~{\em 8\/}(7), e67019.
+
 \bibitem[\protect\citeauthoryear{Fernandes, Reid, Macklaim, McMurrough, Edgell,
   and Gloor}{Fernandes et~al.}{2014}]{fernandes:2014}
 Fernandes, A.~D., J.~N. Reid, J.~M. Macklaim, T.~A. McMurrough, D.~R. Edgell,
@@ -34,6 +62,12 @@ Fernandes, A.~D., J.~N. Reid, J.~M. Macklaim, T.~A. McMurrough, D.~R. Edgell,
   characterizing {RNA}-seq, 16s r{RNA} gene sequencing and selective growth
   experiments by compositional data analysis.
 \newblock {\em Microbiome\/}~{\em 2}, 15.1--15.13.
+
+\bibitem[\protect\citeauthoryear{Frazee, Jaffe, Kirchner, and Leek}{Frazee
+  et~al.}{2016}]{polyester:2016}
+Frazee, A.~C., A.~E. Jaffe, R.~Kirchner, and J.~T. Leek (2016).
+\newblock {polyester: Simulate RNA-seq reads}.
+\newblock {R package version 1.10.0}.
 
 \bibitem[\protect\citeauthoryear{Gajer, Brotman, Bai, Sakamoto, Sch{\"u}tte,
   Zhong, Koenig, Fu, Ma, Zhou, Abdo, Forney, and Ravel}{Gajer
@@ -44,12 +78,49 @@ Gajer, P., R.~M. Brotman, G.~Bai, J.~Sakamoto, U.~M.~E. Sch{\"u}tte, X.~Zhong,
 \newblock Temporal dynamics of the human vaginal microbiota.
 \newblock {\em Sci Transl Med\/}~{\em 4\/}(132), 132ra52.
 
+\bibitem[\protect\citeauthoryear{Gierli{\'n}ski, Cole, Schofield, Schurch,
+  Sherstnev, Singh, Wrobel, Gharbi, Simpson, Owen-Hughes, Blaxter, and
+  Barton}{Gierli{\'n}ski et~al.}{2015}]{Gierlinski:2015aa}
+Gierli{\'n}ski, M., C.~Cole, P.~Schofield, N.~J. Schurch, A.~Sherstnev,
+  V.~Singh, N.~Wrobel, K.~Gharbi, G.~Simpson, T.~Owen-Hughes, M.~Blaxter, and
+  G.~J. Barton (2015, Jul).
+\newblock Statistical models for rna-seq data derived from a two-condition
+  48-replicate experiment.
+\newblock {\em Bioinformatics\/}~{\em 31\/}(22), 3625--3630.
+
+\bibitem[\protect\citeauthoryear{Gloor, Macklaim, and Fernandes}{Gloor
+  et~al.}{2016}]{Gloor:2015}
+Gloor, G.~B., J.~M. Macklaim, and A.~D. Fernandes (2016).
+\newblock Displaying variation in large datasets: a visual summary of effect
+  sizes.
+\newblock {\em Journal of Computational and Graphical Statistics\/}~{\em
+  25\/}(3), 971--9.
+
 \bibitem[\protect\citeauthoryear{Gloor, Macklaim, Vu, and Fernandes}{Gloor
   et~al.}{2016}]{gloorAJS:2016}
 Gloor, G.~B., J.~M. Macklaim, M.~Vu, and A.~D. Fernandes (2016, September).
 \newblock Compositional uncertainty should not be ignored in high-throughput
   sequencing data analysis.
 \newblock {\em Austrian Journal of Statistics\/}~{\em 45}, 73--87.
+
+\bibitem[\protect\citeauthoryear{Gloor and Reid}{Gloor and
+  Reid}{2016}]{Gloor:2016cjm}
+Gloor, G.~B. and G.~Reid (2016, Aug).
+\newblock Compositional analysis: a valid approach to analyze microbiome
+  high-throughput sequencing data.
+\newblock {\em Can J Microbiol\/}~{\em 62\/}(8), 692--703.
+
+\bibitem[\protect\citeauthoryear{Gloor, Wu, Pawlowsky-Glahn, and Egozcue}{Gloor
+  et~al.}{2016}]{gloor2016s}
+Gloor, G.~B., J.~R. Wu, V.~Pawlowsky-Glahn, and J.~J. Egozcue (2016, May).
+\newblock It's all relative: analyzing microbiome data as compositions.
+\newblock {\em Ann Epidemiol\/}~{\em 26\/}(5), 322--9.
+
+\bibitem[\protect\citeauthoryear{Halsey, Curran-Everett, Vowler, and
+  Drummond}{Halsey et~al.}{2015}]{Halsey:2015aa}
+Halsey, L.~G., D.~Curran-Everett, S.~L. Vowler, and G.~B. Drummond (2015, Mar).
+\newblock The fickle p value generates irreproducible results.
+\newblock {\em Nat Methods\/}~{\em 12\/}(3), 179--85.
 
 \bibitem[\protect\citeauthoryear{Hummelen, Fernandes, Macklaim, Dickson,
   Changalucha, Gloor, and Reid}{Hummelen et~al.}{2010}]{Hummelen:2010}
@@ -58,11 +129,23 @@ Hummelen, R., A.~D. Fernandes, J.~M. Macklaim, R.~J. Dickson, J.~Changalucha,
 \newblock Deep sequencing of the vaginal microbiota of women with {HIV}.
 \newblock {\em PLoS One\/}~{\em 5\/}(8), e12078.
 
+\bibitem[\protect\citeauthoryear{Jaynes and Bretthorst}{Jaynes and
+  Bretthorst}{2003}]{Jaynes:2003}
+Jaynes, E.~T. and G.~L. Bretthorst (2003).
+\newblock {\em Probability theory: the logic of science}.
+\newblock Cambridge, UK: Cambridge University Press.
+
 \bibitem[\protect\citeauthoryear{Lang and Johnson}{Lang and
   Johnson}{2015}]{Lang:2015aa}
 Lang, K.~S. and T.~J. Johnson (2015, Jul).
 \newblock Transcriptome modulations due to a/c2 plasmid acquisition.
 \newblock {\em Plasmid\/}~{\em 80}, 83--9.
+
+\bibitem[\protect\citeauthoryear{Langmead and Salzberg}{Langmead and
+  Salzberg}{2012}]{bowtie2}
+Langmead, B. and S.~L. Salzberg (2012).
+\newblock Fast gapped-read alignment with bowtie 2.
+\newblock {\em Nature methods\/}~{\em 9\/}(4), 357--359.
 
 \bibitem[\protect\citeauthoryear{Macklaim, Clemente, Knight, Gloor, and
   Reid}{Macklaim et~al.}{2015}]{Macklaim:2015aa}
@@ -85,6 +168,21 @@ McMurdie, P.~J. and S.~Holmes (2014, Apr).
 \newblock Waste not, want not: why rarefying microbiome data is inadmissible.
 \newblock {\em PLoS Comput Biol\/}~{\em 10\/}(4), e1003531.
 
+\bibitem[\protect\citeauthoryear{McMurrough, Dickson, Thibert, Gloor, and
+  Edgell}{McMurrough et~al.}{2014}]{mcmurrough:2014}
+McMurrough, T.~A., R.~J. Dickson, S.~M.~F. Thibert, G.~B. Gloor, and D.~R.
+  Edgell (2014, Jun).
+\newblock Control of catalytic efficiency by a coevolving network of catalytic
+  and noncatalytic residues.
+\newblock {\em Proc Natl Acad Sci U S A\/}~{\em 111\/}(23), E2376--83.
+
+\bibitem[\protect\citeauthoryear{Newey and McFadden}{Newey and
+  McFadden}{1994}]{Newey:1994}
+Newey, W.~K. and D.~McFadden (1994).
+\newblock Large sample estimation and hypothesis testing.
+\newblock In R.~Engle and D.~McFadden (Eds.), {\em Handbook of Econometrics},
+  Volume~4, Chapter~35, pp.\  2111---2245. Elsevier Science.
+
 \bibitem[\protect\citeauthoryear{Peng, Hao, Liu, Wang, Ma, Yang, Xie, and
   Li}{Peng et~al.}{2014}]{Peng:2014aa}
 Peng, J., B.~Hao, L.~Liu, S.~Wang, B.~Ma, Y.~Yang, F.~Xie, and Y.~Li (2014).
@@ -92,6 +190,15 @@ Peng, J., B.~Hao, L.~Liu, S.~Wang, B.~Ma, Y.~Yang, F.~Xie, and Y.~Li (2014).
   transcriptomes of mesorhizobium huakuii 7653r between bacteroids and
   free-living cells.
 \newblock {\em PLoS One\/}~{\em 9\/}(4), e93626.
+
+\bibitem[\protect\citeauthoryear{Ravel, Gajer, Abdo, Schneider, Koenig,
+  McCulle, Karlebach, Gorle, Russell, Tacket, Brotman, Davis, Ault, Peralta,
+  and Forney}{Ravel et~al.}{2010}]{Ravel:2010}
+Ravel, J., P.~Gajer, Z.~Abdo, G.~M. Schneider, S.~S.~K. Koenig, S.~L. McCulle,
+  S.~Karlebach, R.~Gorle, J.~Russell, C.~O. Tacket, R.~M. Brotman, C.~C. Davis,
+  K.~Ault, L.~Peralta, and L.~J. Forney (2010).
+\newblock Vaginal microbiome of reproductive-age women.
+\newblock {\em Proc Natl Acad Sci U S A\/}~{\em doi/10.1073/pnas.100611107}.
 
 \bibitem[\protect\citeauthoryear{Scott, Gunderson, Mateescu, Zhang, and
   Hwa}{Scott et~al.}{2010}]{Scott:2010}
@@ -106,6 +213,32 @@ Sun, J., T.~Nishiyama, K.~Shimizu, and K.~Kadota (2013).
 \newblock {TCC}: an {R} package for comparing tag count data with robust
   normalization strategies.
 \newblock {\em BMC Bioinformatics\/}~{\em 14}, 219.1--219.13.
+
+\bibitem[\protect\citeauthoryear{Thellin, Zorzi, Lakaye, De~Borman, Coumans,
+  Hennen, Grisar, Igout, and Heinen}{Thellin et~al.}{1999}]{Thellin:1999aa}
+Thellin, O., W.~Zorzi, B.~Lakaye, B.~De~Borman, B.~Coumans, G.~Hennen,
+  T.~Grisar, A.~Igout, and E.~Heinen (1999, Oct).
+\newblock Housekeeping genes as internal standards: use and limits.
+\newblock {\em J Biotechnol\/}~{\em 75\/}(2-3), 291--5.
+
+\bibitem[\protect\citeauthoryear{Thorsen, Brejnrod, Mortensen, Rasmussen,
+  Stokholm, Al-Soud, S{\o}rensen, Bisgaard, and Waage}{Thorsen
+  et~al.}{2016}]{Thorsen:2016aa}
+Thorsen, J., A.~Brejnrod, M.~Mortensen, M.~A. Rasmussen, J.~Stokholm, W.~A.
+  Al-Soud, S.~S{\o}rensen, H.~Bisgaard, and J.~Waage (2016, Nov).
+\newblock Large-scale benchmarking reveals false discoveries and count
+  transformation sensitivity in 16s rrna gene amplicon data analysis methods
+  used in microbiome studies.
+\newblock {\em Microbiome\/}~{\em 4\/}(1), 62.
+
+\bibitem[\protect\citeauthoryear{Vandesompele, De~Preter, Pattyn, Poppe,
+  Van~Roy, De~Paepe, and Speleman}{Vandesompele
+  et~al.}{2002}]{Vandesompele:2002aa}
+Vandesompele, J., K.~De~Preter, F.~Pattyn, B.~Poppe, N.~Van~Roy, A.~De~Paepe,
+  and F.~Speleman (2002, Jun).
+\newblock Accurate normalization of real-time quantitative rt-pcr data by
+  geometric averaging of multiple internal control genes.
+\newblock {\em Genome Biol\/}~{\em 3\/}(7), RESEARCH0034.
 
 \bibitem[\protect\citeauthoryear{Weiss, Van~Treuren, Lozupone, Faust, Friedman,
   Deng, Xia, Xu, Ursell, Alm, Birmingham, Cram, Fuhrman, Raes, Sun, Zhou, and

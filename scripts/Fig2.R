@@ -65,68 +65,92 @@ x.t.user  <- aldex.ttest(x.clr.user, conds)
 x.user.user <- data.frame(x.e.user, x.t.user)
 denom=c(100:200)
 
+x.clr.med <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="median")
+x.e.med <- aldex.effect(x.clr.med, conds)
+x.t.med  <- aldex.ttest(x.clr.med, conds)
+x.med.med <- data.frame(x.e.med, x.t.med)
+
 f2 <- paste(figs.dir, "Fig_2.pdf",sep="")
 
-pdf(f2, height=5, width=12)
+pdf(f2, height=9, width=9)
 par(fig=c(0,1,0,1), new=TRUE)
 
-par(fig=c(0,0.33,0,1), new=TRUE)
+par(fig=c(0,0.5,0.5,1), new=TRUE)
 	called <- x.iqlr.iqlr$wi.eBH <= cutoff
 	plot(x.iqlr.iqlr$diff.win, x.iqlr.iqlr$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="IQLR set", ylim=c(ymin,ymax))
 	points(x.iqlr.iqlr$diff.win[x.iqlr.iqlr$rab.all < rare], x.iqlr.iqlr$diff.btw[x.iqlr.iqlr$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.iqlr.iqlr$diff.win[called], x.iqlr.iqlr$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.iqlr.iqlr[true.set,"diff.win"], x.iqlr.iqlr[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	points(x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.win"], x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.btw"], col="cyan", pch=true.pch, cex=true.cex)
+	points(x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.win"], x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.04,0.18, 0.4,0.9), new=TRUE)
-	hist(x.iqlr.iqlr$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.5)
+par(fig=c(0.05,0.3, 0.7,0.95), new=TRUE)
+	hist(x.iqlr.iqlr$diff.btw, breaks=500, xlim=c(-1,1), main=NULL, xlab="", ylab="", cex.main=0.5, cex.lab=0.5)
+	title("Difference", line=0.5, cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.33,0.66,0,1), new=TRUE)
+par(fig=c(0.5,1,0.5,1), new=TRUE)
 	called <- x.zero.zero$wi.eBH <= cutoff
 	plot(x.zero.zero$diff.win, x.zero.zero$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="non-zero set", ylim=c(ymin,ymax))
 	points(x.zero.zero$diff.win[x.zero.zero$rab.all < rare], x.zero.zero$diff.btw[x.zero.zero$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.zero.zero$diff.win[called], x.zero.zero$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.zero.zero[true.set,"diff.win"], x.zero.zero[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	points(x.zero.zero[zero.feature.subset[[1]],"diff.win"], x.zero.zero[zero.feature.subset[[1]],"diff.btw"], col="cyan", pch=true.pch, cex=true.cex)
+	points(x.zero.zero[zero.feature.subset[[1]],"diff.win"], x.zero.zero[zero.feature.subset[[1]],"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.37,0.51, 0.4,0.9), new=TRUE)
-	hist(x.zero.zero$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.5)
+par(fig=c(0.55,0.8, 0.7,0.95), new=TRUE)
+	hist(x.zero.zero$diff.btw, breaks=500, xlim=c(-1,1), main=NULL, xlab="", ylab="", cex.main=0.5)
+	title("Difference", line=0.5, cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.66,1,0,1), new=TRUE)
+par(fig=c(0,0.5,0,0.5), new=TRUE)
 	called <- x.user.user$wi.eBH <= cutoff
 	plot(x.user.user$diff.win, x.user.user$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="user set", ylim=c(ymin,ymax))
 	points(x.user.user$diff.win[x.user.user$rab.all < rare], x.user.user$diff.btw[x.user.user$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.user.user$diff.win[called], x.user.user$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.user.user[true.set,"diff.win"], x.user.user[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	points(x.user.user[denom,"diff.win"], x.user.user[denom,"diff.btw"], col="cyan", pch=true.pch, cex=true.cex)
+	points(x.user.user[denom,"diff.win"], x.user.user[denom,"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,0, col="black")
 	abline(0,0, col="white", lwd=thres.lwd, lty=2)
 
-par(fig=c(0.70,0.84, 0.4,0.9), new=TRUE)
-	hist(x.user.user$diff.btw, breaks=500, xlim=c(-1,1), main=expression( "Difference" ), xlab="", ylab="", cex.main=0.5)
+par(fig=c(0.05,0.3,0.2,0.45), new=TRUE)
+	hist(x.user.user$diff.btw, breaks=500, xlim=c(-1,1), main=NULL, xlab="", ylab="", cex.main=0.5)
+	title("Difference", line=0.5, cex.main=0.6)
 	abline(v=0, col="black", lwd=thres.lwd)
 	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
+par(fig=c(0.5,1,0,0.5), new=TRUE)
+	called <- x.med.med$wi.eBH <= cutoff
+	plot(x.med.med$diff.win, x.med.med$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="median", ylim=c(ymin,ymax))
+	points(x.med.med$diff.win[x.med.med$rab.all < rare], x.med.med$diff.btw[x.med.med$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
+	points(x.med.med$diff.win[called], x.med.med$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
+	points(x.med.med[true.set,"diff.win"], x.med.med[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
+
+	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
+	abline(0,0, col="black")
+	abline(0,0, col="white", lwd=thres.lwd, lty=2)
+
+par(fig=c(0.55,0.8,0.2,0.45), new=TRUE)
+	hist(x.med.med$diff.btw, breaks=500, xlim=c(-1,1), main=NULL, xlab="", ylab="", cex.main=0.5)
+	title("Difference", line=0.5, cex.main=0.6)
+	abline(v=0, col="black", lwd=thres.lwd)
+	abline(v=0, col="white", lwd=thres.lwd, lty=2)
 
 dev.off()
-
 
 #######DESEQ
 #condition <- c(rep("A", 10), reap("B", 10))

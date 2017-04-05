@@ -38,7 +38,7 @@ source("scripts/Variables.R")
 ##### This dataset demonstrates how each transformation is affected by
 ##### systematic variation.
 ################################### FIGURE 5 ###################################
-
+data.dir <- "data/"
 ##### Read IQR Transformation Data
 instance.median <- unlist(read.table(file=paste(data.dir,"Instance_Diff_Btw_Medians.txt",sep=""), header=T, row.names=1, sep="\t"))
 instance.mean <- unlist(read.table(file=paste(data.dir,"Instance_Diff_Btw_Mean.txt",sep=""), header=T, row.names=1, sep="\t"))
@@ -46,6 +46,10 @@ instance.mean <- unlist(read.table(file=paste(data.dir,"Instance_Diff_Btw_Mean.t
 ##### Read Zero Transformation Data
 zero.median <- unlist(read.table(file=paste(data.dir,"Zero_Diff_Btw_Medians.txt",sep=""), header=T, row.names=1, sep="\t"))
 zero.mean <- unlist(read.table(file=paste(data.dir,"Zero_Diff_Btw_Mean.txt",sep=""), header=T, row.names=1, sep="\t"))
+
+##### Read Median Transformation Data
+med.median <- unlist(read.table(file=paste(data.dir,"Median_Diff_Btw_Medians.txt",sep=""), header=T, row.names=1, sep="\t"))
+med.mean <- unlist(read.table(file=paste(data.dir,"Median_Diff_Btw_Mean.txt",sep=""), header=T, row.names=1, sep="\t"))
 
 ##### Read Original Transformation Data
 original.median <- unlist(read.table(file=paste(data.dir,"Orig_Diff_Btw_Medians.txt",sep=""), header=T, row.names=1, sep="\t"))
@@ -60,9 +64,9 @@ xlb <- "Percent Sparsity"
 man <- paste(ylb, "  vs. ", xlb, sep="")
 
 darkness <- 0.3
-pch <- c(19,19,19)
-col <- c(rgb(1,0,0,darkness), rgb(0,0,1,darkness), rgb(0,0,0,darkness))
-leg <- c("Zero","IQLR","All")
+pch <- c(19,19,19,19)
+col <- c( rgb(0,0,1,darkness),rgb(1,0,0,darkness), rgb(0,0,0,darkness),rgb(0,1,0,darkness))
+leg <- c("CLR","NZLR","IQLR","MED")
 
 fig.name <- paste(figs.dir,"Fig_failure.pdf",sep="")
 pdf(fig.name, height=5, width=8)
@@ -71,9 +75,10 @@ pdf(fig.name, height=5, width=8)
 plot(NULL,xlim=c(0,50),ylim=c(ymin,ymax), xlab=xlb, ylab=ylb) #, main=man)
 
 ##### Plot the points per transformation
-points(zero.median[1:50], pch=pch[1], col=col[1], type="b")
-points(instance.median[1:50], pch=pch[2], col=col[2], type="b")
-points(original.median[1:50], pch=pch[3], col=col[3], type="b")
+points(zero.median[1:50], pch=pch[1], col=col[2], type="b")
+points(instance.median[1:50], pch=pch[2], col=col[3], type="b")
+points(original.median[1:50], pch=pch[3], col=col[1], type="b")
+points(med.median[1:50], pch=pch[4], col=col[4], type="b")
 
 abline(0,0, col=c(rgb(0,0,0,0.75)))
 abline(v=25, col=c(rgb(0,0,0,0.2)))
@@ -81,6 +86,6 @@ abline(v=50, col=c(rgb(0,0,0,0.2)))
 abline(v=75, col=c(rgb(0,0,0,0.2)))
 
 ##### Position the legend at the top right of the plot
-legend(0,8,legend=leg, pch=pch, col=col)
+legend(0,6,legend=leg, pch=pch, col=col)
 
 dev.off()

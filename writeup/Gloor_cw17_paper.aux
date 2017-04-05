@@ -1,6 +1,7 @@
 \relax 
 \bibstyle{chicago}
 \citation{Auer:2010aa,Anders:2013aa}
+\citation{gloorAJS:2016}
 \citation{fernandes:2014,gloorAJS:2016}
 \citation{Weiss:2016aa}
 \citation{Sun:2013aa,McMurdie:2014a}
@@ -11,51 +12,91 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}}
 \newlabel{eq:CLR}{{1}{2}}
 \newlabel{eq:equip}{{2}{2}}
+\citation{Thellin:1999aa,Vandesompele:2002aa}
 \citation{fernandes:2014}
 \citation{Scott:2010}
 \citation{Macklaim:2015aa,Hummelen:2010,Gajer:2012}
 \citation{macklaim:2013}
-\citation{Lang:2015aa,Peng:2014aa,Zhao:2013aa}
+\citation{Lang:2015aa,Peng:2014aa,Zhao:2013aa,Gierlinski:2015aa}
 \newlabel{eq:ALR}{{3}{3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.0.1}Sparsity and asymmetry in HTS data}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Statement of the Problem}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Simulated Data}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}An illustration}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Effect plots of simulated asymmetric data that illustrates the problem. The effect plots show the difference between two conditions simulated RNA-seq data with 1000 genes where 40 are modelled to have true difference between groups. Each point is a feature (gene), they are coloured in black if not different between groups, red if identified as being statistically significantly different between groups, and red with a blue circle if they are one of the 40 genes modelled to be `true positives'. The red points in the top right quadrant are the genes modelled to be asymmetrically variable between groups. These are also true positive features, but are not part of the initial modelled true positives. The inset histograms show the distribution of differences between groups as calculated by ALDEx2, and the vertical line shows a difference of 0.}}{5}}
-\newlabel{Fig:f1a}{{1}{5}}
-\newlabel{eq:iqlr}{{4}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Statement of the Problem}{3}}
+\citation{altman:1983}
+\citation{Gloor:2015}
+\citation{aitchison2002biplots}
+\citation{Halsey:2015aa}
+\citation{Cumming:2008aa}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Effect plots of simulated asymmetric data that illustrates the problem. The effect plots show the difference between two conditions in simulated RNA-seq data with 1000 genes where 40 genes are modelled to have true difference between groups. Each point is a feature (gene), they are coloured in black if not different between groups, red if identified as being statistically significantly different between groups, and red with a blue circle if they are one of the 40 genes modelled to be true positives. The red points in the top right quadrant are the genes modelled to be asymmetrically variable between groups. These are also true positive features, but are not part of the initial modelled true positives. The inset histograms show the distribution of the differences between groups as calculated by ALDEx2, and the vertical line shows a difference of 0. These x-axis of these plots are truncated to show only differences near the midpoint.}}{4}}
+\newlabel{Fig:f1a}{{1}{4}}
+\citation{fernandes:2013,gloorAJS:2016}
+\citation{Thorsen:2016aa}
+\citation{fernandes:2013,gloorAJS:2016}
+\citation{fernandes:2013,macklaim:2013,fernandes:2014,mcmurrough:2014}
+\citation{Gloor:2016cjm,gloor2016s}
+\citation{Newey:1994}
+\citation{Jaynes:2003}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{5}}
+\newlabel{eq:dispersion}{{4}{5}}
+\citation{fernandes:2013,gloorAJS:2016}
+\citation{fernandes:2013,gloorAJS:2016}
+\citation{fernandes:2013}
+\citation{fernandes:2013}
+\citation{polyester:2016}
+\citation{bowtie2}
+\newlabel{eq:matrix}{{5}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Simulated Data}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Four alternative methods}{7}}
+\newlabel{eq:iqlr}{{6}{7}}
 \citation{Scott:2010}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Effect plots of simulated asymmetric data with transformations, based on the CLR that can result in a more accurate centring of the data. }}{6}}
-\newlabel{Fig:f2a}{{2}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Limitations of the approaches}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A figure depicting the behaviour of the transformations for datasets with varying sparsity. Each point represents the median between condition difference for a given transformation given a dataset with a specified sparsity. Points closer to the location y=0 are favourable as it implies that the transformations support the assumption that the majority of features are invariant and unchanging. The original ALDEx2 transformation fails as soon as sparsity is introduced. Inter Quantile Log Ratio transformation is effective on datasets with up to 25\% sparsity from zeroes or extreme count features. Zero-removal transformation is effective on datasets with up to 50\% sparsity exclusively from zeroes. Zero removal is an extended special case of IQR centering as it only affects datasets whose sparsity is due to zeroes.}}{7}}
-\newlabel{Fig:failure_fig}{{3}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}First level headings}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Second level headings}{7}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Third level headings}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Citations, figures and references}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Citations in text}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Figures}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces This is a figure caption.}}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Density functions: (A) Permeability; (B) Porosity.}}{8}}
-\bibdata{bibdesk_refs}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Effect plots of simulated asymmetric data with transformations that can result in a more accurate centring of the data. Points are coloured as in Figure 1\hbox {}, with the points used for the denominator in each case coloured in cyan.}}{8}}
+\newlabel{Fig:f2a}{{2}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The behaviour of each transformations for datasets with varying sparsity. Each point represents the median between condition difference for a given transformation in a dataset with a specified sparsity. Points closer to the location y=0 are favourable. The CLR transformation fails as soon as asymmetric sparsity is introduced. The IQLR transformation is effective on datasets with up to 25\% asymmetric sparsity from zeroes or extreme count features. The NZLR transformation is effective on datasets with up to 50\% sparsity exclusively from zeroes. Replacing the geometric mean with the median in Equation 1\hbox {}, is an improvement, but results in a generally small shift in midpoint.}}{9}}
+\newlabel{Fig:failure}{{3}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Limitations of the approaches}{9}}
+\citation{Ravel:2010}
+\citation{macklaim:2013}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The behaviour of each transformations for datasets with varying 2\% asymmetry where the asymmetric count value is 1. The top left panel shows that it is not sparsity that is the problem, but rather the asymmetry between groups. An asymmetry caused by a count of 1 also induces false positive identifications, shown in red below the dashed line. Both the IQLR and the User-specified transformations are able to centre the data appropriately. However, the zero-adjustment method fails because the problem is not sparsity but low counts.}}{10}}
+\newlabel{Fig:ones}{{4}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Example of a meta-RNA-seq dataset}{10}}
+\citation{macklaim:2013}
+\citation{Scott:2010}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Effect plot and Bland-Altman plots summarizing gene expression in two different states. }}{11}}
+\newlabel{Fig:bv}{{5}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Effect plot and Bland-Altman plots summarizing gene expression in two different states. }}{12}}
+\newlabel{Fig:ribo}{{6}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{12}}
+\bibdata{Gloor_cw17_paper.bbl}
 \bibcite{Aitchison:1986}{\citeauthoryear {Aitchison}{Aitchison}{1986}}
+\bibcite{aitchison2002biplots}{\citeauthoryear {Aitchison and Greenacre}{Aitchison and Greenacre}{2002}}
+\bibcite{altman:1983}{\citeauthoryear {Altman and Bland}{Altman and Bland}{1983}}
 \bibcite{Anders:2013aa}{\citeauthoryear {Anders, McCarthy, Chen, Okoniewski, Smyth, Huber, and Robinson}{Anders et\nobreakspace  {}al.}{2013}}
 \bibcite{Auer:2010aa}{\citeauthoryear {Auer and Doerge}{Auer and Doerge}{2010}}
 \bibcite{barcelo:2001}{\citeauthoryear {Barcel{\'o}-Vidal, Mart{\'\i }n-Fern{\'a}ndez, and Pawlowsky-Glahn}{Barcel{\'o}-Vidal et\nobreakspace  {}al.}{2001}}
+\bibcite{Cumming:2008aa}{\citeauthoryear {Cumming}{Cumming}{2008}}
+\bibcite{fernandes:2013}{\citeauthoryear {Fernandes, Macklaim, Linn, Reid, and Gloor}{Fernandes et\nobreakspace  {}al.}{2013}}
 \bibcite{fernandes:2014}{\citeauthoryear {Fernandes, Reid, Macklaim, McMurrough, Edgell, and Gloor}{Fernandes et\nobreakspace  {}al.}{2014}}
+\bibcite{polyester:2016}{\citeauthoryear {Frazee, Jaffe, Kirchner, and Leek}{Frazee et\nobreakspace  {}al.}{2016}}
 \bibcite{Gajer:2012}{\citeauthoryear {Gajer, Brotman, Bai, Sakamoto, Sch{\"u}tte, Zhong, Koenig, Fu, Ma, Zhou, Abdo, Forney, and Ravel}{Gajer et\nobreakspace  {}al.}{2012}}
+\bibcite{Gierlinski:2015aa}{\citeauthoryear {Gierli{\'n}ski, Cole, Schofield, Schurch, Sherstnev, Singh, Wrobel, Gharbi, Simpson, Owen-Hughes, Blaxter, and Barton}{Gierli{\'n}ski et\nobreakspace  {}al.}{2015}}
+\bibcite{Gloor:2015}{\citeauthoryear {Gloor, Macklaim, and Fernandes}{Gloor et\nobreakspace  {}al.}{2016}}
 \bibcite{gloorAJS:2016}{\citeauthoryear {Gloor, Macklaim, Vu, and Fernandes}{Gloor et\nobreakspace  {}al.}{2016}}
+\bibcite{Gloor:2016cjm}{\citeauthoryear {Gloor and Reid}{Gloor and Reid}{2016}}
+\bibcite{gloor2016s}{\citeauthoryear {Gloor, Wu, Pawlowsky-Glahn, and Egozcue}{Gloor et\nobreakspace  {}al.}{2016}}
+\bibcite{Halsey:2015aa}{\citeauthoryear {Halsey, Curran-Everett, Vowler, and Drummond}{Halsey et\nobreakspace  {}al.}{2015}}
 \bibcite{Hummelen:2010}{\citeauthoryear {Hummelen, Fernandes, Macklaim, Dickson, Changalucha, Gloor, and Reid}{Hummelen et\nobreakspace  {}al.}{2010}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Tables}{9}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces This is an example of a table.}}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Equations}{9}}
+\bibcite{Jaynes:2003}{\citeauthoryear {Jaynes and Bretthorst}{Jaynes and Bretthorst}{2003}}
 \bibcite{Lang:2015aa}{\citeauthoryear {Lang and Johnson}{Lang and Johnson}{2015}}
+\bibcite{bowtie2}{\citeauthoryear {Langmead and Salzberg}{Langmead and Salzberg}{2012}}
 \bibcite{Macklaim:2015aa}{\citeauthoryear {Macklaim, Clemente, Knight, Gloor, and Reid}{Macklaim et\nobreakspace  {}al.}{2015}}
 \bibcite{macklaim:2013}{\citeauthoryear {Macklaim, Fernandes, Di\nobreakspace  {}Bella, Hammond, Reid, and Gloor}{Macklaim et\nobreakspace  {}al.}{2013}}
 \bibcite{McMurdie:2014a}{\citeauthoryear {McMurdie and Holmes}{McMurdie and Holmes}{2014}}
+\bibcite{mcmurrough:2014}{\citeauthoryear {McMurrough, Dickson, Thibert, Gloor, and Edgell}{McMurrough et\nobreakspace  {}al.}{2014}}
+\bibcite{Newey:1994}{\citeauthoryear {Newey and McFadden}{Newey and McFadden}{1994}}
 \bibcite{Peng:2014aa}{\citeauthoryear {Peng, Hao, Liu, Wang, Ma, Yang, Xie, and Li}{Peng et\nobreakspace  {}al.}{2014}}
+\bibcite{Ravel:2010}{\citeauthoryear {Ravel, Gajer, Abdo, Schneider, Koenig, McCulle, Karlebach, Gorle, Russell, Tacket, Brotman, Davis, Ault, Peralta, and Forney}{Ravel et\nobreakspace  {}al.}{2010}}
 \bibcite{Scott:2010}{\citeauthoryear {Scott, Gunderson, Mateescu, Zhang, and Hwa}{Scott et\nobreakspace  {}al.}{2010}}
 \bibcite{Sun:2013aa}{\citeauthoryear {Sun, Nishiyama, Shimizu, and Kadota}{Sun et\nobreakspace  {}al.}{2013}}
+\bibcite{Thellin:1999aa}{\citeauthoryear {Thellin, Zorzi, Lakaye, De\nobreakspace  {}Borman, Coumans, Hennen, Grisar, Igout, and Heinen}{Thellin et\nobreakspace  {}al.}{1999}}
+\bibcite{Thorsen:2016aa}{\citeauthoryear {Thorsen, Brejnrod, Mortensen, Rasmussen, Stokholm, Al-Soud, S{\o }rensen, Bisgaard, and Waage}{Thorsen et\nobreakspace  {}al.}{2016}}
+\bibcite{Vandesompele:2002aa}{\citeauthoryear {Vandesompele, De\nobreakspace  {}Preter, Pattyn, Poppe, Van\nobreakspace  {}Roy, De\nobreakspace  {}Paepe, and Speleman}{Vandesompele et\nobreakspace  {}al.}{2002}}
 \bibcite{Weiss:2016aa}{\citeauthoryear {Weiss, Van\nobreakspace  {}Treuren, Lozupone, Faust, Friedman, Deng, Xia, Xu, Ursell, Alm, Birmingham, Cram, Fuhrman, Raes, Sun, Zhou, and Knight}{Weiss et\nobreakspace  {}al.}{2016}}
 \bibcite{Zhao:2013aa}{\citeauthoryear {Zhao, Chen, Xiong, Xu, Lan, Wang, Yao, Bai, Liu, Meng, Zhang, Sun, Zhao, Bai, Cheng, Chen, Ye, and Xu}{Zhao et\nobreakspace  {}al.}{2013}}

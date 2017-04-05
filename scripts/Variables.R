@@ -94,7 +94,7 @@ reads.30[940:1000,1:10] <- 0
 
 
 # reads with 2% assymmetry as 1 values
-reads.1 <- reads
+reads.1 <- reads.0
 reads.1[980:1000,1:10] <- 1
 
 # reads with 2% assymmetry as 10 values
@@ -139,7 +139,9 @@ rare.col="black"
 rare=0
 rare.pch=20
 rare.cex=0.2
-xlab <- expression( "Median" ~~ Log[2] ~~ "dispersion" )
-ylab <- expression( "Median" ~~ Log[2] ~~ "difference" )
+#xlab <- expression( "Median" ~~ Log[2] ~~ "dispersion" )
+#ylab <- expression( "Median" ~~ Log[2] ~~ "difference" )
+xlab <- "Dispersion"
+ylab <- "Difference"
 ymin <- -3
 ymax <- 12

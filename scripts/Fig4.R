@@ -31,7 +31,7 @@
 ################################################################################
 
 ##### Load Required Libraries
-source("Variables.R")
+source("scripts/Variables.R")
 
 ################################### FIGURE 4a ##################################
 ##### This is a figure generated off dataset count_table2, Tom/Dave's
@@ -53,7 +53,7 @@ x.e.o.sel <- aldex.effect(x.clr.o.sel, selex.conds, useMC=TRUE)
 x.t.o.sel  <- aldex.ttest(x.clr.o.sel, selex.conds)
 x.all.o.sel <- data.frame(x.e.o.sel, x.t.o.sel)
 
-x.clr.osel.iqlr <- aldex.clr(selex.reads, mc.samples, verbose=FALSE, useMC=FALSE, iqlr=TRUE)
+x.clr.osel.iqlr <- aldex.clr(selex.reads, mc.samples, verbose=FALSE, useMC=FALSE, denom="iqlr")
 x.e.osel.iqlr <- aldex.effect(x.clr.osel.iqlr, selex.conds, useMC=TRUE)
 x.t.osel.iqlr  <- aldex.ttest(x.clr.osel.iqlr, selex.conds)
 x.all.osel.iqlr <- data.frame(x.e.osel.iqlr, x.t.osel.iqlr)

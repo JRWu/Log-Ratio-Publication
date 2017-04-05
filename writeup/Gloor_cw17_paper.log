@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JAN 2017 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 APR 2017 14:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -153,18 +153,18 @@ File: ansinew.def 2015/03/17 v1.2c Input encoding file
 (./Gloor_cw17_paper.aux)
 \openout1 = `Gloor_cw17_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -227,12 +227,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -240,78 +240,99 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
-<../figures/Fig_1.pdf, id=25, 1156.32pt x 433.62pt>
+<../figures/Fig_1.pdf, id=26, 1156.32pt x 433.62pt>
 File: ../figures/Fig_1.pdf Graphic file (type pdf)
  <use ../figures/Fig_1.pdf>
-Package pdftex.def Info: ../figures/Fig_1.pdf used on input line 132.
+Package pdftex.def Info: ../figures/Fig_1.pdf used on input line 122.
 (pdftex.def)             Requested size: 433.62pt x 162.6071pt.
 
-Overfull \hbox (6.82866pt too wide) in paragraph at lines 132--133
+Overfull \hbox (6.82866pt too wide) in paragraph at lines 122--123
 [][]
  []
 
+[4 <../figures/Fig_1.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 147.
 
-LaTeX Warning: Reference `Fig:f1b' on page 4 undefined on input line 139.
 
-[4] [5 <../figures/Fig_1.pdf>]
-<../figures/Fig_2.pdf, id=47, 867.24pt x 361.35pt>
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
+ [5] [6]
+<../figures/Fig_2.pdf, id=53, 650.43pt x 650.43pt>
 File: ../figures/Fig_2.pdf Graphic file (type pdf)
  <use ../figures/Fig_2.pdf>
-Package pdftex.def Info: ../figures/Fig_2.pdf used on input line 162.
-(pdftex.def)             Requested size: 433.62pt x 180.67456pt.
+Package pdftex.def Info: ../figures/Fig_2.pdf used on input line 201.
+(pdftex.def)             Requested size: 433.62pt x 433.63216pt.
 
-Overfull \hbox (6.82866pt too wide) in paragraph at lines 162--163
+Overfull \hbox (6.82866pt too wide) in paragraph at lines 201--202
 [][]
  []
 
-
-LaTeX Warning: Reference `fig:failure_fig' on page 6 undefined on input line 17
-3.
-
-<../figures/Fig_failure.pdf, id=48, 578.16pt x 361.35pt>
+[7] <../figures/Fig_failure.pdf, id=59, 578.16pt x 361.35pt>
 File: ../figures/Fig_failure.pdf Graphic file (type pdf)
 
 <use ../figures/Fig_failure.pdf>
-Package pdftex.def Info: ../figures/Fig_failure.pdf used on input line 177.
-(pdftex.def)             Requested size: 384.10959pt x 240.06866pt.
+Package pdftex.def Info: ../figures/Fig_failure.pdf used on input line 230.
+(pdftex.def)             Requested size: 289.07999pt x 180.67456pt.
 
+<../figures/Fig_ones.pdf, id=60, 650.43pt x 650.43pt>
+File: ../figures/Fig_ones.pdf Graphic file (type pdf)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use ../figures/Fig_ones.pdf>
+Package pdftex.def Info: ../figures/Fig_ones.pdf used on input line 237.
+(pdftex.def)             Requested size: 361.34999pt x 361.36014pt.
+ [8 <../figures/Fig_2.pdf>] [9 <../figures/Fig_failure.pdf>] <../figures/twtyfr
+.pdf, id=90, 650.43pt x 361.35pt>
+File: ../figures/twtyfr.pdf Graphic file (type pdf)
 
-[6 <../figures/Fig_2.pdf>] [7 <../figures/Fig_failure.pdf>] [8]
-(./Gloor_cw17_paper.bbl [9]) [10] (./Gloor_cw17_paper.aux)
+<use ../figures/twtyfr.pdf>
+Package pdftex.def Info: ../figures/twtyfr.pdf used on input line 259.
+(pdftex.def)             Requested size: 361.34999pt x 200.75563pt.
+ [10 <../figures/Fig_ones.pdf>]
+<../figures/twtyfr_corr.pdf, id=105, 867.24pt x 650.43pt>
+File: ../figures/twtyfr_corr.pdf Graphic file (type pdf)
 
-LaTeX Warning: There were undefined references.
-
- ) 
+<use ../figures/twtyfr_corr.pdf>
+Package pdftex.def Info: ../figures/twtyfr_corr.pdf used on input line 274.
+(pdftex.def)             Requested size: 361.34999pt x 271.01514pt.
+ [11 <../figures/twtyfr.pdf>] [12 <../figures/twtyfr_corr.pdf>] (./Gloor_cw17_p
+aper.bbl [13] [14]) [15]
+(./Gloor_cw17_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 2599 strings out of 493089
- 34832 string characters out of 6134842
- 102275 words of memory out of 5000000
- 6030 multiletter control sequences out of 15000+600000
- 11785 words of font info for 45 fonts, out of 8000000 for 9000
+ 2660 strings out of 493089
+ 35893 string characters out of 6134842
+ 105698 words of memory out of 5000000
+ 6082 multiletter control sequences out of 15000+600000
+ 13820 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,21n,24p,1988b,247s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Gloor_cw17_paper.pdf (10 pages, 635316 bytes).
+ 38i,19n,24p,1718b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbxti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Gloor_cw17_paper.pdf (15 pages, 3527895 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 213 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
