@@ -119,7 +119,7 @@ Throughout, we use two plots to summarize the location of the features in multiv
 
 
 \begin{figure}[ht]
-\includegraphics[width=6in]{../figures/Fig_1.pdf}
+\includegraphics[width=6in]{Fig_1.pdf}
 \vspace{3mm} \caption{Effect plots  of simulated asymmetric data that illustrates the problem. The effect plots show the difference between two conditions in simulated RNA-seq data with 1000 genes where 40 genes are modelled to have true difference between groups. Each point is a feature (gene), they are coloured in black if not different between groups, red if identified as being statistically significantly different between groups, and red with a blue circle if they are one of the 40  genes modelled to be  true positives. The red points in the top right quadrant are the genes modelled to be asymmetrically variable between groups. These are also true positive features, but are not part of the initial modelled true positives. The inset histograms show the distribution of the differences between groups as calculated by ALDEx2, and the vertical line shows a difference of 0. These x-axis of these plots are truncated to show only differences near the midpoint.}
 \label{Fig:f1a}
 \end{figure}
@@ -198,7 +198,7 @@ RNA-Seq data was simulated for benchmarking purposes. Assemblies from \textit{Sa
 An additional 98 datasets derived from the base dataset are generated in order to benchmark how well the interquartile log-ratio (IQLR) transformation supports the assumption that most features are invariant and unchanging. As the original dataset has approximately 6000 nonzero features, 60 features are incrementally removed from the samples of condition A in each simulated dataset for a resultant set of datasets with sparsity ranging from 0\% to 98\% sparse in condition A. 
 
 \begin{figure}[!ht]
-\includegraphics[width=6in]{../figures/Fig_2.pdf}
+\includegraphics[width=6in]{Fig_2.pdf}
 \vspace{3mm} \caption{Effect plots of simulated asymmetric data with transformations that can result in a more accurate centring of the data. Points are coloured as in Figure \ref{Fig:f1a}, with the points used for the denominator in each case coloured in cyan.}
 \label{Fig:f2a}
 \end{figure}
@@ -227,14 +227,14 @@ The transformation in Equation \ref{eq:iqlr} is termed the IQLR transformation. 
 The second approach uses as the denominator the set of non-zero features in each group.  Thus, in this case the geometric mean of group A and group B are based on different, but potentially overlapping, sets of features, this approach is called the no-zero log ratio (NZLR). As shown in Figure \ref{Fig:f2a}:non-zero, the NZLR method also restores the centre of the data to the origin and identifies the proper set of features as differential. 
 
 \begin{figure}[th!]
-\includegraphics[width=4in]{../figures/Fig_failure.pdf}
+\includegraphics[width=4in]{Fig_failure.pdf}
 \caption{The behaviour of each transformations for datasets with varying sparsity. Each point represents the median between condition difference for a given transformation in a dataset with a specified sparsity. Points closer to the location y=0 are favourable. The CLR transformation fails as soon as asymmetric sparsity is introduced. The IQLR  transformation is effective on datasets with up to 25\% asymmetric sparsity from zeroes or extreme count features. The NZLR transformation is effective on datasets with up to 50\% sparsity exclusively from zeroes. Replacing the geometric mean with the median in Equation \ref{eq:CLR}, is an improvement, but results in a generally small shift in midpoint.}
 \label{Fig:failure}
 \end{figure}
 
 
 \begin{figure}[!t]
-\includegraphics[width=5in]{../figures/Fig_ones.pdf}
+\includegraphics[width=5in]{Fig_ones.pdf}
 \caption{The behaviour of each transformations for datasets with varying 2\% asymmetry where the asymmetric count value is 1. The top left panel shows that it is not sparsity that is the problem, but rather the asymmetry  between groups. An asymmetry caused by a count of 1 also induces false positive identifications, shown in red below the dashed line. Both the IQLR and the User-specified transformations are able to centre the data appropriately. However, the zero-adjustment method fails because the problem is not sparsity but low counts.}
 \label{Fig:ones}
 \end{figure}
@@ -256,7 +256,7 @@ Next, rather than modelling sparsity, we modelled low-count asymmetry by changin
 The results, shown in Figure \ref{Fig:ones} show that an asymmetry where the asymmetric value is 1 again results in the location of the data being displaced from 0. However, when the IQLR and ULR methods are used the location of the data is restored to 0. Not surprisingly, the NZLR does not restore the data to the proper location since the asymmetry is not driven by sparsity. The median method was not tested. We suggest that the NZLR method be used only when the other approaches fail, and when the investigator is confident that sparsity is driving the asymmetry in the data. 
 
 \begin{figure}[ht]
-\includegraphics[width=5in]{../figures/twtyfr.pdf}
+\includegraphics[width=5in]{twtyfr.pdf}
 \caption{Effect plot and Bland-Altman plots summarizing gene expression in two different states. }
 \label{Fig:bv}
 \end{figure}
@@ -271,7 +271,7 @@ We can see that there is a large asymmetry in distribution, the most striking of
 We also see a group composed of functions found in common between the the H and BV group that is  expressed at very high relative levels, centred around 1,1.5 and 8,1.5 on the two plots. These are functions that are central and required by all living organisms. Two sets of functions are highlighted: ribosomal protein functions in blue, and glycolytic functions in magenta. Many of the functions in these groups are often used as internal standards for comparison as it is assumed that their expression is invariant \shortcite{Scott:2010}. The median offset of the two sets on the y-axis is given, and we can see that they are both observed to be substantially above the expected location of 0 when the CLR is used to determine differential abundance.   
 
 \begin{figure}[ht]
-\includegraphics[width=5in]{../figures/twtyfr_corr.pdf}
+\includegraphics[width=5in]{twtyfr_corr.pdf}
 \caption{Effect plot and Bland-Altman plots summarizing gene expression in two different states. }
 \label{Fig:ribo}
 \end{figure}
@@ -299,10 +299,10 @@ In either case, it must be remembered that the results of any analysis must be i
 %``{\bf Appendix} A" etc. if more than one.
 
 \renewcommand\refname{}
-\section*{References}
+%\section*{References}
 \vskip-1cm
 % \bibliography{bibdesk_refs}
-\bibliography{Gloor_cw17_paper.bbl}[heading=none]
+\bibliography{Gloor_cw17_paper.bbl}
 %\vskip-0.25cm References follow the acknowledgements. Use first
 %level no-numbered headings. The bibliography should follow the
 %{\it Chicago style}. See below for examples.

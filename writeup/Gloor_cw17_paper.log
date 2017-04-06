@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 APR 2017 14:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 APR 2017 09:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -240,69 +240,64 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
-<../figures/Fig_1.pdf, id=26, 1156.32pt x 433.62pt>
-File: ../figures/Fig_1.pdf Graphic file (type pdf)
- <use ../figures/Fig_1.pdf>
-Package pdftex.def Info: ../figures/Fig_1.pdf used on input line 122.
+<Fig_1.pdf, id=26, 1156.32pt x 433.62pt>
+File: Fig_1.pdf Graphic file (type pdf)
+ <use Fig_1.pdf>
+Package pdftex.def Info: Fig_1.pdf used on input line 122.
 (pdftex.def)             Requested size: 433.62pt x 162.6071pt.
 
 Overfull \hbox (6.82866pt too wide) in paragraph at lines 122--123
 [][]
  []
 
-[4 <../figures/Fig_1.pdf>]
+[4 <./Fig_1.pdf>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 147.
 
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
- [5] [6]
-<../figures/Fig_2.pdf, id=53, 650.43pt x 650.43pt>
-File: ../figures/Fig_2.pdf Graphic file (type pdf)
- <use ../figures/Fig_2.pdf>
-Package pdftex.def Info: ../figures/Fig_2.pdf used on input line 201.
+[5] [6] <Fig_2.pdf, id=53, 650.43pt x 650.43pt>
+File: Fig_2.pdf Graphic file (type pdf)
+ <use Fig_2.pdf>
+Package pdftex.def Info: Fig_2.pdf used on input line 201.
 (pdftex.def)             Requested size: 433.62pt x 433.63216pt.
 
 Overfull \hbox (6.82866pt too wide) in paragraph at lines 201--202
 [][]
  []
 
-[7] <../figures/Fig_failure.pdf, id=59, 578.16pt x 361.35pt>
-File: ../figures/Fig_failure.pdf Graphic file (type pdf)
-
-<use ../figures/Fig_failure.pdf>
-Package pdftex.def Info: ../figures/Fig_failure.pdf used on input line 230.
+[7] <Fig_failure.pdf, id=59, 578.16pt x 361.35pt>
+File: Fig_failure.pdf Graphic file (type pdf)
+ <use Fig_failure.pdf>
+Package pdftex.def Info: Fig_failure.pdf used on input line 230.
 (pdftex.def)             Requested size: 289.07999pt x 180.67456pt.
 
-<../figures/Fig_ones.pdf, id=60, 650.43pt x 650.43pt>
-File: ../figures/Fig_ones.pdf Graphic file (type pdf)
-
-<use ../figures/Fig_ones.pdf>
-Package pdftex.def Info: ../figures/Fig_ones.pdf used on input line 237.
+<Fig_ones.pdf, id=60, 650.43pt x 650.43pt>
+File: Fig_ones.pdf Graphic file (type pdf)
+ <use Fig_ones.pdf>
+Package pdftex.def Info: Fig_ones.pdf used on input line 237.
 (pdftex.def)             Requested size: 361.34999pt x 361.36014pt.
- [8 <../figures/Fig_2.pdf>] [9 <../figures/Fig_failure.pdf>] <../figures/twtyfr
-.pdf, id=90, 650.43pt x 361.35pt>
-File: ../figures/twtyfr.pdf Graphic file (type pdf)
+ [8 <./Fig_2.pdf>] [9 <./Fig_failure.pdf>] <twtyfr.pdf, id=90, 650.43pt x 361.3
+5pt>
+File: twtyfr.pdf Graphic file (type pdf)
 
-<use ../figures/twtyfr.pdf>
-Package pdftex.def Info: ../figures/twtyfr.pdf used on input line 259.
+<use twtyfr.pdf>
+Package pdftex.def Info: twtyfr.pdf used on input line 259.
 (pdftex.def)             Requested size: 361.34999pt x 200.75563pt.
- [10 <../figures/Fig_ones.pdf>]
-<../figures/twtyfr_corr.pdf, id=105, 867.24pt x 650.43pt>
-File: ../figures/twtyfr_corr.pdf Graphic file (type pdf)
-
-<use ../figures/twtyfr_corr.pdf>
-Package pdftex.def Info: ../figures/twtyfr_corr.pdf used on input line 274.
+ [10 <./Fig_ones.pdf>]
+<twtyfr_corr.pdf, id=105, 867.24pt x 650.43pt>
+File: twtyfr_corr.pdf Graphic file (type pdf)
+ <use twtyfr_corr.pdf>
+Package pdftex.def Info: twtyfr_corr.pdf used on input line 274.
 (pdftex.def)             Requested size: 361.34999pt x 271.01514pt.
- [11 <../figures/twtyfr.pdf>] [12 <../figures/twtyfr_corr.pdf>] (./Gloor_cw17_p
-aper.bbl [13] [14]) [15]
+ [11 <./twtyfr.pdf>] [12 <./twtyfr_corr.pdf>] (./Gloor_cw17_paper.bbl [13] [14]
+) [15]
 (./Gloor_cw17_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 2660 strings out of 493089
- 35893 string characters out of 6134842
+ 2659 strings out of 493089
+ 35618 string characters out of 6134842
  105698 words of memory out of 5000000
  6082 multiletter control sequences out of 15000+600000
  13820 words of font info for 51 fonts, out of 8000000 for 9000
@@ -329,7 +324,7 @@ r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/
 local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Gloor_cw17_paper.pdf (15 pages, 3527895 bytes).
+Output written on Gloor_cw17_paper.pdf (15 pages, 3527806 bytes).
 PDF statistics:
  213 PDF objects out of 1000 (max. 8388607)
  161 compressed objects within 2 object streams
