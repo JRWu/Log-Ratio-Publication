@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{Aitchison:1986}
+J.~Aitchison.
+\newblock {\em The Statistical Analysis of Compositional Data}.
+\newblock Chapman \& Hall, 1986.
+
+\bibitem{aitchison2002biplots}
+John Aitchison and Michael Greenacre.
+\newblock Biplots of compositional data.
+\newblock {\em Journal of the Royal Statistical Society: Series C (Applied
+  Statistics)}, 51(4):375--392, 2002.
+
+\bibitem{fernandes:2013}
+A.~D. Fernandes, J.~M. Macklaim, T.G Linn, G.~Reid, and G.~B. Gloor.
+\newblock {ANOVA}-like differential expression ({ALDEx}) analysis for mixed
+  population {RNA}-seq.
+\newblock {\em PLoS ONE}, 8(7):e67019, July 2013.
+
+\bibitem{fernandes:2014}
+Andrew~D Fernandes, Jennifer~Ns Reid, Jean~M Macklaim, Thomas~A McMurrough,
+  David~R Edgell, and Gregory~B Gloor.
+\newblock Unifying the analysis of high-throughput sequencing datasets:
+  characterizing {RNA}-seq, 16s r{RNA} gene sequencing and selective growth
+  experiments by compositional data analysis.
+\newblock {\em Microbiome}, 2:15.1--15.13, 2014.
+
+\bibitem{gloor:effect}
+Gregory~B. Gloor, Jean~M. Macklaim, and Andrew~D. Fernandes.
+\newblock Displaying variation in large datasets: Plotting a visual summary of
+  effect sizes.
+\newblock {\em Journal of Computational and Graphical Statistics},
+  25(3):971--979, 2016.
+
+\end{thebibliography}

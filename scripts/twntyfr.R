@@ -81,3 +81,36 @@ ma.plot(x.u, -0,9,7.5,main="BA plot: Ribosomal functions")
 
 dev.off()
 
+
+	text(x1,y1, labels=paste("med ribo=", round(median(x$diff.btw[ribo]),3), sep=""))
+	text(x1,y2, labels=paste("med glyc=", round(median(x$diff.btw[glycol]),3), sep=""))
+
+
+pdf("figures/twtyfr_poster.pdf", height=3.7,width=12)
+par(mfrow=c(1,4))
+
+eff.plot(x.e, main="Denom=all")
+legend(5.6,-4.1, legend=c("abundant", "rare", "ribosome", "glycolysis"),   col=c(rgb(0.8,0.7,0.5,0.3), rgb(0.2,0.1,0.05,0.3), rgb(0,0,1,1), rgb(1,0,0.8,1)), pch=19, cex=1, bg="white")
+	text(5.5,10, labels=paste("med ribo=", round(median(x.e$diff.btw[ribo]),3), sep=""))
+	text(5.5,9, labels=paste("med glyc=", round(median(x.e$diff.btw[glycol]),3), sep=""))
+
+#x <- aldex.clr(e.min, conds, denom="iqlr")
+#x.i <- aldex.effect(x, conds, verbose=FALSE)
+eff.plot(x.i, main="Denom=IQLR")
+#	legend(6,-6, legend=c("non-sparse", "sparse", "ribosome", "glycolysis"),   col=c(rgb(0.8,0.7,0.5,0.3), rgb(0.2,0.1,0.05,0.3), rgb(0,0,1,1), rgb(1,0,0.8,1)), pch=19, cex=1, bg="white")
+	text(5.5,9.5, labels=paste("med ribo=", round(median(x.i$diff.btw[ribo]),3), sep=""))
+	text(5.5,8.5, labels=paste("med glyc=", round(median(x.i$diff.btw[glycol]),3), sep=""))
+
+#x <- aldex.clr(e.min, conds, denom="zero")
+#x.z <- aldex.effect(x, conds, verbose=FALSE)
+eff.plot(x.z, main="Denom=non-zero")
+	text(5.5,9.5, labels=paste("med ribo=", round(median(x.z$diff.btw[ribo]),3), sep=""))
+	text(5.5,8.5, labels=paste("med glyc=", round(median(x.z$diff.btw[glycol]),3), sep=""))
+
+#x <- aldex.clr(e.min, conds, denom=ribo)
+#x.u <- aldex.effect(x, conds, verbose=FALSE)
+eff.plot(x.u, main="Denom=Ribosomal functions")
+	text(5.5,9.5, labels=paste("med ribo=", round(median(x.u$diff.btw[ribo]),3), sep=""))
+	text(5.5,8.5, labels=paste("med glyc=", round(median(x.u$diff.btw[glycol]),3), sep=""))
+
+dev.off()
