@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{13}
+\begin{thebibliography}{36}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -43,169 +43,653 @@
 \csname PreBibitemsHook\endcsname
 
 %%% 1
-\bibitem{koon}
+\bibitem{Auer:2010aa}
 \begin{barticle}
-\bauthor{\bsnm{Koonin}, \binits{E.V.}},
-\bauthor{\bsnm{Altschul}, \binits{S.F.}},
-\bauthor{\bsnm{Bork}, \binits{P.}}:
-\batitle{Brca1 protein products: functional motifs}.
-\bjtitle{Nat Genet}
-\bvolume{13},
-\bfpage{266}--\blpage{267}
-(\byear{1996})
+\bauthor{\bsnm{Auer}, \binits{P.L.}},
+\bauthor{\bsnm{Doerge}, \binits{R.W.}}:
+\batitle{Statistical design and analysis of {RNA} sequencing data}.
+\bjtitle{Genetics}
+\bvolume{185}(\bissue{2}),
+\bfpage{405}--\blpage{16}
+(\byear{2010}).
+doi:\doiurl{10.1534/genetics.110.114983}
 \end{barticle}
 \endbibitem
 
 %%% 2
-\bibitem{khar}
-\begin{botherref}
-\oauthor{\bsnm{Kharitonov}, \binits{S.A.}},
-\oauthor{\bsnm{Barnes}, \binits{P.J.}}:
-Clinical Aspects of Exhaled Nitric Oxide.
-in press
-\end{botherref}
+\bibitem{Anders:2013aa}
+\begin{barticle}
+\bauthor{\bsnm{Anders}, \binits{S.}},
+\bauthor{\bsnm{McCarthy}, \binits{D.J.}},
+\bauthor{\bsnm{Chen}, \binits{Y.}},
+\bauthor{\bsnm{Okoniewski}, \binits{M.}},
+\bauthor{\bsnm{Smyth}, \binits{G.K.}},
+\bauthor{\bsnm{Huber}, \binits{W.}},
+\bauthor{\bsnm{Robinson}, \binits{M.D.}}:
+\batitle{Count-based differential expression analysis of {RNA} sequencing data
+  using {R} and {Bioconductor}}.
+\bjtitle{Nat Protoc}
+\bvolume{8}(\bissue{9}),
+\bfpage{1765}--\blpage{86}
+(\byear{2013}).
+doi:\doiurl{10.1038/nprot.2013.099}
+\end{barticle}
 \endbibitem
 
 %%% 3
-\bibitem{zvai}
+\bibitem{Macklaim:2015aa}
 \begin{barticle}
-\bauthor{\bsnm{Zvaifler}, \binits{N.J.}},
-\bauthor{\bsnm{Burger}, \binits{J.A.}},
-\bauthor{\bsnm{Marinova-Mutafchieva}, \binits{L.}},
-\bauthor{\bsnm{Taylor}, \binits{P.}},
-\bauthor{\bsnm{Maini}, \binits{R.N.}}:
-\batitle{Mesenchymal cells, stromal derived factor-1 and rheumatoid arthritis
-  [abstract]}.
-\bjtitle{Arthritis Rheum}
-\bvolume{42},
-\bfpage{250}
-(\byear{1999})
+\bauthor{\bsnm{Macklaim}, \binits{J.M.}},
+\bauthor{\bsnm{Clemente}, \binits{J.C.}},
+\bauthor{\bsnm{Knight}, \binits{R.}},
+\bauthor{\bsnm{Gloor}, \binits{G.B.}},
+\bauthor{\bsnm{Reid}, \binits{G.}}:
+\batitle{Changes in vaginal microbiota following antimicrobial and probiotic
+  therapy}.
+\bjtitle{Microb Ecol Health Dis}
+\bvolume{26},
+\bfpage{27799}
+(\byear{2015})
 \end{barticle}
 \endbibitem
 
 %%% 4
-\bibitem{xjon}
-\begin{bchapter}
-\bauthor{\bsnm{Jones}, \binits{X.}}:
-\bctitle{Zeolites and synthetic mechanisms}.
-In: \beditor{\bsnm{Smith}, \binits{Y.}} (ed.)
-\bbtitle{Proceedings of the First National Conference on Porous Sieves: 27-30
-  June 1996; Baltimore},
-pp. \bfpage{16}--\blpage{27}
-(\byear{1996}).
-\bcomment{Stoneham: Butterworth-Heinemann}
-\end{bchapter}
+\bibitem{Hummelen:2010}
+\begin{barticle}
+\bauthor{\bsnm{Hummelen}, \binits{R.}},
+\bauthor{\bsnm{Fernandes}, \binits{A.D.}},
+\bauthor{\bsnm{Macklaim}, \binits{J.M.}},
+\bauthor{\bsnm{Dickson}, \binits{R.J.}},
+\bauthor{\bsnm{Changalucha}, \binits{J.}},
+\bauthor{\bsnm{Gloor}, \binits{G.B.}},
+\bauthor{\bsnm{Reid}, \binits{G.}}:
+\batitle{Deep sequencing of the vaginal microbiota of women with {HIV}}.
+\bjtitle{PLoS One}
+\bvolume{5}(\bissue{8}),
+\bfpage{12078}
+(\byear{2010}).
+doi:\doiurl{10.1371/journal.pone.0012078}
+\end{barticle}
 \endbibitem
 
 %%% 5
-\bibitem{marg}
-\begin{bbook}
-\bauthor{\bsnm{Margulis}, \binits{L.}}:
-\bbtitle{Origin of Eukaryotic Cells}.
-\bpublisher{Yale University Press},
-\blocation{New Haven}
-(\byear{1970})
-\end{bbook}
+\bibitem{Gajer:2012}
+\begin{barticle}
+\bauthor{\bsnm{Gajer}, \binits{P.}},
+\bauthor{\bsnm{Brotman}, \binits{R.M.}},
+\bauthor{\bsnm{Bai}, \binits{G.}},
+\bauthor{\bsnm{Sakamoto}, \binits{J.}},
+\bauthor{\bsnm{Sch{\"u}tte}, \binits{U.M.E.}},
+\bauthor{\bsnm{Zhong}, \binits{X.}},
+\bauthor{\bsnm{Koenig}, \binits{S.S.K.}},
+\bauthor{\bsnm{Fu}, \binits{L.}},
+\bauthor{\bsnm{Ma}, \binits{Z.S.}},
+\bauthor{\bsnm{Zhou}, \binits{X.}},
+\bauthor{\bsnm{Abdo}, \binits{Z.}},
+\bauthor{\bsnm{Forney}, \binits{L.J.}},
+\bauthor{\bsnm{Ravel}, \binits{J.}}:
+\batitle{Temporal dynamics of the human vaginal microbiota}.
+\bjtitle{Sci Transl Med}
+\bvolume{4}(\bissue{132}),
+\bfpage{132}--\blpage{52}
+(\byear{2012}).
+doi:\doiurl{10.1126/scitranslmed.3003605}
+\end{barticle}
 \endbibitem
 
 %%% 6
-\bibitem{oreg}
+\bibitem{macklaim:2013}
 \begin{barticle}
-\bauthor{\bsnm{Orengo}, \binits{C.A.}},
-\bauthor{\bsnm{Bray}, \binits{J.E.}},
-\bauthor{\bsnm{Hubbard}, \binits{T.}},
-\bauthor{\bsnm{LoConte}, \binits{L.}},
-\bauthor{\bsnm{Sillitoe}, \binits{I.}}:
-\batitle{Analysis and assessment of ab initio three-dimensional prediction,
-  secondary structure, and contacts prediction}.
-\bjtitle{Proteins}
-\bvolume{Suppl 3},
-\bfpage{149}--\blpage{170}
-(\byear{1999})
+\bauthor{\bsnm{Macklaim}, \binits{M.J.}},
+\bauthor{\bsnm{Fernandes}, \binits{D.A.}},
+\bauthor{\bsnm{Di~Bella}, \binits{M.J.}},
+\bauthor{\bsnm{Hammond}, \binits{J.-A.}},
+\bauthor{\bsnm{Reid}, \binits{G.}},
+\bauthor{\bsnm{Gloor}, \binits{G.B.}}:
+\batitle{Comparative meta-{RNA}-seq of the vaginal microbiota and differential
+  expression by \textit{{L}actobacillus iners} in health and dysbiosis}.
+\bjtitle{Microbiome}
+\bvolume{1},
+\bfpage{15}
+(\byear{2013}).
+doi:\doiurl{10.1186/2049-2618-1-12}
 \end{barticle}
 \endbibitem
 
 %%% 7
-\bibitem{schn}
-\begin{bchapter}
-\bauthor{\bsnm{Schnepf}, \binits{E.}}:
-\bctitle{From prey via endosymbiont to plastids: comparative studies in
-  dinoflagellates}.
-In: \beditor{\bsnm{Lewin}, \binits{R.A.}} (ed.)
-\bbtitle{Origins of Plastids}
-vol. \bseriesno{2},
-\bedition{2nd} edn.,
-pp. \bfpage{53}--\blpage{76}.
-\bpublisher{Chapman and Hall},
-\blocation{New York}
-(\byear{1993})
-\end{bchapter}
+\bibitem{Lang:2015aa}
+\begin{barticle}
+\bauthor{\bsnm{Lang}, \binits{K.S.}},
+\bauthor{\bsnm{Johnson}, \binits{T.J.}}:
+\batitle{Transcriptome modulations due to a/c2 plasmid acquisition}.
+\bjtitle{Plasmid}
+\bvolume{80},
+\bfpage{83}--\blpage{9}
+(\byear{2015}).
+doi:\doiurl{10.1016/j.plasmid.2015.05.005}
+\end{barticle}
 \endbibitem
 
 %%% 8
-\bibitem{pond}
-\begin{botherref}
-Innovative Oncology
-\end{botherref}
+\bibitem{Peng:2014aa}
+\begin{barticle}
+\bauthor{\bsnm{Peng}, \binits{J.}},
+\bauthor{\bsnm{Hao}, \binits{B.}},
+\bauthor{\bsnm{Liu}, \binits{L.}},
+\bauthor{\bsnm{Wang}, \binits{S.}},
+\bauthor{\bsnm{Ma}, \binits{B.}},
+\bauthor{\bsnm{Yang}, \binits{Y.}},
+\bauthor{\bsnm{Xie}, \binits{F.}},
+\bauthor{\bsnm{Li}, \binits{Y.}}:
+\batitle{Rna-seq and microarrays analyses reveal global differential
+  transcriptomes of mesorhizobium huakuii 7653r between bacteroids and
+  free-living cells}.
+\bjtitle{PLoS One}
+\bvolume{9}(\bissue{4}),
+\bfpage{93626}
+(\byear{2014}).
+doi:\doiurl{10.1371/journal.pone.0093626}
+\end{barticle}
 \endbibitem
 
 %%% 9
-\bibitem{smith}
-\begin{bbook}
-\beditor{\bsnm{Smith}, \binits{Y.}} (ed.):
-\bbtitle{Proceedings of the First National Conference on Porous Sieves: 27-30
-  June 1996; Baltimore}.
-\bpublisher{Butterworth-Heinemann},
-\blocation{Stoneham}
-(\byear{1996})
-\end{bbook}
+\bibitem{Zhao:2013aa}
+\begin{barticle}
+\bauthor{\bsnm{Zhao}, \binits{H.}},
+\bauthor{\bsnm{Chen}, \binits{C.}},
+\bauthor{\bsnm{Xiong}, \binits{Y.}},
+\bauthor{\bsnm{Xu}, \binits{X.}},
+\bauthor{\bsnm{Lan}, \binits{R.}},
+\bauthor{\bsnm{Wang}, \binits{H.}},
+\bauthor{\bsnm{Yao}, \binits{X.}},
+\bauthor{\bsnm{Bai}, \binits{X.}},
+\bauthor{\bsnm{Liu}, \binits{X.}},
+\bauthor{\bsnm{Meng}, \binits{Q.}},
+\bauthor{\bsnm{Zhang}, \binits{X.}},
+\bauthor{\bsnm{Sun}, \binits{H.}},
+\bauthor{\bsnm{Zhao}, \binits{A.}},
+\bauthor{\bsnm{Bai}, \binits{X.}},
+\bauthor{\bsnm{Cheng}, \binits{Y.}},
+\bauthor{\bsnm{Chen}, \binits{Q.}},
+\bauthor{\bsnm{Ye}, \binits{C.}},
+\bauthor{\bsnm{Xu}, \binits{J.}}:
+\batitle{Global transcriptional and phenotypic analyses of {E}scherichia coli
+  {O157:H7 }strain {X}uzhou21 and its p{O}157\_{S}al cured mutant}.
+\bjtitle{PLoS One}
+\bvolume{8}(\bissue{5}),
+\bfpage{65466}
+(\byear{2013}).
+doi:\doiurl{10.1371/journal.pone.0065466}
+\end{barticle}
 \endbibitem
 
 %%% 10
-\bibitem{hunn}
-\begin{bchapter}
-\bauthor{\bsnm{Hunninghake}, \binits{G.W.}},
-\bauthor{\bsnm{Gadek}, \binits{J.E.}}:
-\bctitle{The alveloar macrophage}.
-In: \beditor{\bsnm{Harris}, \binits{T.J.R.}} (ed.)
-\bbtitle{Cultured Human Cells and Tissues},
-pp. \bfpage{54}--\blpage{56}.
-\bpublisher{Academic Press},
-\blocation{New York}
-(\byear{1995}).
-\bcomment{Stoner G (Series Editor): Methods and Perspectives in Cell Biology,
-  vol 1}
-\end{bchapter}
+\bibitem{Gierlinski:2015aa}
+\begin{barticle}
+\bauthor{\bsnm{Gierli{\'n}ski}, \binits{M.}},
+\bauthor{\bsnm{Cole}, \binits{C.}},
+\bauthor{\bsnm{Schofield}, \binits{P.}},
+\bauthor{\bsnm{Schurch}, \binits{N.J.}},
+\bauthor{\bsnm{Sherstnev}, \binits{A.}},
+\bauthor{\bsnm{Singh}, \binits{V.}},
+\bauthor{\bsnm{Wrobel}, \binits{N.}},
+\bauthor{\bsnm{Gharbi}, \binits{K.}},
+\bauthor{\bsnm{Simpson}, \binits{G.}},
+\bauthor{\bsnm{Owen-Hughes}, \binits{T.}},
+\bauthor{\bsnm{Blaxter}, \binits{M.}},
+\bauthor{\bsnm{Barton}, \binits{G.J.}}:
+\batitle{Statistical models for rna-seq data derived from a two-condition
+  48-replicate experiment}.
+\bjtitle{Bioinformatics}
+\bvolume{31}(\bissue{22}),
+\bfpage{3625}--\blpage{3630}
+(\byear{2015}).
+doi:\doiurl{10.1093/bioinformatics/btv425}
+\end{barticle}
 \endbibitem
 
 %%% 11
-\bibitem{advi}
-\begin{botherref}
-Advisory Committee on Genetic Modification:
-Annual Report.
-London
-(1999).
-Advisory Committee on Genetic Modification
-\end{botherref}
+\bibitem{fernandes:2013}
+\begin{barticle}
+\bauthor{\bsnm{Fernandes}, \binits{A.D.}},
+\bauthor{\bsnm{Macklaim}, \binits{J.M.}},
+\bauthor{\bsnm{Linn}, \binits{T.G.}},
+\bauthor{\bsnm{Reid}, \binits{G.}},
+\bauthor{\bsnm{Gloor}, \binits{G.B.}}:
+\batitle{{ANOVA}-like differential expression ({ALDEx}) analysis for mixed
+  population {RNA}-seq}.
+\bjtitle{PLoS ONE}
+\bvolume{8}(\bissue{7}),
+\bfpage{67019}
+(\byear{2013})
+\end{barticle}
 \endbibitem
 
 %%% 12
-\bibitem{koha}
-\begin{botherref}
-\oauthor{\bsnm{Kohavi}, \binits{R.}}:
-Wrappers for performance enhancement and obvious decision graphs.
-PhD thesis,
-Stanford University, Computer Science Department
-(1995)
-\end{botherref}
+\bibitem{Aitchison:1986}
+\begin{bbook}
+\bauthor{\bsnm{Aitchison}, \binits{J.}}:
+\bbtitle{The Statistical Analysis of Compositional Data}.
+\bpublisher{Chapman \& Hall}, \blocation{???}
+(\byear{1986})
+\end{bbook}
 \endbibitem
 
 %%% 13
-\bibitem{mouse}
+\bibitem{fernandes:2014}
+\begin{barticle}
+\bauthor{\bsnm{Fernandes}, \binits{A.D.}},
+\bauthor{\bsnm{Reid}, \binits{J.N.}},
+\bauthor{\bsnm{Macklaim}, \binits{J.M.}},
+\bauthor{\bsnm{McMurrough}, \binits{T.A.}},
+\bauthor{\bsnm{Edgell}, \binits{D.R.}},
+\bauthor{\bsnm{Gloor}, \binits{G.B.}}:
+\batitle{Unifying the analysis of high-throughput sequencing datasets:
+  characterizing {RNA}-seq, 16{S} r{RNA} gene sequencing and selective growth
+  experiments by compositional data analysis}.
+\bjtitle{Microbiome}
+\bvolume{2},
+\bfpage{15}--\blpage{11513}
+(\byear{2014}).
+doi:\doiurl{10.1186/2049-2618-2-15}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{mcmurrough:2014}
+\begin{barticle}
+\bauthor{\bsnm{McMurrough}, \binits{T.A.}},
+\bauthor{\bsnm{Dickson}, \binits{R.J.}},
+\bauthor{\bsnm{Thibert}, \binits{S.M.F.}},
+\bauthor{\bsnm{Gloor}, \binits{G.B.}},
+\bauthor{\bsnm{Edgell}, \binits{D.R.}}:
+\batitle{Control of catalytic efficiency by a coevolving network of catalytic
+  and noncatalytic residues}.
+\bjtitle{Proc Natl Acad Sci U S A}
+\bvolume{111}(\bissue{23}),
+\bfpage{2376}--\blpage{83}
+(\byear{2014}).
+doi:\doiurl{10.1073/pnas.1322352111}
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{Thellin:1999aa}
+\begin{barticle}
+\bauthor{\bsnm{Thellin}, \binits{O.}},
+\bauthor{\bsnm{Zorzi}, \binits{W.}},
+\bauthor{\bsnm{Lakaye}, \binits{B.}},
+\bauthor{\bsnm{De~Borman}, \binits{B.}},
+\bauthor{\bsnm{Coumans}, \binits{B.}},
+\bauthor{\bsnm{Hennen}, \binits{G.}},
+\bauthor{\bsnm{Grisar}, \binits{T.}},
+\bauthor{\bsnm{Igout}, \binits{A.}},
+\bauthor{\bsnm{Heinen}, \binits{E.}}:
+\batitle{Housekeeping genes as internal standards: use and limits}.
+\bjtitle{J Biotechnol}
+\bvolume{75}(\bissue{2-3}),
+\bfpage{291}--\blpage{5}
+(\byear{1999})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{Vandesompele:2002aa}
+\begin{barticle}
+\bauthor{\bsnm{Vandesompele}, \binits{J.}},
+\bauthor{\bsnm{De~Preter}, \binits{K.}},
+\bauthor{\bsnm{Pattyn}, \binits{F.}},
+\bauthor{\bsnm{Poppe}, \binits{B.}},
+\bauthor{\bsnm{Van~Roy}, \binits{N.}},
+\bauthor{\bsnm{De~Paepe}, \binits{A.}},
+\bauthor{\bsnm{Speleman}, \binits{F.}}:
+\batitle{Accurate normalization of real-time quantitative rt-pcr data by
+  geometric averaging of multiple internal control genes}.
+\bjtitle{Genome Biol}
+\bvolume{3}(\bissue{7}),
+\bfpage{0034}
+(\byear{2002})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{gloorAJS:2016}
+\begin{barticle}
+\bauthor{\bsnm{Gloor}, \binits{G.B.}},
+\bauthor{\bsnm{Macklaim}, \binits{J.M.}},
+\bauthor{\bsnm{Vu}, \binits{M.}},
+\bauthor{\bsnm{Fernandes}, \binits{A.D.}}:
+\batitle{Compositional uncertainty should not be ignored in high-throughput
+  sequencing data analysis}.
+\bjtitle{Austrian Journal of Statistics}
+\bvolume{45},
+\bfpage{73}--\blpage{87}
+(\byear{2016}).
+doi:\doiurl{10.17713/ajs.v45i4.122}
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{Weiss:2016aa}
+\begin{barticle}
+\bauthor{\bsnm{Weiss}, \binits{S.}},
+\bauthor{\bsnm{Van~Treuren}, \binits{W.}},
+\bauthor{\bsnm{Lozupone}, \binits{C.}},
+\bauthor{\bsnm{Faust}, \binits{K.}},
+\bauthor{\bsnm{Friedman}, \binits{J.}},
+\bauthor{\bsnm{Deng}, \binits{Y.}},
+\bauthor{\bsnm{Xia}, \binits{L.C.}},
+\bauthor{\bsnm{Xu}, \binits{Z.Z.}},
+\bauthor{\bsnm{Ursell}, \binits{L.}},
+\bauthor{\bsnm{Alm}, \binits{E.J.}},
+\bauthor{\bsnm{Birmingham}, \binits{A.}},
+\bauthor{\bsnm{Cram}, \binits{J.A.}},
+\bauthor{\bsnm{Fuhrman}, \binits{J.A.}},
+\bauthor{\bsnm{Raes}, \binits{J.}},
+\bauthor{\bsnm{Sun}, \binits{F.}},
+\bauthor{\bsnm{Zhou}, \binits{J.}},
+\bauthor{\bsnm{Knight}, \binits{R.}}:
+\batitle{Correlation detection strategies in microbial data sets vary widely in
+  sensitivity and precision}.
+\bjtitle{ISME J}
+\bvolume{10}(\bissue{7}),
+\bfpage{1669}--\blpage{81}
+(\byear{2016}).
+doi:\doiurl{10.1038/ismej.2015.235}
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem{Sun:2013aa}
+\begin{barticle}
+\bauthor{\bsnm{Sun}, \binits{J.}},
+\bauthor{\bsnm{Nishiyama}, \binits{T.}},
+\bauthor{\bsnm{Shimizu}, \binits{K.}},
+\bauthor{\bsnm{Kadota}, \binits{K.}}:
+\batitle{{TCC}: an {R} package for comparing tag count data with robust
+  normalization strategies}.
+\bjtitle{BMC Bioinformatics}
+\bvolume{14},
+\bfpage{219}--\blpage{121913}
+(\byear{2013}).
+doi:\doiurl{10.1186/1471-2105-14-219}
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{McMurdie:2014a}
+\begin{barticle}
+\bauthor{\bsnm{McMurdie}, \binits{P.J.}},
+\bauthor{\bsnm{Holmes}, \binits{S.}}:
+\batitle{Waste not, want not: why rarefying microbiome data is inadmissible}.
+\bjtitle{PLoS Comput Biol}
+\bvolume{10}(\bissue{4}),
+\bfpage{1003531}
+(\byear{2014}).
+doi:\doiurl{10.1371/journal.pcbi.1003531}
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{barcelo:2001}
+\begin{bchapter}
+\bauthor{\bsnm{Barcel{\'o}-Vidal}, \binits{C.}},
+\bauthor{\bsnm{Mart{\'\i}n-Fern{\'a}ndez}, \binits{J.A.}},
+\bauthor{\bsnm{Pawlowsky-Glahn}, \binits{V.}}:
+\bctitle{Mathematical foundations of compositional data analysis}.
+In: \bbtitle{Proceedings of IAMG},
+vol. \bseriesno{1},
+pp. \bfpage{1}--\blpage{20}
+(\byear{2001})
+\end{bchapter}
+\endbibitem
+
+%%% 22
+\bibitem{Scott:2010}
+\begin{barticle}
+\bauthor{\bsnm{Scott}, \binits{M.}},
+\bauthor{\bsnm{Gunderson}, \binits{C.W.}},
+\bauthor{\bsnm{Mateescu}, \binits{E.M.}},
+\bauthor{\bsnm{Zhang}, \binits{Z.}},
+\bauthor{\bsnm{Hwa}, \binits{T.}}:
+\batitle{Interdependence of cell growth and gene expression: origins and
+  consequences}.
+\bjtitle{Science}
+\bvolume{330}(\bissue{6007}),
+\bfpage{1099}--\blpage{102}
+(\byear{2010}).
+doi:\doiurl{10.1126/science.1192588}
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem{altman:1983}
+\begin{barticle}
+\bauthor{\bsnm{Altman}, \binits{D.G.}},
+\bauthor{\bsnm{Bland}, \binits{J.M.}}:
+\batitle{Measurement in medicine: The analysis of method comparison studies}.
+\bjtitle{Journal of the Royal Statistical Society. Series D (The Statistician)}
+\bvolume{32}(\bissue{3}),
+\bfpage{307}--\blpage{317}
+(\byear{1983})
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{Gloor:2015}
+\begin{barticle}
+\bauthor{\bsnm{Gloor}, \binits{G.B.}},
+\bauthor{\bsnm{Macklaim}, \binits{J.M.}},
+\bauthor{\bsnm{Fernandes}, \binits{A.D.}}:
+\batitle{Displaying variation in large datasets: a visual summary of effect
+  sizes}.
+\bjtitle{Journal of Computational and Graphical Statistics}
+\bvolume{25}(\bissue{3}),
+\bfpage{971}--\blpage{9}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{Halsey:2015aa}
+\begin{barticle}
+\bauthor{\bsnm{Halsey}, \binits{L.G.}},
+\bauthor{\bsnm{Curran-Everett}, \binits{D.}},
+\bauthor{\bsnm{Vowler}, \binits{S.L.}},
+\bauthor{\bsnm{Drummond}, \binits{G.B.}}:
+\batitle{The fickle p value generates irreproducible results}.
+\bjtitle{Nat Methods}
+\bvolume{12}(\bissue{3}),
+\bfpage{179}--\blpage{85}
+(\byear{2015}).
+doi:\doiurl{10.1038/nmeth.3288}
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{Cumming:2008aa}
+\begin{barticle}
+\bauthor{\bsnm{Cumming}, \binits{G.}}:
+\batitle{Replication and p intervals: p values predict the future only vaguely,
+  but confidence intervals do much better}.
+\bjtitle{Perspect Psychol Sci}
+\bvolume{3}(\bissue{4}),
+\bfpage{286}--\blpage{300}
+(\byear{2008}).
+doi:\doiurl{10.1111/j.1745-6924.2008.00079.x}
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{Thorsen:2016aa}
+\begin{barticle}
+\bauthor{\bsnm{Thorsen}, \binits{J.}},
+\bauthor{\bsnm{Brejnrod}, \binits{A.}},
+\bauthor{\bsnm{Mortensen}, \binits{M.}},
+\bauthor{\bsnm{Rasmussen}, \binits{M.A.}},
+\bauthor{\bsnm{Stokholm}, \binits{J.}},
+\bauthor{\bsnm{Al-Soud}, \binits{W.A.}},
+\bauthor{\bsnm{S{\o}rensen}, \binits{S.}},
+\bauthor{\bsnm{Bisgaard}, \binits{H.}},
+\bauthor{\bsnm{Waage}, \binits{J.}}:
+\batitle{Large-scale benchmarking reveals false discoveries and count
+  transformation sensitivity in 16{S} r{RNA} gene amplicon data analysis
+  methods used in microbiome studies}.
+\bjtitle{Microbiome}
+\bvolume{4}(\bissue{1}),
+\bfpage{62}
+(\byear{2016}).
+doi:\doiurl{10.1186/s40168-016-0208-8}
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{Gloor:2016cjm}
+\begin{barticle}
+\bauthor{\bsnm{Gloor}, \binits{G.B.}},
+\bauthor{\bsnm{Reid}, \binits{G.}}:
+\batitle{Compositional analysis: a valid approach to analyze microbiome
+  high-throughput sequencing data}.
+\bjtitle{Can J Microbiol}
+\bvolume{62}(\bissue{8}),
+\bfpage{692}--\blpage{703}
+(\byear{2016}).
+doi:\doiurl{10.1139/cjm-2015-0821}
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem{gloor2016s}
+\begin{barticle}
+\bauthor{\bsnm{Gloor}, \binits{G.B.}},
+\bauthor{\bsnm{Wu}, \binits{J.R.}},
+\bauthor{\bsnm{Pawlowsky-Glahn}, \binits{V.}},
+\bauthor{\bsnm{Egozcue}, \binits{J.J.}}:
+\batitle{It's all relative: analyzing microbiome data as compositions}.
+\bjtitle{Ann Epidemiol}
+\bvolume{26}(\bissue{5}),
+\bfpage{322}--\blpage{9}
+(\byear{2016}).
+doi:\doiurl{10.1016/j.annepidem.2016.03.003}
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem{Newey:1994}
+\begin{bchapter}
+\bauthor{\bsnm{Newey}, \binits{W.K.}},
+\bauthor{\bsnm{McFadden}, \binits{D.}}:
+\bctitle{Large sample estimation and hypothesis testing}.
+In: \beditor{\bsnm{Engle}, \binits{R.}},
+\beditor{\bsnm{McFadden}, \binits{D.}} (eds.)
+\bbtitle{Handbook of Econometrics}
+vol. \bseriesno{4},
+pp. \bfpage{2111}--\blpage{2245}.
+\bpublisher{Elsevier Science}, \blocation{???}
+(\byear{1994}).
+\bcomment{Chap. 35}
+\end{bchapter}
+\endbibitem
+
+%%% 31
+\bibitem{Jaynes:2003}
+\begin{bbook}
+\bauthor{\bsnm{Jaynes}, \binits{E.T.}},
+\bauthor{\bsnm{Bretthorst}, \binits{G.L.}}:
+\bbtitle{Probability Theory: the Logic of Science}.
+\bpublisher{Cambridge University Press},
+\blocation{Cambridge, UK}
+(\byear{2003}).
+\burl{http://www.loc.gov/catdir/samples/cam033/2002071486.html}
+\end{bbook}
+\endbibitem
+
+%%% 32
+\bibitem{polyester:2016}
 \begin{botherref}
-The Mouse Tumor Biology Database.
-\url{http://tumor.informatics.jax.org/cancer\_links.html}
+\oauthor{\bsnm{Frazee}, \binits{A.C.}},
+\oauthor{\bsnm{Jaffe}, \binits{A.E.}},
+\oauthor{\bsnm{Kirchner}, \binits{R.}},
+\oauthor{\bsnm{Leek}, \binits{J.T.}}:
+{polyester: Simulate RNA-seq reads}.
+{R package version 1.10.0}
+(2016)
 \end{botherref}
+\endbibitem
+
+%%% 33
+\bibitem{bowtie2}
+\begin{barticle}
+\bauthor{\bsnm{Langmead}, \binits{B.}},
+\bauthor{\bsnm{Salzberg}, \binits{S.L.}}:
+\batitle{Fast gapped-read alignment with bowtie 2}.
+\bjtitle{Nature methods}
+\bvolume{9}(\bissue{4}),
+\bfpage{357}--\blpage{359}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 34
+\bibitem{Ravel:2010}
+\begin{botherref}
+\oauthor{\bsnm{Ravel}, \binits{J.}},
+\oauthor{\bsnm{Gajer}, \binits{P.}},
+\oauthor{\bsnm{Abdo}, \binits{Z.}},
+\oauthor{\bsnm{Schneider}, \binits{G.M.}},
+\oauthor{\bsnm{Koenig}, \binits{S.S.K.}},
+\oauthor{\bsnm{McCulle}, \binits{S.L.}},
+\oauthor{\bsnm{Karlebach}, \binits{S.}},
+\oauthor{\bsnm{Gorle}, \binits{R.}},
+\oauthor{\bsnm{Russell}, \binits{J.}},
+\oauthor{\bsnm{Tacket}, \binits{C.O.}},
+\oauthor{\bsnm{Brotman}, \binits{R.M.}},
+\oauthor{\bsnm{Davis}, \binits{C.C.}},
+\oauthor{\bsnm{Ault}, \binits{K.}},
+\oauthor{\bsnm{Peralta}, \binits{L.}},
+\oauthor{\bsnm{Forney}, \binits{L.J.}}:
+Vaginal microbiome of reproductive-age women.
+Proc Natl Acad Sci U S A
+\textbf{doi/10.1073/pnas.100611107}
+(2010)
+\end{botherref}
+\endbibitem
+
+%%% 35
+\bibitem{Quinn:2017}
+\begin{barticle}
+\bauthor{\bsnm{Quinn}, \binits{T.}},
+\bauthor{\bsnm{Richardson}, \binits{M.F.}},
+\bauthor{\bsnm{Lovell}, \binits{D.}},
+\bauthor{\bsnm{Crowley}, \binits{T.}}:
+\batitle{propr: An {R}-package for identifying proportionally abundant features
+  using compositional data analysis}.
+\bjtitle{bioRxiv}
+(\byear{2017}).
+doi:\doiurl{10.1101/104935}.
+\arxivurl{http://biorxiv.org/content/early/2017/02/01/104935.full.pdf}
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem{Mitra:2011}
+\begin{barticle}
+\bauthor{\bsnm{Mitra}, \binits{S.}},
+\bauthor{\bsnm{Rupek}, \binits{P.}},
+\bauthor{\bsnm{Richter}, \binits{D.C.}},
+\bauthor{\bsnm{Urich}, \binits{T.}},
+\bauthor{\bsnm{Gilbert}, \binits{J.A.}},
+\bauthor{\bsnm{Meyer}, \binits{F.}},
+\bauthor{\bsnm{Wilke}, \binits{A.}},
+\bauthor{\bsnm{Huson}, \binits{D.H.}}:
+\batitle{Functional analysis of metagenomes and metatranscriptomes using seed
+  and kegg}.
+\bjtitle{BMC Bioinformatics}
+\bvolume{12 Suppl 1},
+\bfpage{21}
+(\byear{2011}).
+doi:\doiurl{10.1186/1471-2105-12-S1-S21}
+\end{barticle}
 \endbibitem
 
 \end{thebibliography}
@@ -217,155 +701,648 @@ The Mouse Tumor Biology Database.
 <refgrp>
 
 <bibl id="B1">
-  <title><p>BRCA1 protein products: functional motifs</p></title>
+  <title><p>Statistical design and analysis of {RNA} sequencing
+  data</p></title>
   <aug>
-    <au><snm>Koonin</snm><fnm>E V</fnm></au>
-    <au><snm>Altschul</snm><fnm>S F</fnm></au>
-    <au><snm>Bork</snm><fnm>P</fnm></au>
+    <au><snm>Auer</snm><fnm>PL</fnm></au>
+    <au><snm>Doerge</snm><fnm>{R} W</fnm></au>
   </aug>
-  <source>Nat Genet</source>
-  <pubdate>1996</pubdate>
-  <volume>13</volume>
-  <fpage>266</fpage>
-  <lpage>267</lpage>
+  <source>Genetics</source>
+  <pubdate>2010</pubdate>
+  <volume>185</volume>
+  <issue>2</issue>
+  <fpage>405</fpage>
+  <lpage>16</lpage>
 </bibl>
 
 <bibl id="B2">
-  <title><p>Clinical aspects of exhaled nitric oxide</p></title>
+  <title><p>Count-based differential expression analysis of {RNA} sequencing
+  data using {R} and {Bioconductor}</p></title>
   <aug>
-    <au><snm>Kharitonov</snm><fnm>S A</fnm></au>
-    <au><snm>Barnes</snm><fnm>P J</fnm></au>
+    <au><snm>Anders</snm><fnm>S</fnm></au>
+    <au><snm>McCarthy</snm><fnm>DJ</fnm></au>
+    <au><snm>Chen</snm><fnm>Y</fnm></au>
+    <au><snm>Okoniewski</snm><fnm>M</fnm></au>
+    <au><snm>Smyth</snm><fnm>GK</fnm></au>
+    <au><snm>Huber</snm><fnm>W</fnm></au>
+    <au><snm>Robinson</snm><fnm>MD</fnm></au>
   </aug>
-  <source>Eur Respir J</source>
-  <inpress />
+  <source>Nat Protoc</source>
+  <pubdate>2013</pubdate>
+  <volume>8</volume>
+  <issue>9</issue>
+  <fpage>1765</fpage>
+  <lpage>86</lpage>
 </bibl>
 
 <bibl id="B3">
-  <title><p>Mesenchymal cells, stromal derived factor-1 and rheumatoid
-  arthritis [abstract]</p></title>
+  <title><p>Changes in vaginal microbiota following antimicrobial and probiotic
+  therapy</p></title>
   <aug>
-    <au><snm>Zvaifler</snm><fnm>N J</fnm></au>
-    <au><snm>Burger</snm><fnm>J A</fnm></au>
-    <au><snm>Marinova Mutafchieva</snm><fnm>L</fnm></au>
-    <au><snm>Taylor</snm><fnm>P</fnm></au>
-    <au><snm>Maini</snm><fnm>R N</fnm></au>
+    <au><snm>Macklaim</snm><fnm>JM</fnm></au>
+    <au><snm>Clemente</snm><fnm>JC</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+    <au><snm>Reid</snm><fnm>G</fnm></au>
   </aug>
-  <source>Arthritis Rheum</source>
-  <pubdate>1999</pubdate>
-  <volume>42</volume>
-  <fpage>s250</fpage>
+  <source>Microb Ecol Health Dis</source>
+  <pubdate>2015</pubdate>
+  <volume>26</volume>
+  <fpage>27799</fpage>
 </bibl>
 
 <bibl id="B4">
-  <title><p>Zeolites and synthetic mechanisms</p></title>
+  <title><p>Deep sequencing of the vaginal microbiota of women with
+  {HIV}</p></title>
   <aug>
-    <au><snm>Jones</snm><fnm>X</fnm></au>
+    <au><snm>Hummelen</snm><fnm>R</fnm></au>
+    <au><snm>Fernandes</snm><fnm>AD</fnm></au>
+    <au><snm>Macklaim</snm><fnm>JM</fnm></au>
+    <au><snm>Dickson</snm><fnm>RJ</fnm></au>
+    <au><snm>Changalucha</snm><fnm>J</fnm></au>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+    <au><snm>Reid</snm><fnm>G</fnm></au>
   </aug>
-  <source>Proceedings of the First National Conference on Porous Sieves: 27-30
-  June 1996; Baltimore</source>
-  <editor>Y Smith</editor>
-  <pubdate>1996</pubdate>
-  <fpage>16</fpage>
-  <lpage>27</lpage>
+  <source>PLoS One</source>
+  <pubdate>2010</pubdate>
+  <volume>5</volume>
+  <issue>8</issue>
+  <fpage>e12078</fpage>
 </bibl>
 
 <bibl id="B5">
-  <title><p>Origin of Eukaryotic Cells</p></title>
+  <title><p>Temporal dynamics of the human vaginal microbiota</p></title>
   <aug>
-    <au><snm>Margulis</snm><fnm>L</fnm></au>
+    <au><snm>Gajer</snm><fnm>P</fnm></au>
+    <au><snm>Brotman</snm><fnm>RM</fnm></au>
+    <au><snm>Bai</snm><fnm>G</fnm></au>
+    <au><snm>Sakamoto</snm><fnm>J</fnm></au>
+    <au><snm>Sch{\"u}tte</snm><fnm>UME</fnm></au>
+    <au><snm>Zhong</snm><fnm>X</fnm></au>
+    <au><snm>Koenig</snm><fnm>SSK</fnm></au>
+    <au><snm>Fu</snm><fnm>L</fnm></au>
+    <au><snm>Ma</snm><fnm>ZS</fnm></au>
+    <au><snm>Zhou</snm><fnm>X</fnm></au>
+    <au><snm>Abdo</snm><fnm>Z</fnm></au>
+    <au><snm>Forney</snm><fnm>LJ</fnm></au>
+    <au><snm>Ravel</snm><fnm>J</fnm></au>
   </aug>
-  <publisher>New Haven: Yale University Press</publisher>
-  <pubdate>1970</pubdate>
+  <source>Sci Transl Med</source>
+  <pubdate>2012</pubdate>
+  <volume>4</volume>
+  <issue>132</issue>
+  <fpage>132ra52</fpage>
 </bibl>
 
 <bibl id="B6">
-  <title><p>Analysis and assessment of ab initio three-dimensional prediction,
-  secondary structure, and contacts prediction</p></title>
+  <title><p>Comparative meta-{RNA}-seq of the vaginal microbiota and
+  differential expression by \textit{{L}actobacillus iners} in health and
+  dysbiosis</p></title>
   <aug>
-    <au><snm>Orengo</snm><fnm>C A</fnm></au>
-    <au><snm>Bray</snm><fnm>J E</fnm></au>
-    <au><snm>Hubbard</snm><fnm>T</fnm></au>
-    <au><snm>LoConte</snm><fnm>L</fnm></au>
-    <au><snm>Sillitoe</snm><fnm>I</fnm></au>
+    <au><snm>Macklaim</snm><fnm>MJ</fnm></au>
+    <au><snm>Fernandes</snm><fnm>DA</fnm></au>
+    <au><snm>Di Bella</snm><fnm>MJ</fnm></au>
+    <au><snm>Hammond</snm><fnm>JA</fnm></au>
+    <au><snm>Reid</snm><fnm>G</fnm></au>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
   </aug>
-  <source>Proteins</source>
-  <pubdate>1999</pubdate>
-  <volume>Suppl 3</volume>
-  <fpage>149</fpage>
-  <lpage>170</lpage>
+  <source>Microbiome</source>
+  <pubdate>2013</pubdate>
+  <volume>1</volume>
+  <fpage>15</fpage>
 </bibl>
 
 <bibl id="B7">
-  <title><p>From prey via endosymbiont to plastids: comparative studies in
-  dinoflagellates</p></title>
+  <title><p>Transcriptome modulations due to A/C2 plasmid
+  acquisition</p></title>
   <aug>
-    <au><snm>Schnepf</snm><fnm>E</fnm></au>
+    <au><snm>Lang</snm><fnm>KS</fnm></au>
+    <au><snm>Johnson</snm><fnm>TJ</fnm></au>
   </aug>
-  <source>Origins of Plastids</source>
-  <publisher>New York: Chapman and Hall</publisher>
-  <editor>R A Lewin</editor>
-  <edition>2</edition>
-  <pubdate>1993</pubdate>
-  <volume>2</volume>
-  <fpage>53</fpage>
-  <lpage>76</lpage>
+  <source>Plasmid</source>
+  <pubdate>2015</pubdate>
+  <volume>80</volume>
+  <fpage>83</fpage>
+  <lpage>9</lpage>
 </bibl>
 
 <bibl id="B8">
-  <title><p>Innovative oncology</p></title>
-  <source>Breast Cancer Res</source>
-  <editor>B Ponder and S Johnston and L Chodosh</editor>
-  <pubdate>1998</pubdate>
-  <volume>10</volume>
-  <fpage>1</fpage>
-  <lpage>72</lpage>
+  <title><p>RNA-Seq and microarrays analyses reveal global differential
+  transcriptomes of Mesorhizobium huakuii 7653R between bacteroids and
+  free-living cells</p></title>
+  <aug>
+    <au><snm>Peng</snm><fnm>J</fnm></au>
+    <au><snm>Hao</snm><fnm>B</fnm></au>
+    <au><snm>Liu</snm><fnm>L</fnm></au>
+    <au><snm>Wang</snm><fnm>S</fnm></au>
+    <au><snm>Ma</snm><fnm>B</fnm></au>
+    <au><snm>Yang</snm><fnm>Y</fnm></au>
+    <au><snm>Xie</snm><fnm>F</fnm></au>
+    <au><snm>Li</snm><fnm>Y</fnm></au>
+  </aug>
+  <source>PLoS One</source>
+  <pubdate>2014</pubdate>
+  <volume>9</volume>
+  <issue>4</issue>
+  <fpage>e93626</fpage>
 </bibl>
 
 <bibl id="B9">
-  <title><p>Proceedings of the First National Conference on Porous Sieves:
-  27-30 June 1996; Baltimore</p></title>
-  <publisher>Stoneham: Butterworth-Heinemann</publisher>
-  <editor>Y Smith</editor>
-  <pubdate>1996</pubdate>
+  <title><p>Global transcriptional and phenotypic analyses of {E}scherichia
+  coli {O157:H7 }strain {X}uzhou21 and its p{O}157\_{S}al cured
+  mutant</p></title>
+  <aug>
+    <au><snm>Zhao</snm><fnm>H</fnm></au>
+    <au><snm>Chen</snm><fnm>C</fnm></au>
+    <au><snm>Xiong</snm><fnm>Y</fnm></au>
+    <au><snm>Xu</snm><fnm>X</fnm></au>
+    <au><snm>Lan</snm><fnm>R</fnm></au>
+    <au><snm>Wang</snm><fnm>H</fnm></au>
+    <au><snm>Yao</snm><fnm>X</fnm></au>
+    <au><snm>Bai</snm><fnm>X</fnm></au>
+    <au><snm>Liu</snm><fnm>X</fnm></au>
+    <au><snm>Meng</snm><fnm>Q</fnm></au>
+    <au><snm>Zhang</snm><fnm>X</fnm></au>
+    <au><snm>Sun</snm><fnm>H</fnm></au>
+    <au><snm>Zhao</snm><fnm>A</fnm></au>
+    <au><snm>Bai</snm><fnm>X</fnm></au>
+    <au><snm>Cheng</snm><fnm>Y</fnm></au>
+    <au><snm>Chen</snm><fnm>Q</fnm></au>
+    <au><snm>Ye</snm><fnm>C</fnm></au>
+    <au><snm>Xu</snm><fnm>J</fnm></au>
+  </aug>
+  <source>PLoS One</source>
+  <pubdate>2013</pubdate>
+  <volume>8</volume>
+  <issue>5</issue>
+  <fpage>e65466</fpage>
 </bibl>
 
 <bibl id="B10">
-  <title><p>The alveloar macrophage</p></title>
+  <title><p>Statistical models for RNA-seq data derived from a two-condition
+  48-replicate experiment</p></title>
   <aug>
-    <au><snm>Hunninghake</snm><fnm>G W</fnm></au>
-    <au><snm>Gadek</snm><fnm>J E</fnm></au>
+    <au><snm>Gierli{\'n}ski</snm><fnm>M</fnm></au>
+    <au><snm>Cole</snm><fnm>C</fnm></au>
+    <au><snm>Schofield</snm><fnm>P</fnm></au>
+    <au><snm>Schurch</snm><fnm>NJ</fnm></au>
+    <au><snm>Sherstnev</snm><fnm>A</fnm></au>
+    <au><snm>Singh</snm><fnm>V</fnm></au>
+    <au><snm>Wrobel</snm><fnm>N</fnm></au>
+    <au><snm>Gharbi</snm><fnm>K</fnm></au>
+    <au><snm>Simpson</snm><fnm>G</fnm></au>
+    <au><snm>Owen Hughes</snm><fnm>T</fnm></au>
+    <au><snm>Blaxter</snm><fnm>M</fnm></au>
+    <au><snm>Barton</snm><fnm>GJ</fnm></au>
   </aug>
-  <source>Cultured Human Cells and Tissues</source>
-  <publisher>New York: Academic Press</publisher>
-  <editor>T J R Harris</editor>
-  <pubdate>1995</pubdate>
-  <fpage>54</fpage>
-  <lpage>56</lpage>
-  <note>Stoner G (Series Editor): Methods and Perspectives in Cell Biology, vol
-  1</note>
+  <source>Bioinformatics</source>
+  <pubdate>2015</pubdate>
+  <volume>31</volume>
+  <issue>22</issue>
+  <fpage>3625</fpage>
+  <lpage>3630</lpage>
 </bibl>
 
 <bibl id="B11">
-  <title><p>Annual Report</p></title>
-  <aug><au><cnm>Advisory Committee on Genetic Modification</cnm></au></aug>
-  <publisher>London</publisher>
-  <pubdate>1999</pubdate>
+  <title><p>{ANOVA}-Like Differential Expression ({ALDEx}) Analysis for Mixed
+  Population {RNA}-Seq</p></title>
+  <aug>
+    <au><snm>Fernandes</snm><fnm>A. D.</fnm></au>
+    <au><snm>Macklaim</snm><fnm>J. M.</fnm></au>
+    <au><snm>Linn</snm><fnm>T.G</fnm></au>
+    <au><snm>Reid</snm><fnm>G.</fnm></au>
+    <au><snm>Gloor</snm><fnm>G. B.</fnm></au>
+  </aug>
+  <source>PLoS ONE</source>
+  <pubdate>2013</pubdate>
+  <volume>8</volume>
+  <issue>7</issue>
+  <fpage>e67019</fpage>
 </bibl>
 
 <bibl id="B12">
-  <title><p>Wrappers for performance enhancement and obvious decision
-  graphs</p></title>
+  <title><p>The Statistical Analysis of Compositional Data</p></title>
   <aug>
-    <au><snm>Kohavi</snm><fnm>R</fnm></au>
+    <au><snm>Aitchison</snm><fnm>J.</fnm></au>
   </aug>
-  <source>PhD thesis</source>
-  <publisher>Stanford University, Computer Science Department</publisher>
-  <pubdate>1995</pubdate>
+  <publisher>Chapman \& Hall</publisher>
+  <pubdate>1986</pubdate>
 </bibl>
 
 <bibl id="B13">
-  <title><p>The Mouse Tumor Biology Database</p></title>
-  <url>http://tumor.informatics.jax.org/cancer\_links.html</url>
+  <title><p>Unifying the analysis of high-throughput sequencing datasets:
+  characterizing {RNA}-seq, 16{S} r{RNA} gene sequencing and selective growth
+  experiments by compositional data analysis</p></title>
+  <aug>
+    <au><snm>Fernandes</snm><fnm>AD</fnm></au>
+    <au><snm>Reid</snm><fnm>JN</fnm></au>
+    <au><snm>Macklaim</snm><fnm>JM</fnm></au>
+    <au><snm>McMurrough</snm><fnm>TA</fnm></au>
+    <au><snm>Edgell</snm><fnm>DR</fnm></au>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+  </aug>
+  <source>Microbiome</source>
+  <pubdate>2014</pubdate>
+  <volume>2</volume>
+  <fpage>15.1</fpage>
+  <lpage>-15.13</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Control of catalytic efficiency by a coevolving network of
+  catalytic and noncatalytic residues</p></title>
+  <aug>
+    <au><snm>McMurrough</snm><fnm>TA</fnm></au>
+    <au><snm>Dickson</snm><fnm>RJ</fnm></au>
+    <au><snm>Thibert</snm><fnm>SMF</fnm></au>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+    <au><snm>Edgell</snm><fnm>DR</fnm></au>
+  </aug>
+  <source>Proc Natl Acad Sci U S A</source>
+  <pubdate>2014</pubdate>
+  <volume>111</volume>
+  <issue>23</issue>
+  <fpage>E2376</fpage>
+  <lpage>83</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Housekeeping genes as internal standards: use and
+  limits</p></title>
+  <aug>
+    <au><snm>Thellin</snm><fnm>O</fnm></au>
+    <au><snm>Zorzi</snm><fnm>W</fnm></au>
+    <au><snm>Lakaye</snm><fnm>B</fnm></au>
+    <au><snm>De Borman</snm><fnm>B</fnm></au>
+    <au><snm>Coumans</snm><fnm>B</fnm></au>
+    <au><snm>Hennen</snm><fnm>G</fnm></au>
+    <au><snm>Grisar</snm><fnm>T</fnm></au>
+    <au><snm>Igout</snm><fnm>A</fnm></au>
+    <au><snm>Heinen</snm><fnm>E</fnm></au>
+  </aug>
+  <source>J Biotechnol</source>
+  <pubdate>1999</pubdate>
+  <volume>75</volume>
+  <issue>2-3</issue>
+  <fpage>291</fpage>
+  <lpage>5</lpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>Accurate normalization of real-time quantitative RT-PCR data by
+  geometric averaging of multiple internal control genes</p></title>
+  <aug>
+    <au><snm>Vandesompele</snm><fnm>J</fnm></au>
+    <au><snm>De Preter</snm><fnm>K</fnm></au>
+    <au><snm>Pattyn</snm><fnm>F</fnm></au>
+    <au><snm>Poppe</snm><fnm>B</fnm></au>
+    <au><snm>Van Roy</snm><fnm>N</fnm></au>
+    <au><snm>De Paepe</snm><fnm>A</fnm></au>
+    <au><snm>Speleman</snm><fnm>F</fnm></au>
+  </aug>
+  <source>Genome Biol</source>
+  <pubdate>2002</pubdate>
+  <volume>3</volume>
+  <issue>7</issue>
+  <fpage>RESEARCH0034</fpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Compositional uncertainty should not be ignored in high-throughput
+  sequencing data analysis</p></title>
+  <aug>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+    <au><snm>Macklaim</snm><fnm>JM</fnm></au>
+    <au><snm>Vu</snm><fnm>M</fnm></au>
+    <au><snm>Fernandes</snm><fnm>AD</fnm></au>
+  </aug>
+  <source>Austrian Journal of Statistics</source>
+  <pubdate>2016</pubdate>
+  <volume>45</volume>
+  <fpage>73</fpage>
+  <lpage>87</lpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Correlation detection strategies in microbial data sets vary widely
+  in sensitivity and precision</p></title>
+  <aug>
+    <au><snm>Weiss</snm><fnm>S</fnm></au>
+    <au><snm>Van Treuren</snm><fnm>W</fnm></au>
+    <au><snm>Lozupone</snm><fnm>C</fnm></au>
+    <au><snm>Faust</snm><fnm>K</fnm></au>
+    <au><snm>Friedman</snm><fnm>J</fnm></au>
+    <au><snm>Deng</snm><fnm>Y</fnm></au>
+    <au><snm>Xia</snm><fnm>LC</fnm></au>
+    <au><snm>Xu</snm><fnm>ZZ</fnm></au>
+    <au><snm>Ursell</snm><fnm>L</fnm></au>
+    <au><snm>Alm</snm><fnm>EJ</fnm></au>
+    <au><snm>Birmingham</snm><fnm>A</fnm></au>
+    <au><snm>Cram</snm><fnm>JA</fnm></au>
+    <au><snm>Fuhrman</snm><fnm>JA</fnm></au>
+    <au><snm>Raes</snm><fnm>J</fnm></au>
+    <au><snm>Sun</snm><fnm>F</fnm></au>
+    <au><snm>Zhou</snm><fnm>J</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+  </aug>
+  <source>ISME J</source>
+  <pubdate>2016</pubdate>
+  <volume>10</volume>
+  <issue>7</issue>
+  <fpage>1669</fpage>
+  <lpage>81</lpage>
+</bibl>
+
+<bibl id="B19">
+  <title><p>{TCC}: an {R} package for comparing tag count data with robust
+  normalization strategies</p></title>
+  <aug>
+    <au><snm>Sun</snm><fnm>J</fnm></au>
+    <au><snm>Nishiyama</snm><fnm>T</fnm></au>
+    <au><snm>Shimizu</snm><fnm>K</fnm></au>
+    <au><snm>Kadota</snm><fnm>K</fnm></au>
+  </aug>
+  <source>BMC Bioinformatics</source>
+  <pubdate>2013</pubdate>
+  <volume>14</volume>
+  <fpage>219.1</fpage>
+  <lpage>-219.13</lpage>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Waste not, want not: why rarefying microbiome data is
+  inadmissible</p></title>
+  <aug>
+    <au><snm>McMurdie</snm><fnm>PJ</fnm></au>
+    <au><snm>Holmes</snm><fnm>S</fnm></au>
+  </aug>
+  <source>PLoS Comput Biol</source>
+  <pubdate>2014</pubdate>
+  <volume>10</volume>
+  <issue>4</issue>
+  <fpage>e1003531</fpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>Mathematical foundations of compositional data analysis</p></title>
+  <aug>
+    <au><snm>Barcel{\'o} Vidal</snm><fnm>C</fnm></au>
+    <au><snm>Mart{\'\i}n Fern{\'a}ndez</snm><fnm>JA</fnm></au>
+    <au><snm>Pawlowsky Glahn</snm><fnm>V</fnm></au>
+  </aug>
+  <source>Proceedings of IAMG</source>
+  <pubdate>2001</pubdate>
+  <volume>1</volume>
+  <fpage>1</fpage>
+  <lpage>-20</lpage>
+</bibl>
+
+<bibl id="B22">
+  <title><p>Interdependence of cell growth and gene expression: origins and
+  consequences</p></title>
+  <aug>
+    <au><snm>Scott</snm><fnm>M</fnm></au>
+    <au><snm>Gunderson</snm><fnm>CW</fnm></au>
+    <au><snm>Mateescu</snm><fnm>EM</fnm></au>
+    <au><snm>Zhang</snm><fnm>Z</fnm></au>
+    <au><snm>Hwa</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Science</source>
+  <pubdate>2010</pubdate>
+  <volume>330</volume>
+  <issue>6007</issue>
+  <fpage>1099</fpage>
+  <lpage>102</lpage>
+</bibl>
+
+<bibl id="B23">
+  <title><p>Measurement in Medicine: The Analysis of Method Comparison
+  Studies</p></title>
+  <aug>
+    <au><snm>Altman</snm><fnm>D. G.</fnm></au>
+    <au><snm>Bland</snm><fnm>J. M.</fnm></au>
+  </aug>
+  <source>Journal of the Royal Statistical Society. Series D (The
+  Statistician)</source>
+  <publisher>Wiley for the Royal Statistical Society</publisher>
+  <pubdate>1983</pubdate>
+  <volume>32</volume>
+  <issue>3</issue>
+  <fpage>pp.307</fpage>
+  <lpage>317</lpage>
+  <url>http://www.jstor.org/stable/2987937</url>
+</bibl>
+
+<bibl id="B24">
+  <title><p>Displaying Variation in Large Datasets: a Visual Summary of Effect
+  Sizes</p></title>
+  <aug>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+    <au><snm>Macklaim</snm><fnm>JM</fnm></au>
+    <au><snm>Fernandes</snm><fnm>AD</fnm></au>
+  </aug>
+  <source>Journal of Computational and Graphical Statistics</source>
+  <pubdate>2016</pubdate>
+  <volume>25</volume>
+  <issue>3</issue>
+  <fpage>971</fpage>
+  <lpage>9</lpage>
+</bibl>
+
+<bibl id="B25">
+  <title><p>The fickle P value generates irreproducible results</p></title>
+  <aug>
+    <au><snm>Halsey</snm><fnm>LG</fnm></au>
+    <au><snm>Curran Everett</snm><fnm>D</fnm></au>
+    <au><snm>Vowler</snm><fnm>SL</fnm></au>
+    <au><snm>Drummond</snm><fnm>GB</fnm></au>
+  </aug>
+  <source>Nat Methods</source>
+  <pubdate>2015</pubdate>
+  <volume>12</volume>
+  <issue>3</issue>
+  <fpage>179</fpage>
+  <lpage>85</lpage>
+</bibl>
+
+<bibl id="B26">
+  <title><p>Replication and p Intervals: p Values Predict the Future Only
+  Vaguely, but Confidence Intervals Do Much Better</p></title>
+  <aug>
+    <au><snm>Cumming</snm><fnm>G</fnm></au>
+  </aug>
+  <source>Perspect Psychol Sci</source>
+  <pubdate>2008</pubdate>
+  <volume>3</volume>
+  <issue>4</issue>
+  <fpage>286</fpage>
+  <lpage>300</lpage>
+</bibl>
+
+<bibl id="B27">
+  <title><p>Large-scale benchmarking reveals false discoveries and count
+  transformation sensitivity in 16{S} r{RNA} gene amplicon data analysis
+  methods used in microbiome studies</p></title>
+  <aug>
+    <au><snm>Thorsen</snm><fnm>J</fnm></au>
+    <au><snm>Brejnrod</snm><fnm>A</fnm></au>
+    <au><snm>Mortensen</snm><fnm>M</fnm></au>
+    <au><snm>Rasmussen</snm><fnm>MA</fnm></au>
+    <au><snm>Stokholm</snm><fnm>J</fnm></au>
+    <au><snm>Al Soud</snm><fnm>WA</fnm></au>
+    <au><snm>S{\o}rensen</snm><fnm>S</fnm></au>
+    <au><snm>Bisgaard</snm><fnm>H</fnm></au>
+    <au><snm>Waage</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Microbiome</source>
+  <pubdate>2016</pubdate>
+  <volume>4</volume>
+  <issue>1</issue>
+  <fpage>62</fpage>
+</bibl>
+
+<bibl id="B28">
+  <title><p>Compositional analysis: a valid approach to analyze microbiome
+  high-throughput sequencing data</p></title>
+  <aug>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+    <au><snm>Reid</snm><fnm>G</fnm></au>
+  </aug>
+  <source>Can J Microbiol</source>
+  <pubdate>2016</pubdate>
+  <volume>62</volume>
+  <issue>8</issue>
+  <fpage>692</fpage>
+  <lpage>703</lpage>
+</bibl>
+
+<bibl id="B29">
+  <title><p>It's all relative: analyzing microbiome data as
+  compositions</p></title>
+  <aug>
+    <au><snm>Gloor</snm><fnm>GB</fnm></au>
+    <au><snm>Wu</snm><fnm>JR</fnm></au>
+    <au><snm>Pawlowsky Glahn</snm><fnm>V</fnm></au>
+    <au><snm>Egozcue</snm><fnm>JJ</fnm></au>
+  </aug>
+  <source>Ann Epidemiol</source>
+  <pubdate>2016</pubdate>
+  <volume>26</volume>
+  <issue>5</issue>
+  <fpage>322</fpage>
+  <lpage>9</lpage>
+</bibl>
+
+<bibl id="B30">
+  <title><p>Large sample estimation and hypothesis testing</p></title>
+  <aug>
+    <au><snm>Newey</snm><fnm>WK</fnm></au>
+    <au><snm>McFadden</snm><fnm>D</fnm></au>
+  </aug>
+  <source>Handbook of Econometrics</source>
+  <publisher>Elsevier Science</publisher>
+  <editor>Engle, Robert and McFadden, Daniel</editor>
+  <section><title><p>35</p></title></section>
+  <pubdate>1994</pubdate>
+  <volume>4</volume>
+  <fpage>2111</fpage>
+  <lpage>--2245</lpage>
+</bibl>
+
+<bibl id="B31">
+  <title><p>Probability theory: the logic of science</p></title>
+  <aug>
+    <au><snm>Jaynes</snm><fnm>E. T</fnm></au>
+    <au><snm>Bretthorst</snm><fnm>GL</fnm></au>
+  </aug>
+  <publisher>Cambridge, UK: Cambridge University Press</publisher>
+  <pubdate>2003</pubdate>
+  <url>http://www.loc.gov/catdir/samples/cam033/2002071486.html</url>
+</bibl>
+
+<bibl id="B32">
+  <title><p>{polyester: Simulate RNA-seq reads}</p></title>
+  <aug>
+    <au><snm>Frazee</snm><fnm>AC</fnm></au>
+    <au><snm>Jaffe</snm><fnm>AE</fnm></au>
+    <au><snm>Kirchner</snm><fnm>R</fnm></au>
+    <au><snm>Leek</snm><fnm>JT</fnm></au>
+  </aug>
+  <pubdate>2016</pubdate>
+  <note>{R package version 1.10.0}</note>
+</bibl>
+
+<bibl id="B33">
+  <title><p>Fast gapped-read alignment with Bowtie 2</p></title>
+  <aug>
+    <au><snm>Langmead</snm><fnm>B</fnm></au>
+    <au><snm>Salzberg</snm><fnm>SL</fnm></au>
+  </aug>
+  <source>Nature methods</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2012</pubdate>
+  <volume>9</volume>
+  <issue>4</issue>
+  <fpage>357</fpage>
+  <lpage>-359</lpage>
+</bibl>
+
+<bibl id="B34">
+  <title><p>Vaginal microbiome of reproductive-age women</p></title>
+  <aug>
+    <au><snm>Ravel</snm><fnm>J</fnm></au>
+    <au><snm>Gajer</snm><fnm>P</fnm></au>
+    <au><snm>Abdo</snm><fnm>Z</fnm></au>
+    <au><snm>Schneider</snm><fnm>GM</fnm></au>
+    <au><snm>Koenig</snm><fnm>SSK</fnm></au>
+    <au><snm>McCulle</snm><fnm>SL</fnm></au>
+    <au><snm>Karlebach</snm><fnm>S</fnm></au>
+    <au><snm>Gorle</snm><fnm>R</fnm></au>
+    <au><snm>Russell</snm><fnm>J</fnm></au>
+    <au><snm>Tacket</snm><fnm>CO</fnm></au>
+    <au><snm>Brotman</snm><fnm>RM</fnm></au>
+    <au><snm>Davis</snm><fnm>CC</fnm></au>
+    <au><snm>Ault</snm><fnm>K</fnm></au>
+    <au><snm>Peralta</snm><fnm>L</fnm></au>
+    <au><snm>Forney</snm><fnm>LJ</fnm></au>
+  </aug>
+  <source>Proc Natl Acad Sci U S A</source>
+  <pubdate>2010</pubdate>
+  <volume>doi/10.1073/pnas.100611107</volume>
+</bibl>
+
+<bibl id="B35">
+  <title><p>propr: An {R}-package for Identifying Proportionally Abundant
+  Features Using Compositional Data Analysis</p></title>
+  <aug>
+    <au><snm>Quinn</snm><fnm>T</fnm></au>
+    <au><snm>Richardson</snm><fnm>MF</fnm></au>
+    <au><snm>Lovell</snm><fnm>D</fnm></au>
+    <au><snm>Crowley</snm><fnm>T</fnm></au>
+  </aug>
+  <source>bioRxiv</source>
+  <publisher>Cold Spring Harbor Labs Journals</publisher>
+  <pubdate>2017</pubdate>
+  <url>http://biorxiv.org/content/early/2017/02/01/104935</url>
+</bibl>
+
+<bibl id="B36">
+  <title><p>Functional analysis of metagenomes and metatranscriptomes using
+  SEED and KEGG</p></title>
+  <aug>
+    <au><snm>Mitra</snm><fnm>S</fnm></au>
+    <au><snm>Rupek</snm><fnm>P</fnm></au>
+    <au><snm>Richter</snm><fnm>DC</fnm></au>
+    <au><snm>Urich</snm><fnm>T</fnm></au>
+    <au><snm>Gilbert</snm><fnm>JA</fnm></au>
+    <au><snm>Meyer</snm><fnm>F</fnm></au>
+    <au><snm>Wilke</snm><fnm>A</fnm></au>
+    <au><snm>Huson</snm><fnm>DH</fnm></au>
+  </aug>
+  <source>BMC Bioinformatics</source>
+  <pubdate>2011</pubdate>
+  <volume>12 Suppl 1</volume>
+  <fpage>S21</fpage>
 </bibl>
 
 </refgrp>
