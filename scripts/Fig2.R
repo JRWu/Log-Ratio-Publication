@@ -32,7 +32,7 @@
 
 ##### Load Required Libraries
 source("scripts/Variables.R")
-
+mc.samples=128
 ################################### FIGURE 1a ##################################
 ##### This figure is generated off dataset reads
 ##### It is the original unmodified base dataset with 40 positive controls
@@ -59,7 +59,7 @@ x.zero.zero <- data.frame(x.e.zero, x.t.zero)
 zero.feature.subset <- aldex.set.mode(reads.0, conds, denom="zero")
 
 
-x.clr.user <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom=c(100:200))
+x.clr.user <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="lvha")
 x.e.user <- aldex.effect(x.clr.user, conds)
 x.t.user  <- aldex.ttest(x.clr.user, conds)
 x.user.user <- data.frame(x.e.user, x.t.user)
@@ -115,11 +115,11 @@ par(fig=c(0.55,0.8, 0.7,0.95), new=TRUE)
 
 par(fig=c(0,0.5,0,0.5), new=TRUE)
 	called <- x.user.user$wi.eBH <= cutoff
-	plot(x.user.user$diff.win, x.user.user$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="user set", ylim=c(ymin,ymax))
+	plot(x.user.user$diff.win, x.user.user$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="LVHA set", ylim=c(ymin,ymax))
 	points(x.user.user$diff.win[x.user.user$rab.all < rare], x.user.user$diff.btw[x.user.user$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.user.user$diff.win[called], x.user.user$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.user.user[true.set,"diff.win"], x.user.user[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	points(x.user.user[denom,"diff.win"], x.user.user[denom,"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
+	points(x.user.user[x.clr.user@denom,"diff.win"], x.user.user[x.clr.user@denom,"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)

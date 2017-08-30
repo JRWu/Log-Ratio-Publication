@@ -7,16 +7,25 @@ ribo <- c(grep("LSU", rownames(e.min)), grep("SSU", rownames(e.min)))
 glycol <- c(2418,1392,1305,1306,2421,1049)
 sparse.set <- names(which(apply(e.min, 1, min) == 0))
 
-e.min.n0.CZM <- cmultRepl(t(e.min), label=0, method="CZM")
-e.min.clr <- t( apply(e.min.n0.CZM, 1, function(x){log(x) - mean(log(x))}) )
-
-e.min.pcx <- prcomp(e.min.clr)
-
-e.min.clr.u <- t( apply(e.min.n0.CZM, 1, function(x){log(x) - mean(log(x[ribo]))}) )
-
-e.min.pcx.u <- prcomp(e.min.clr.u)
+#e.min.n0.CZM <- cmultRepl(t(e.min), label=0, method="CZM")
+#e.min.clr <- t( apply(e.min.n0.CZM, 1, function(x){log(x) - mean(log(x))}) )
+#
+#e.min.pcx <- prcomp(e.min.clr)
+#
+#e.min.clr.u <- t( apply(e.min.n0.CZM, 1, function(x){log(x) - mean(log(x[ribo]))}) )
+#
+#e.min.pcx.u <- prcomp(e.min.clr.u)
 
 conds <-c("H","H","H","H","B","H","B","B","H","B","H","B","B","B","B","B","B","B","H","B","H","H")
+#x <- aldex.clr(e.min, conds=conds, denom="house")
+#x.e <- aldex.effect(x, conds)
+#
+#rho <- propr::aldex2propr(x, how="perb")
+#diag(rho@matrix) <- 0
+#rownames(rho@matrix) <- colnames(rho@counts)
+#colnames(rho@matrix) <- colnames(rho@counts)
+#
+#saveRDS(rho, file="data/rho.rds", ascii=FALSE)
 
 
 eff.plot <- function(x, main=""){
@@ -63,54 +72,48 @@ eff.plot(x.i, main="Effect plot: IQLR")
 #x.z <- aldex.effect(x, conds, verbose=FALSE)
 eff.plot(x.z, main="Effect plot: Zero")
 
-#x <- aldex.clr(e.min, conds, denom=ribo)
-#x.u <- aldex.effect(x, conds, verbose=FALSE)
-eff.plot(x.u, main="Effect plot: Ribosomal functions")
+x <- aldex.clr(e.min, conds, denom="lvha")
+x.u <- aldex.effect(x, conds, verbose=FALSE)
+eff.plot(x.u, main="Effect plot: VALR")
 
-#x <- aldex.clr(e.min, conds, denom="iqlr")
-#x.i <- aldex.effect(x, conds, verbose=FALSE)
 ma.plot(x.i, 10,9,7.5,main="BA plot: IQLR")
 
-#x <- aldex.clr(e.min, conds, denom="zero")
-#x.z <- aldex.effect(x, conds, verbose=FALSE)
 ma.plot(x.z, 10,9,7.5,main="BA plot: Zero")
 
-#x <- aldex.clr(e.min, conds, denom=ribo)
-#x.u <- aldex.effect(x, conds, verbose=FALSE)
-ma.plot(x.u, -0,9,7.5,main="BA plot: Ribosomal functions")
+ma.plot(x.u, -0,9,7.5,main="BA plot: VALR")
 
 dev.off()
 
 
-	text(x1,y1, labels=paste("med ribo=", round(median(x$diff.btw[ribo]),3), sep=""))
-	text(x1,y2, labels=paste("med glyc=", round(median(x$diff.btw[glycol]),3), sep=""))
-
-
-pdf("figures/twtyfr_poster.pdf", height=3.7,width=12)
-par(mfrow=c(1,4))
-
-eff.plot(x.e, main="Denom=all")
-legend(5.6,-4.1, legend=c("abundant", "rare", "ribosome", "glycolysis"),   col=c(rgb(0.8,0.7,0.5,0.3), rgb(0.2,0.1,0.05,0.3), rgb(0,0,1,1), rgb(1,0,0.8,1)), pch=19, cex=1, bg="white")
-	text(5.5,10, labels=paste("med ribo=", round(median(x.e$diff.btw[ribo]),3), sep=""))
-	text(5.5,9, labels=paste("med glyc=", round(median(x.e$diff.btw[glycol]),3), sep=""))
-
-#x <- aldex.clr(e.min, conds, denom="iqlr")
-#x.i <- aldex.effect(x, conds, verbose=FALSE)
-eff.plot(x.i, main="Denom=IQLR")
-#	legend(6,-6, legend=c("non-sparse", "sparse", "ribosome", "glycolysis"),   col=c(rgb(0.8,0.7,0.5,0.3), rgb(0.2,0.1,0.05,0.3), rgb(0,0,1,1), rgb(1,0,0.8,1)), pch=19, cex=1, bg="white")
-	text(5.5,9.5, labels=paste("med ribo=", round(median(x.i$diff.btw[ribo]),3), sep=""))
-	text(5.5,8.5, labels=paste("med glyc=", round(median(x.i$diff.btw[glycol]),3), sep=""))
-
-#x <- aldex.clr(e.min, conds, denom="zero")
-#x.z <- aldex.effect(x, conds, verbose=FALSE)
-eff.plot(x.z, main="Denom=non-zero")
-	text(5.5,9.5, labels=paste("med ribo=", round(median(x.z$diff.btw[ribo]),3), sep=""))
-	text(5.5,8.5, labels=paste("med glyc=", round(median(x.z$diff.btw[glycol]),3), sep=""))
-
-#x <- aldex.clr(e.min, conds, denom=ribo)
-#x.u <- aldex.effect(x, conds, verbose=FALSE)
-eff.plot(x.u, main="Denom=Ribosomal functions")
-	text(5.5,9.5, labels=paste("med ribo=", round(median(x.u$diff.btw[ribo]),3), sep=""))
-	text(5.5,8.5, labels=paste("med glyc=", round(median(x.u$diff.btw[glycol]),3), sep=""))
-
-dev.off()
+#	text(x1,y1, labels=paste("med ribo=", round(median(x$diff.btw[ribo]),3), sep=""))
+#	text(x1,y2, labels=paste("med glyc=", round(median(x$diff.btw[glycol]),3), sep=""))
+#
+#
+#pdf("figures/twtyfr_poster.pdf", height=3.7,width=12)
+#par(mfrow=c(1,4))
+#
+#eff.plot(x.e, main="Denom=all")
+#legend(5.6,-4.1, legend=c("abundant", "rare", "ribosome", "glycolysis"),   col=c(rgb(0.8,0.7,0.5,0.3), rgb(0.2,0.1,0.05,0.3), rgb(0,0,1,1), rgb(1,0,0.8,1)), pch=19, cex=1, bg="white")
+#	text(5.5,10, labels=paste("med ribo=", round(median(x.e$diff.btw[ribo]),3), sep=""))
+#	text(5.5,9, labels=paste("med glyc=", round(median(x.e$diff.btw[glycol]),3), sep=""))
+#
+##x <- aldex.clr(e.min, conds, denom="iqlr")
+##x.i <- aldex.effect(x, conds, verbose=FALSE)
+#eff.plot(x.i, main="Denom=IQLR")
+##	legend(6,-6, legend=c("non-sparse", "sparse", "ribosome", "glycolysis"),   col=c(rgb(0.8,0.7,0.5,0.3), rgb(0.2,0.1,0.05,0.3), rgb(0,0,1,1), rgb(1,0,0.8,1)), pch=19, cex=1, bg="white")
+#	text(5.5,9.5, labels=paste("med ribo=", round(median(x.i$diff.btw[ribo]),3), sep=""))
+#	text(5.5,8.5, labels=paste("med glyc=", round(median(x.i$diff.btw[glycol]),3), sep=""))
+#
+##x <- aldex.clr(e.min, conds, denom="zero")
+##x.z <- aldex.effect(x, conds, verbose=FALSE)
+#eff.plot(x.z, main="Denom=non-zero")
+#	text(5.5,9.5, labels=paste("med ribo=", round(median(x.z$diff.btw[ribo]),3), sep=""))
+#	text(5.5,8.5, labels=paste("med glyc=", round(median(x.z$diff.btw[glycol]),3), sep=""))
+#
+##x <- aldex.clr(e.min, conds, denom=ribo)
+##x.u <- aldex.effect(x, conds, verbose=FALSE)
+#eff.plot(x.u, main="Denom=Ribosomal functions")
+#	text(5.5,9.5, labels=paste("med ribo=", round(median(x.u$diff.btw[ribo]),3), sep=""))
+#	text(5.5,8.5, labels=paste("med glyc=", round(median(x.u$diff.btw[glycol]),3), sep=""))
+#
+#dev.off()

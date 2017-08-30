@@ -55,7 +55,7 @@ x.e.zero <- aldex.effect(x.clr.zero, conds)
 x.t.zero  <- aldex.ttest(x.clr.zero, conds)
 x.1.zero <- data.frame(x.e.zero, x.t.zero)
 
-x.clr.user <- aldex.clr(reads.1, conds, mc.samples, verbose=FALSE, denom=c(100:200))
+x.clr.user <- aldex.clr(reads.1, conds, mc.samples, verbose=FALSE, denom="lvha")
 x.e.user <- aldex.effect(x.clr.user, conds)
 x.t.user  <- aldex.ttest(x.clr.user, conds)
 x.1.user <- data.frame(x.e.user, x.t.user)
@@ -106,7 +106,7 @@ par(fig=c(0,0.5,0,0.5), new=TRUE)
 
 par(fig=c(0.5,1,0,0.5), new=TRUE)
 	called <- x.1.user$wi.eBH <= cutoff
-	plot(x.1.user$diff.win, x.1.user$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 1 User-specified", ylim=c(ymin,ymax))
+	plot(x.1.user$diff.win, x.1.user$diff.btw, xlab=xlab, ylab=ylab, col=all.col, pch=all.pch, cex=all.cex, main="Asymmetric 1 VALR-adjusted", ylim=c(ymin,ymax))
 	points(x.1.user$diff.win[x.1.user$rab.all.1.iqlr < rare], x.1.user$diff.btw[x.1.user$rab.all.1.iqlr < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.1.user$diff.win[called], x.1.user$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.1.user[true.set,"diff.win"], x.1.user[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
