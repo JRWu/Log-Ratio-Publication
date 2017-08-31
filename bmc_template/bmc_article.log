@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  30 AUG 2017 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  31 AUG 2017 11:58
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -450,16 +450,23 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-[2] [3] [4] [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 336.
+[2] [3] [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 325.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 336.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 325.
 
-Overfull \hbox (9.72984pt too wide) detected at line 363
+[5]
+Overfull \hbox (16.75902pt too wide) in paragraph at lines 348--349
+[]\OT1/cmr/m/n/10 In the-ory, the vec-tor $[][]$ can be ad-justed to a unit pro
+b-a-bil-ity vec-tor, $[]$,
+ []
+
+
+Overfull \hbox (9.72984pt too wide) detected at line 368
  $[][] \OT1/cmr/m/n/10 = [] = [] \OMS/cmsy/m/n/10 ^^X \OML/cmm/m/it/10 Dirichle
 t[]\OT1/cmr/m/n/10 ([][] + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)$  
  []
@@ -470,15 +477,12 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 150.
 
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13])
+[13])
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `bv' on page 14 undefined on input line 566.
+LaTeX Warning: Reference `bv' on page 14 undefined on input line 575.
 
 
 AED: lastpage setting LastPage
@@ -492,13 +496,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3136 strings out of 493089
- 38484 string characters out of 6134842
- 117611 words of memory out of 5000000
- 6593 multiletter control sequences out of 15000+600000
- 18800 words of font info for 70 fonts, out of 8000000 for 9000
+ 3139 strings out of 493089
+ 38517 string characters out of 6134842
+ 116705 words of memory out of 5000000
+ 6595 multiletter control sequences out of 15000+600000
+ 19501 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,11n,37p,1631b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,11n,37p,1588b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
@@ -520,7 +524,7 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bmc_article.pdf (15 pages, 271683 bytes).
+Output written on bmc_article.pdf (15 pages, 271952 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
