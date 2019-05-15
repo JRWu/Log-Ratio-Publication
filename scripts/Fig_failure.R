@@ -66,7 +66,7 @@ ymax <- max(zero.median, instance.median, original.median)
 ymin <- min(zero.median, instance.median, original.median)
 
 ylb <- "Median Between Condition Diff"
-xlb <- "Percent Sparsity"
+xlb <- "Percent Asymmetric Sparsity"
 man <- paste(ylb, "  vs. ", xlb, sep="")
 
 darkness <- 0.5
