@@ -74,6 +74,7 @@ reads.all <- read.table(read.file, header=T, row.names=1, sep="\t", check.names=
 # reduce to first 1000 lines
 reads <- reads.all[1:1000,]
 
+# alternate the direction of change
 for(i in seq(47,86, by=2)){
 	r <- as.numeric(c(reads[i,11:20], reads[i,1:10]))
 	reads[i,] <- r

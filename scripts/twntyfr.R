@@ -17,8 +17,8 @@ sparse.set <- names(which(apply(e.min, 1, min) == 0))
 #e.min.pcx.u <- prcomp(e.min.clr.u)
 
 conds <-c("H","H","H","H","B","H","B","B","H","B","H","B","B","B","B","B","B","B","H","B","H","H")
-#x <- aldex.clr(e.min, conds=conds, denom="house")
-#x.e <- aldex.effect(x, conds)
+x <- aldex.clr(e.min, conds, denom=ribo)
+x.e <- aldex.effect(x)
 #
 #rho <- propr::aldex2propr(x, how="perb")
 #diag(rho@matrix) <- 0
@@ -38,7 +38,7 @@ eff.plot <- function(x, main=""){
 	abline(h=0,lty=3, lwd=3, col=rgb(0,0,0,0.4))
 }
 
-ma.plot <- function(x, x1, y1,y2, main=""){
+ma.plot <- function(x, x1, denom, y1,y2, main=""){
 	plot(x$rab.all, x$diff.btw, pch=19, col=rgb(0.8,0.7,0.5,0.3), cex=0.5, xlab="Log-ratio abundance", ylab="Difference", main=main)
 	points(x[sparse.set,"rab.all"], x[sparse.set,"diff.btw"], pch=19, col=rgb(0.2,0.1,0.05,0.3), cex=0.5)
 	points(x$rab.all[ribo], x$diff.btw[ribo], pch=19, col=rgb(0,0,1,1), cex=0.5)
@@ -48,16 +48,20 @@ ma.plot <- function(x, x1, y1,y2, main=""){
 	text(x1,y2, labels=paste("med glyc=", round(median(x$diff.btw[glycol]),3), sep=""))
 }
 
-
-pdf("figures/twtyfr.pdf", height=5,width=9)
-par(mfrow=c(1,2))
-#x <- aldex.clr(e.min, conds)
-#x.e <- aldex.effect(x, conds, verbose=FALSE)
-eff.plot(x.e, main="Effect plot")
-legend(6,-6, legend=c("non-sparse", "sparse", "ribosome", "glycolysis"),   col=c(rgb(0.8,0.7,0.5,0.3), rgb(0.2,0.1,0.05,0.3), rgb(0,0,1,1), rgb(1,0,0.8,1)), pch=19, cex=0.5, bg="white")
-
-ma.plot(x.e, 10,9,7.5, main="Bland Altman plot")
-
+pdf("figures/MAx4.pdf", height=10, width=9)
+par(mfrow=c(2,2))
+x <- aldex.clr(e.min, conds)
+x.e <- aldex.effect(x)
+ma.plot(x.e, 10,x@denom,6,7.5, main="denom = all")
+x <- aldex.clr(e.min, conds, denom="iqlr")
+x.e <- aldex.effect(x)
+ma.plot(x.e, 11,x@denom,6,7.5, main="denom = IQLR")
+x <- aldex.clr(e.min, conds, denom="lvha")
+x.e <- aldex.effect(x)
+ma.plot(x.e, 1,x@denom,6,7.5, main="denom = LVHA")
+x <- aldex.clr(e.min, conds, denom=ribo)
+x.e <- aldex.effect(x)
+ma.plot(x.e, 0, ribo ,6,7.5, main="denom = ribosome")
 dev.off()
 
 pdf("figures/twtyfr_corr.pdf", height=9,width=12)
@@ -74,13 +78,13 @@ eff.plot(x.z, main="Effect plot: Zero")
 
 x <- aldex.clr(e.min, conds, denom="lvha")
 x.u <- aldex.effect(x, conds, verbose=FALSE)
-eff.plot(x.u, main="Effect plot: VALR")
+eff.plot(x.u, main="Effect plot: LVHA")
 
 ma.plot(x.i, 10,9,7.5,main="BA plot: IQLR")
 
 ma.plot(x.z, 10,9,7.5,main="BA plot: Zero")
 
-ma.plot(x.u, -0,9,7.5,main="BA plot: VALR")
+ma.plot(x.u, -0,9,7.5,main="BA plot: LVHA")
 
 dev.off()
 

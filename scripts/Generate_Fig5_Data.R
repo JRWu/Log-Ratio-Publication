@@ -36,7 +36,7 @@ library(ALDEx2)
 
 data.dir <- "data/"
 figs.dir <- "figures/"
-read.file <- "sparse/reads_"
+read.file <- "sparse/reads_scaled_"
 
 ##### Omitting the T-test and only calculating effect sizes reduces mc.samples
 mc.samples <- 64
@@ -60,9 +60,11 @@ between.mean.m <- NULL
 between.median.m <- NULL
 between.mean.l <- NULL
 between.median.l <- NULL
+between.mean.d <- NULL
+between.median.d <- NULL
 
 ##### Iterate through the set of reads with simulated sparsity
-for (j in 1:24)
+for (j in 1:50)
 {
 	print(j)
 	reads <- read.table(paste(data.dir,read.file,j,sep=""), header=T, row.names=1, sep="\t")
@@ -82,19 +84,26 @@ for (j in 1:24)
 #	##### Original ALDEx2
 #
 #	##### IQR Transformation
-#	x.clr.i <- aldex.clr(reads, conds, mc.samples, denom="iqlr", verbose=FALSE, useMC=FALSE)
-#	x.effect.i<- aldex.effect(x.clr.i, conds, useMC=FALSE, verbose=FALSE)
+#	x.clr.i <- aldex.clr(reads, conds, mc.samples, denom="iqlr", verbose=FALSE, useMC=F)
+#	x.effect.i<- aldex.effect(x.clr.i, conds, useMC=F, verbose=FALSE)
 #
 #	##### median Transformation
 #	x.clr.m <- aldex.clr(reads, conds, mc.samples, denom="median", verbose=FALSE, useMC=FALSE)
 #	x.effect.m<- aldex.effect(x.clr.m, conds, useMC=FALSE, verbose=FALSE)
 #
+##### DESeq Transformation
+#	x.clr.d <- aldex.clr(reads, conds=conds, mc.samples, denom="mcn", verbose=FALSE, useMC=FALSE)
+#	x.effect.d <- aldex.effect(x.clr.d, conds, useMC=FALSE, verbose=FALSE)
 #
-#	between.mean.i <- c(between.mean.i, mean(x.effect.i$diff.btw))
-#	between.median.i <- c(between.median.i, median(x.effect.i$diff.btw))
+#
+	between.mean.i <- c(between.mean.i, mean(x.effect.i$diff.btw))
+	between.median.i <- c(between.median.i, median(x.effect.i$diff.btw))
 #
 	between.mean.l <- c(between.mean.l, mean(x.effect.l$diff.btw))
 	between.median.l <- c(between.median.l, median(x.effect.l$diff.btw))
+
+#	between.mean.d <- c(between.mean.d, mean(x.effect.d$diff.btw))
+#	between.median.d <- c(between.median.d, median(x.effect.d$diff.btw))
 #
 #	between.mean.z <- c(between.mean.z, mean(x.effect.z$diff.btw))
 #	between.median.z <- c(between.median.z, median(x.effect.z$diff.btw))
@@ -107,21 +116,27 @@ for (j in 1:24)
 }
 
 ##### Save the 2 sets of data
-f.out.mean <- paste(data.dir,"LVHA_Btw_Mean.txt",sep="")
-write.table(between.mean.l, file=f.out.mean, sep="\t", quote=F)
-f.out.median <- paste(data.dir,"LVHA_Btw_Medians.txt",sep="")
-write.table(between.median.l, file=f.out.median, sep="\t", quote=F)
+#f.out.mean <- paste(data.dir,"LVHA_Btw_Mean.txt",sep="")
+#write.table(between.mean.l, file=f.out.mean, sep="\t", quote=F)
+#f.out.median <- paste(data.dir,"LVHA_Btw_Medians.txt",sep="")
+#write.table(between.median.l, file=f.out.median, sep="\t", quote=F)
 
-#f.out.mean <- paste(data.dir,"Instance_Diff_Btw_Mean.txt",sep="")
-#write.table(between.mean.i, file=f.out.mean, sep="\t", quote=F)
-#f.out.median <- paste(data.dir,"Instance_Diff_Btw_Medians.txt",sep="")
-#write.table(between.median.i, file=f.out.median, sep="\t", quote=F)
+#f.out.mean <- paste(data.dir,"DES_Btw_Mean.txt",sep="")
+#write.table(between.mean.d, file=f.out.mean, sep="\t", quote=F)
+#f.out.median <- paste(data.dir,"DES_Btw_Medians.txt",sep="")
+#write.table(between.median.d, file=f.out.median, sep="\t", quote=F)
+
+
+f.out.mean <- paste(data.dir,"Instance_Diff_Btw_Mean.txt",sep="")
+write.table(between.mean.i, file=f.out.mean, sep="\t", quote=F)
+f.out.median <- paste(data.dir,"Instance_Diff_Btw_Medians.txt",sep="")
+write.table(between.median.i, file=f.out.median, sep="\t", quote=F)
 #
 #f.out.mean.z <- paste(data.dir,"Zero_Diff_Btw_Mean.txt",sep="")
 #write.table(between.mean.z, file=f.out.mean.z, sep="\t", quote=F)
 #f.out.median.z <- paste(data.dir,"Zero_Diff_Btw_Medians.txt",sep="")
 #write.table(between.median.z, file=f.out.median.z, sep="\t", quote=F)
-#
+##
 #f.out.mean.o <- paste(data.dir,"Orig_Diff_Btw_Mean.txt",sep="")
 #write.table(between.mean.o, file=f.out.mean.o, sep="\t", quote=F)
 #f.out.median.o <- paste(data.dir,"Orig_Diff_Btw_Medians.txt",sep="")

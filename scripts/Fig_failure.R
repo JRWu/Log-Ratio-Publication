@@ -59,6 +59,8 @@ med.mean <- unlist(read.table(file=paste(data.dir,"Median_Diff_Btw_Mean.txt",sep
 original.median <- unlist(read.table(file=paste(data.dir,"Orig_Diff_Btw_Medians.txt",sep=""), header=T, row.names=1, sep="\t"))
 original.mean <- unlist(read.table(file=paste(data.dir,"Orig_Diff_Btw_Mean.txt",sep=""), header=T, row.names=1, sep="\t"))
 
+# des.median <- unlist(read.table(file=paste(data.dir,"DES_Btw_Medians.txt",sep=""), # header=T, row.names=1, sep="\t"))
+
 ##### Plot Work
 ymax <- max(zero.median, instance.median, original.median)
 ymin <- min(zero.median, instance.median, original.median)
@@ -68,8 +70,8 @@ xlb <- "Percent Sparsity"
 man <- paste(ylb, "  vs. ", xlb, sep="")
 
 darkness <- 0.5
-pch <- c(15,16,2,19,5)
-col <- c( rgb(0,0,1,darkness),rgb(1,0,0,darkness), rgb(0,1,1,darkness),rgb(0.8,0.4,0,1),rgb(0,0,0,1))
+pch <- c(15,16,17,19,5,19)
+col <- c( rgb(0,0,1,darkness),rgb(1,0,0,darkness), rgb(0,1,1,darkness),rgb(1,0.3,0,1),rgb(0,0,0,1))
 leg <- c("CLR","NZLR","IQLR","MED","LVHA")
 
 fig.name <- paste(figs.dir,"Fig_failure.pdf",sep="")
@@ -80,10 +82,11 @@ plot(NULL,xlim=c(0,50),ylim=c(ymin,ymax), xlab=xlb, ylab=ylb) #, main=man)
 
 ##### Plot the points per transformation
 points(zero.median[1:50], pch=pch[2], col=col[2], type="b")
-points(instance.median[1:50], pch=pch[3], col=col[3], type="b")
 points(original.median[1:50], pch=pch[1], col=col[1], type="b")
 points(med.median[1:50], pch=pch[4], col=col[4], type="b")
 points(lvha.median[1:50], pch=pch[5], col=col[5], type="b",cex=1.2)
+points(instance.median[1:50], pch=pch[3], col=col[3], type="b")
+#points(des.median[1:50], pch=pch[6], col="black", type="b",cex=1.2)
 
 abline(0,0, col=c(rgb(0,0,0,0.75)))
 abline(v=25, col=c(rgb(0,0,0,0.2)))
