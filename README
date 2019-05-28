@@ -1,15 +1,29 @@
+LICENSE:
+https://en.wikipedia.org/wiki/MIT_License
+
+May 28, 2019
+
 data/
 - Contains the dataset for each figure
 figures/
 - Contains the output of the scripts in scripts/
 - Contains figures to be used in writeup/
+  - Fig1.pdf #Fig 1
+  - Fig2.pdf # Fig 2
+  - Fig_failure.pdf # Fig 3
+  - Fig_ones.pdf # Fig 4
+  - MAx4.pdf # Fig 5
 scripts/
 - Contains scripts for the data analysis
-writeup/
-- Contains the latex docs and references.bib for the writeup
+  - Variables.R # setup script
+  - Fig1.R #Fig 1
+  - Fig2.R # Fig 2
+  - Fig_failure.R # Fig 3
+  - Fig_ones.R # Fig 4
+  - twntyfr.R # Fig 5
+bmc_template/
+- Contains the latex docs and references.bib for the BMC Bioinformatics submission
 
-LICENSE:
-https://en.wikipedia.org/wiki/MIT_License
 
 To run the suite of analysis:
 
