@@ -3,3 +3,10 @@ additional_work/*
 .DS_Store
 
 test.pdf
+bmc_template/bmc_article.aux
+bmc_template/bmc_article.dvi
+bmc_template/bmc_article.log
+bmc_template/bmc_article.synctex.gz
+*.aux
+*.gz
+*.log

@@ -352,13 +352,13 @@ doi:\doiurl{10.3389/fmicb.2017.02224}
 \begin{barticle}
 \bauthor{\bsnm{Macklaim}, \binits{J.M.}},
 \bauthor{\bsnm{Gloor}, \binits{G.B.}}:
-\batitle{From rna-seq to biological inference: Using compositional data
+\batitle{From {RNA}-seq to biological inference: Using compositional data
   analysis in meta-transcriptomics}.
 \bjtitle{Methods Mol Biol}
 \bvolume{1849},
 \bfpage{193}--\blpage{213}
 (\byear{2018}).
-doi:\doiurl{10.1007/978-1-4939-8728-3_13}
+doi:\doiurl{10.1007/978-1-4939-8728-3\_13}
 \end{barticle}
 \endbibitem
 
@@ -1049,7 +1049,7 @@ doi:\doiurl{10.1186/1471-2105-12-S1-S21}
 </bibl>
 
 <bibl id="B17">
-  <title><p>From RNA-seq to Biological Inference: Using Compositional Data
+  <title><p>From {RNA}-seq to Biological Inference: Using Compositional Data
   Analysis in Meta-Transcriptomics</p></title>
   <aug>
     <au><snm>Macklaim</snm><fnm>JM</fnm></au>

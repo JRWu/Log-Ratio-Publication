@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAY 2019 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 MAY 2019 10:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -466,59 +466,12 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 325.
 
 [5]
-Overfull \hbox (16.75902pt too wide) in paragraph at lines 348--349
+Overfull \hbox (17.30031pt too wide) in paragraph at lines 348--349
 []\OT1/cmr/m/n/10 In the-ory, the vec-tor $[][]$ can be ad-justed to a unit pro
 b-a-bil-ity vec-tor, $[]$,
  []
 
-
-Overfull \hbox (5.90068pt too wide) detected at line 368
- $\OT1/cmr/m/n/10 P[] = [] = [] \OMS/cmsy/m/n/10 ^^X [][]\OT1/cmr/m/n/10 ([][] 
-+ 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)$  
- []
-
-[6] [7] [8] [9] [10] [11] [12] (./bmc_article.bbl [13]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.361 doi:\doiurl{10.1007/978-1-4939-8728-3_13}
-                                               
-? s
-OK, entering \scrollmode...
-! Extra }, or forgotten $.
-\doiurl  ...}{\csname doi@size\endcsname #1}}\fi }
-                                                  
-l.361 doi:\doiurl{10.1007/978-1-4939-8728-3_13}
-                                               
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.362 \end{barticle}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.362 \end{barticle}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[14])
+[6] [7] [8] [9] [10] [11] [12] (./bmc_article.bbl [13] [14])
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -534,13 +487,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3141 strings out of 493089
- 38554 string characters out of 6134842
- 119000 words of memory out of 5000000
- 6596 multiletter control sequences out of 15000+600000
- 19462 words of font info for 72 fonts, out of 8000000 for 9000
+ 3153 strings out of 493089
+ 38680 string characters out of 6134842
+ 119002 words of memory out of 5000000
+ 6602 multiletter control sequences out of 15000+600000
+ 21292 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,11n,37p,1632b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,13n,37p,1632b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></u
@@ -549,6 +502,7 @@ usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
 local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
@@ -563,10 +517,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bmc_article.pdf (16 pages, 287210 bytes).
+Output written on bmc_article.pdf (16 pages, 294939 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 149 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

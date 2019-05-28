@@ -345,25 +345,23 @@ The ALDEx2 R package  uses Bayesian modelling to generate a probability function
 
 The starting point for analysis is matrix S, containing \textit{n} samples $ \times~D$ features. A  sample vector contains the number of reads mapped to any of the $j$  features in the $i^{th}$ sample,  $\textbf{s}_i=[j_1,j_2 \ldots j_D]$, where $i=1 \ldots n , j=1 \ldots D$. As noted above, since the total number of counts is determined by the machine, these data are compositional and are an example of an equivalence class with $\alpha_{i} = \sum \textbf{s}_{i}$ \cite{Gloor:2016cjm,gloor2016s}. 
 
-In theory, the vector $\textit{\textbf{s}}_i$ can be adjusted to a unit probability vector,  ${\textit{\textbf{p}}_i=[p_1,p_2 \ldots p_D] }$, i.e. $\alpha=1$, without loss of information by the maximum likelihood (ML) estimate  $\textit{\textbf{p}}_i=\textit{\textbf{s}}_i / \alpha_{i}$. In this representation, the value of the $j^{th}$ feature in the $i^{th}$ sample is a ML estimate of the probability of observing the counts conditioned on the fractional  $f$ that the feature represents in the underlying data and on the total read depth for the sample; i.e., $\mathbb{P}_{i,j}(f_{i,j}|\alpha_{i})$. However, the maximum likelihood estimate will be exponentially inaccurate when the dataset contains many values near or at the low count margin \cite{Newey:1994} as is common in sparse HTS data. Instead ALDEx2 uses a standard Bayesian approach \cite{Jaynes:2003} to infer a posterior distribution of the unit vector directly from $\textit{\textbf{s}}_i$, by drawing $k$ random Monte-Carlo instances from the Dirichlet distribution with a uniform, uninformative prior of 0.5, i.e.:
-
-
+In theory, the vector $\boldsymbol{s}_i$ can be adjusted to a unit probability vector,  ${\boldsymbol{p}_i=[p_1,p_2 \ldots p_D] }$, i.e. $\alpha=1$, without loss of information by the maximum likelihood (ML) estimate  $\boldsymbol{p}_i=\boldsymbol{s}_i / \alpha_{i}$. In this representation, the value of the $j^{th}$ feature in the $i^{th}$ sample is a ML estimate of the probability of observing the counts conditioned on the fractional  $f$ that the feature represents in the underlying data and on the total read depth for the sample; i.e., $\mathbb{P}_{i,j}(f_{i,j}|\alpha_{i})$. However, the maximum likelihood estimate will be exponentially inaccurate when the dataset contains many values near or at the low count margin \cite{Newey:1994} as is common in sparse HTS data. Instead ALDEx2 uses a standard Bayesian approach \cite{Jaynes:2003} to infer a posterior distribution of the unit vector directly from $\boldsymbol{s}_i$, by drawing $k$ random Monte-Carlo instances from the Dirichlet distribution with a uniform, uninformative prior of 0.5, i.e.:
 
 \begin{equation}
-\mathrm{P}_{i (1 \ldots k)}=
-\left( \begin{array}{c}
-    \textit{\textbf{p}}_1 \\
-   \textit{\textbf{p}}_2 \\
+\textrm{P}_{i (1 \ldots k)}=
+\begin{pmatrix}
+    \boldsymbol{p}_1 \\
+    \boldsymbol{p}_2 \\
     \vdots \\
-    \textit{\textbf{p}}_k \\
-\end{array} \right)=
-\left( \begin{array}{ccccc}
-    p_{i,11} & p_{i,21} & p_{i,j1} & \dots  & p_{i,D1} \\
-    p_{i,12} & p_{i,22} & p_{i,j2} & \dots  & p_{i,D2} \\
-    \vdots & \vdots & \vdots & \ddots & \vdots \\
-    p_{i,1k} & p_{i,2k} & p_{i,jk} & \dots  & p_{i,Dk}\\
-\end{array} \right)
-\sim \mathrm{Dirichlet}_{(1 \ldots k)}(\textit{\textbf{s}}_i + 0.5)
+    \boldsymbol{p}_k \\
+\end{pmatrix} =
+\begin{pmatrix}
+    p_{i,11} & p_{i,21} & p_{i,31} & \dots  &  p_{i,D1}  \\
+    p_{i,12} & p_{i,22} & p_{i,32} & \dots  &  p_{i,D2}  \\
+    \vdots & \vdots & \vdots & \ddots &  \vdots  \\
+    p_{i,1k} & p_{i,2k} & p_{i,3k} & \dots  & p_{i,Dk} \\
+\end{pmatrix}
+\sim Dirichlet_{(1 \ldots k)}( \boldsymbol{s}_i + 0.5)
 \label{eq:matrix}
 \end{equation}
 
