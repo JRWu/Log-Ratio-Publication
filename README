@@ -1,44 +1,17 @@
 data/
 - Contains the dataset for each figure
-figures/ 
+figures/
 - Contains the output of the scripts in scripts/
 - Contains figures to be used in writeup/
-scripts/ 
+scripts/
 - Contains scripts for the data analysis
 writeup/
 - Contains the latex docs and references.bib for the writeup
 
-LICENSE: 
+LICENSE:
 https://en.wikipedia.org/wiki/MIT_License
 
 To run the suite of analysis:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Fig1:  (somewhat intro)
@@ -51,25 +24,25 @@ Fig1:  (somewhat intro)
 Hypothesis is that:
 Identifying the variables with the most consistent (midpoint/typical) variance in all samples will correct for this centering problem/defect
 
-- We can identify the bulk of the data and adjust this to zero 
+- We can identify the bulk of the data and adjust this to zero
 
-Introduce the formula (CLR formula) + (Find variance) 
-	- Point estimate 
+Introduce the formula (CLR formula) + (Find variance)
+	- Point estimate
 	- Dirichlet MC. Replicates
 	- There's 2 ways
 			- doing as point shifts on biplot
-			- MC shifts on effect plot 
+			- MC shifts on effect plot
 
 Fig2: (methods/intro/results)
 	- Helps to explain what's going on  (simulated data)
 	- Model data (transcriptome) Doesn't matter what kind, modeled as count from neg.binomial dist (generate selex data)
-	- Use artificial dataset at first, Use supplimentary S1,S2,S3, doesn't matter source of the data and we can replicate this shift 
+	- Use artificial dataset at first, Use supplimentary S1,S2,S3, doesn't matter source of the data and we can replicate this shift
 		- Reiterate that it's count data and the source doesn't matter
 
 	- 2a The data is UNCENTERED (Original ALDEx2)
 	- 2b The adjusted data 		(Adjusted ALDEx2)
-	- a and a' as effect and biplots 
-	- b and b' as effect and biplots 
+	- a and a' as effect and biplots
+	- b and b' as effect and biplots
 
 ^^ Methods/Introduction
 	- a is generic sequencing is introduction
@@ -82,20 +55,20 @@ Fig2: (methods/intro/results)
 Fig3: (results)
 	- demonstrate this phenomenon in a real dataset, Selex dataset
 	- Try microbiome dataset(s) that are very different (HMP dataset) (tongue/stool)
-	- a + b to use effect plots 	
+	- a + b to use effect plots
 	- Phenomenon in REAL dataset needs to be combined with zero removal adjustment or else it doesn't work
-	
-	
-	
+
+
+
 
 Fig4/Tab1: (discussion)
 	- What happens in "good data"
 	- IDeal data/model data
 	- Transcriptome, tongue/cheek (whichever data that doesn't have off centering)
 	- Doesn't have an effect on "ideal data" or "good data" but only affects bad data
-	
-	- Use yeast transcriptome dataset that I drew the simulated data from, or use a tongue/cheek dataset with no off centering 
-	- Demonstrate original ALDEx2 and Adjusted ALDEx2 
+
+	- Use yeast transcriptome dataset that I drew the simulated data from, or use a tongue/cheek dataset with no off centering
+	- Demonstrate original ALDEx2 and Adjusted ALDEx2
 
 
 
@@ -103,9 +76,9 @@ Fig4/Tab1: (discussion)
 
 TODO:
 	1) Centered/Uncentered w/ phi
-		- Univariate test but we may be affecting multivariate 
-	2) MiRKAT? 
-		- 
+		- Univariate test but we may be affecting multivariate
+	2) MiRKAT?
+		-
 	3) Per/Group or Whole group?
 		- (1 condition or 2 condition)
 
@@ -116,7 +89,7 @@ NOTE:
 
 
 	- Make a script per figure
-	- Make bold comments if 1 major script 
+	- Make bold comments if 1 major script
 	- s
 
 
@@ -133,17 +106,17 @@ Implemented as a new package*
 	- If your data is very sparse, the alternative approach is...
 	- Zero removal works in very extreme cases
 		Extend the models or problems (really unbalanced set of sparsity) therefore zero removal fixes that, only do if desparate
-		
-	one more example for really unbalanced 
+
+	one more example for really unbalanced
 
 
 
-Add dashed white line ontop of the ablines 
+Add dashed white line ontop of the ablines
 
 
 
 
-	
+
 supplementary:
 Includde the variance across DATA or the variance across the MC instances
 
@@ -153,15 +126,15 @@ expected value of variance
 SI:
 	- Histograms
 		Variance distribution is wide with a negative log ratio value for count
-		low counts; variance for a given OTU/feature will be variable 
-		
+		low counts; variance for a given OTU/feature will be variable
+
 		get CLR of the data
 		what's the mean CLR across each otu (plot that as histogram)
-		
+
 		Which is better; instances or just the data?
 		variance of data is less than variance of instance on SPARSE OTUs
-		Plot a histogram of the variances* 
-		
+		Plot a histogram of the variances*
+
 
 
 Compare the midpoints of the differnces between for different levels of sparsity
@@ -170,7 +143,7 @@ Compare zero removal and the IQR
 Simulate more sparsity in reads_A_500_0 in order to see where the IQR adjustment fails
 
 
-	
+
 
 June 29:
 	- Find Variance per instance
@@ -180,21 +153,21 @@ June 29:
 
 - Add abline h=25
 - Overplot the UNADJUSTED onto the BEtween_Median figures
-- Add supplimentary figure, use Data vs MC Instances of the CLR 
+- Add supplimentary figure, use Data vs MC Instances of the CLR
 	- Found no real difference between the metrics in terms of ability to correct for this shift
 	- Both start to fail at ~25%, for efficiency, a single CLR transformed instance is good
-	- Could experiment with IQR picking but then 
-	- Stop the cutoff at 50% 
+	- Could experiment with IQR picking but then
+	- Stop the cutoff at 50%
 	- For the overplot of zero removal could experiment up to 100%
-	
+
 	1) Run on the point estimate of the data
 	2) What's the diff between zero removal and this
-	3) 
+	3)
 TODO:
 	- Overplot the median difference of the data between conditions
 	- Use figure in paper***
 	- Run with 16 instances
-	
+
 Estimating a midpoint is ok with 8 MC instances
 
 
@@ -206,11 +179,11 @@ Start With:
 		Change the figures around
 	- Simulated no difference (figure 4a) 	is 1a
 	- Simulated asymmetric (figure 1)		is 1b
-	
+
 First ref should be to figure 1
 	- Remove figure 2a
-	- Make figure 2b standalone 
-	
+	- Make figure 2b standalone
+
 Figure 1 (could be 4 panel)
 	- 4a becomes 1a
 	- 1 becomes 1b
@@ -238,7 +211,7 @@ In "fig6" talk about 2% asymmetry
 dada2 generates asymmetric distribution
 
 don't talk about transcriptomics dataset; but a simulated dataset where we understand params
-selex w/ asymmetry 
+selex w/ asymmetry
 
 	- ability for an endonuclease to cut DNA
 	- start w/ supercoil DNA, added endonuclease
@@ -246,14 +219,14 @@ selex w/ asymmetry
 	- if you isolate the band with no endonuclease, you get random pool
 	- if you cut the NDA,you lose the ones that are cut efficiently, the ones are uncut are left (depletion experiment)
 	- high count variants are less efficiently cut
-	
+
 	- add tom + dave as sources of data
-	- jia, briana, michael, tom, dave, 
-	
+	- jia, briana, michael, tom, dave,
+
 
 Make 4a into 1a
 Make 2a into 1b
-Make figure 2b standalone 
+Make figure 2b standalone
 Make figure 6 into figure 3 (works whether or not asymmetry is due to 0 or not)
 Make selex into figure 4
 	Add the legend scale information
@@ -264,7 +237,7 @@ Michael's figure is supplimentary
 
 
 ^^ Put the histograms in the same spot
-	
+
 
 
 provide offset
