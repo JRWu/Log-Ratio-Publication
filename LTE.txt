@@ -1,0 +1,13 @@
+Dear Editor,
+
+Please find enclosed oure manuscript entitled "Finding the centre: correcting for compositional asymmetry in high-throughput sequencing datasets" by Wu et al, which we submit for consideration in BMC Bioinformatics as a Methodology article.
+
+This is the first report providing a data-driven approach to properly centre high-throughput sequencing data. Mis-centring is a pervasive problem when using compositional data analysis approaches for high-throughput sequencing, and the approaches provided here show that even very asymmetric datasets can be analyzed in a rigorous way. As compositional data analysis methods are become more popular for the analysis of high throughput sequencing datasets, we believe that this work would be of general interest to the readership of BMC Bioinformatics.
+
+We confirm that this manuscript has not been published elsewhere nor is it under consideration at another journal. All authors have approved the manuscript and agree with its submission to BMC Bioinformatics.
+
+Please address all correspondence to Greg Gloor, ggloor.
+
+We appreciate your consideration of this work
+
+Greg Gloor, on behalf of the authors

@@ -1,7 +1,7 @@
 \relax 
 \global\@namedef{num@address}{2}
 \global\@namedef{num@author}{4}
-\thanksnewlabel{au1@email}{{jia_wu@hotmail.com}{1}}
+\thanksnewlabel{au1@email}{{jr2wu@uwaterloo.ca}{1}}
 \thanksnewlabel{au2@email}{{jean.macklaim@gmail.com}{1}}
 \thanksnewlabel{au3@email}{{bgenge3@gmail.com}{1}}
 \thanksnewlabel{au4@email}{{ggloor@uwo.ca}{1}}
@@ -54,8 +54,20 @@
 \newlabel{eq:ALR}{{3}{4}}
 \citation{altman:1983}
 \citation{gloor:effect}
+\citation{polyester:2016}
+\citation{bowtie2}
+\citation{Ravel:2010}
+\citation{gloor:effect}
+\citation{Macklaim:2018aa}
+\citation{macklaim:2013}
+\citation{macklaim:2013}
+\citation{Scott:2010}
+\citation{Quinn:2017}
 \citation{Halsey:2015aa}
 \citation{Cumming:2008aa}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Availability and requirements}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Competing interests}{10}}
+\newlabel{eq:dispersion}{{4}{10}}
 \citation{fernandes:2013}
 \citation{gloorAJS:2016}
 \citation{fernandes:2013}
@@ -64,38 +76,28 @@
 \citation{gloor2016s}
 \citation{Newey:1994}
 \citation{Jaynes:2003}
-\newlabel{eq:dispersion}{{4}{6}}
 \citation{fernandes:2013}
 \citation{gloorAJS:2016}
 \citation{fernandes:2013}
 \citation{gloorAJS:2016}
+\newlabel{eq:matrix}{{5}{11}}
 \citation{fernandes:2013}
 \citation{fernandes:2013}
-\newlabel{eq:matrix}{{5}{7}}
-\newlabel{eq:iqlr}{{6}{8}}
-\newlabel{eq:vale}{{7}{8}}
-\newlabel{eq:iqlr}{{8}{8}}
-\citation{polyester:2016}
-\citation{bowtie2}
-\newlabel{eq:iqlr}{{9}{9}}
-\citation{Ravel:2010}
-\citation{gloor:effect}
-\citation{Macklaim:2018aa}
-\citation{macklaim:2013}
-\citation{macklaim:2013}
-\citation{Scott:2010}
-\citation{Quinn:2017}
+\newlabel{eq:iqlr}{{6}{12}}
 \bibstyle{bmc-mathphys}
-\bibdata{bibdesk_refs}
+\bibdata{bmc_article.bbl}
 \bibcite{Auer:2010aa}{1}
 \bibcite{Anders:2013aa}{2}
+\newlabel{eq:vale}{{7}{13}}
+\newlabel{eq:iqlr}{{8}{13}}
+\newlabel{eq:iqlr}{{9}{13}}
+\thanksnewlabel{aff1thanks}{{1}{13}}
+\thanksnewlabel{aff2thanks}{{2}{13}}
 \bibcite{Macklaim:2015aa}{3}
 \bibcite{Hummelen:2010}{4}
 \bibcite{Gajer:2012}{5}
 \bibcite{macklaim:2013}{6}
 \bibcite{Lang:2015aa}{7}
-\thanksnewlabel{aff1thanks}{{1}{13}}
-\thanksnewlabel{aff2thanks}{{2}{13}}
 \bibcite{Peng:2014aa}{8}
 \bibcite{Zhao:2013aa}{9}
 \bibcite{Gierlinski:2015aa}{10}
@@ -132,7 +134,7 @@
 \citation{Macklaim:2018aa}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces {\mathversion  {bold}\bfseries  Effect plots of simulated asymmetric data illustrates the problem.} The effect plots show the difference between two conditions in simulated RNA-seq data with 1000 genes where 40 genes are modelled to have true difference between groups. Each point is a feature (gene) and they are coloured in black if not different between groups, red if identified as being statistically significantly different between groups, and red with a blue circle if they are one of the 40 genes modelled to be true positives. The red points in the top right quadrant are the genes modelled to be asymmetrically variable between groups. These are also true positive features, but are not part of the initial modelled true positives. The inset histograms show the distribution of the differences between groups as calculated by ALDEx2, and the vertical line shows a difference of 0. These x-axis of the histograms are truncated to show only differences near the midpoint.}}{15}}
 \newlabel{Fig:f1a}{{1}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\mathversion  {bold}\bfseries  Effect plots of simulated asymmetric data with transformations that can result in a more accurate centring of the data.} Denominators were chosen for ALDEx2 using the iqlr, non-zero, lvha, or median option. The user defined denominator was 100 randomly chosen features known not to be different between groups. Points are coloured as in Figure 1\hbox {}, with the points used for the denominator in each case coloured in cyan.}}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\mathversion  {bold}\bfseries  Effect plots of simulated asymmetric data with transformations that can result in a more accurate centring of the data.} Denominators were chosen for ALDEx2 using the iqlr, non-zero, lvha, or median option. The user defined denominator was 100 randomly chosen features known not to be different between groups. Points are coloured as in Figure 1\hbox {}, with the points used for the denominator in each case coloured in orange.}}{15}}
 \newlabel{Fig:f2a}{{2}{15}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\mathversion  {bold}\bfseries  The behaviour of each transformations for datasets with varying sparsity.} Each point represents the median between condition difference for a given transformation in a dataset with a specified sparsity. Points closer to the location y=0 are favourable. The CLR transformation fails as soon as asymmetric sparsity is introduced. The IQLR and LVHA transformations are effective on datasets with up to 25\% asymmetric sparsity from zeroes or extreme count features. The NZLR transformation is effective on datasets with up to 50\% sparsity, but the asymmetry must be from zeroes exclusively. Replacing the geometric mean with the median in Equation 1\hbox {}, is an improvement, but results in a generally small shift in midpoint. The user defined correction was not applied as it is trivial to identify one or more invariant features in modelled data regardless of the percent sparsity.}}{15}}
 \newlabel{Fig:failure}{{3}{15}}

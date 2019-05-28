@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 MAY 2019 10:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 MAY 2019 17:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -456,22 +456,29 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-[2] [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 325.
+[2] [3] [4] [5] [6] [7] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+\OT1/cmr/m/n/10 (https://www.bioconductor.org/packages/release/bioc/html/ALDEx2
+.html). All
+ []
 
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 409.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 325.
-
-[5]
-Overfull \hbox (17.30031pt too wide) in paragraph at lines 348--349
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 409.
+ [10]
+Overfull \hbox (17.30031pt too wide) in paragraph at lines 432--433
 []\OT1/cmr/m/n/10 In the-ory, the vec-tor $[][]$ can be ad-justed to a unit pro
 b-a-bil-ity vec-tor, $[]$,
  []
 
-[6] [7] [8] [9] [10] [11] [12] (./bmc_article.bbl [13] [14])
+[11] [12] (./bmc_article.bbl [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14])
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -487,13 +494,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3153 strings out of 493089
- 38680 string characters out of 6134842
- 119002 words of memory out of 5000000
- 6602 multiletter control sequences out of 15000+600000
+ 3152 strings out of 493089
+ 38667 string characters out of 6134842
+ 112460 words of memory out of 5000000
+ 6601 multiletter control sequences out of 15000+600000
  21292 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,13n,37p,1632b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,13n,37p,1632b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></u
@@ -517,7 +524,7 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bmc_article.pdf (16 pages, 294939 bytes).
+Output written on bmc_article.pdf (16 pages, 295824 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  106 compressed objects within 2 object streams

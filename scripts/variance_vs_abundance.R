@@ -27,12 +27,15 @@ load("/Users/ggloor/Documents/0_git/effect/data/ref.set.ty.Rdata")
 # barton yeast
 load("/Users/ggloor/Documents/0_git/effect/data/ref.set.yeast.Rdata")
 
-par(mfrow=c(2,2))
+pdf("figures/Disp-v-Abund.pdf")
+par(mfrow=c(1,1))
 
-plot(ref.set.ty[[1]]$diff.win, ref.set.ty[[1]]$rab.all,col=rgb(0,0,0,0.2), pch=19)
+plot(ref.set.ty[[1]]$diff.win, ref.set.ty[[1]]$rab.all,col=rgb(1,0,0,0.2), pch=19,
+   xlim=c(0,6), ylim=c(-10,10), xlab="Dispersion", ylab="log2 Relative Abundance")
 
-plot(ref.set.yeast[[1]]$diff.win, ref.set.yeast[[1]]$rab.all, col=rgb(0,0,0,0.2), pch=19)
-
+points(ref.set.yeast[[1]]$diff.win, ref.set.yeast[[1]]$rab.all, col=rgb(0,0,1,0.2), pch=19)
+legend(0,-7, legend=c("transcriptome", "microbiome"), col=c("blue","red"), pch=19)
+dev.off()
 
 plot(x.e$diff.win, x.e$rab.all, col=rgb(0,0,0,0.2), pch=19)
 points(x.e$diff.win[x.iqlr@denom], x.e$rab.all[x.iqlr@denom], col=rgb(1,0,0,0.5), pch=19)
