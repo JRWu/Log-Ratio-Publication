@@ -1,15 +1,15 @@
 ################################################################################
 ##### Fig1.R
-##### Author: Jia Rong Wu
+##### Author: Jia Rong Wu, Greg Gloor
 ##### jwu424 (at) gmail.com
 #####
 ##### DESCRIPTION: Generalized R script in order to generate supporting figures
-##### for the paper IQLR. Code for Figure 1 a/b.
+##### for the paper IQLR. Code for Figure 2.
 #####
 ##### USAGE: Rscript --vanilla Fig1.R
 #####
 ##### LICENSE
-##### Copyright (c) 2016 Jia Rong Wu
+##### Copyright (c) 2016, 2019 Jia Rong Wu, GBG
 #####
 ##### Permission is hereby granted, free of charge, to any person obtaining a
 ##### copy of this software and associated documentation files (the "Software"),
@@ -45,29 +45,27 @@ conds <- c(rep("A", 10), rep("B", 10))
 ##### Use assymmetric datasets
 
 x.clr.iqlr <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="iqlr")
-x.e.iqlr <- aldex.effect(x.clr.iqlr, conds)
-x.t.iqlr  <- aldex.ttest(x.clr.iqlr, conds)
+x.e.iqlr <- aldex.effect(x.clr.iqlr)
+x.t.iqlr  <- aldex.ttest(x.clr.iqlr)
 x.iqlr.iqlr <- data.frame(x.e.iqlr, x.t.iqlr)
 
-# get the feature subset from ALDEx2
-iqlr.feature.subset <- aldex.set.mode(reads.0, conds, denom="iqlr")
 
 x.clr.zero <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="zero")
-x.e.zero <- aldex.effect(x.clr.zero, conds)
-x.t.zero  <- aldex.ttest(x.clr.zero, conds)
+x.e.zero <- aldex.effect(x.clr.zero)
+x.t.zero  <- aldex.ttest(x.clr.zero)
 x.zero.zero <- data.frame(x.e.zero, x.t.zero)
 zero.feature.subset <- aldex.set.mode(reads.0, conds, denom="zero")
 
 
 x.clr.user <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="lvha")
-x.e.user <- aldex.effect(x.clr.user, conds)
-x.t.user  <- aldex.ttest(x.clr.user, conds)
+x.e.user <- aldex.effect(x.clr.user)
+x.t.user  <- aldex.ttest(x.clr.user)
 x.user.user <- data.frame(x.e.user, x.t.user)
 denom=c(100:200)
 
 x.clr.med <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="median")
-x.e.med <- aldex.effect(x.clr.med, conds)
-x.t.med  <- aldex.ttest(x.clr.med, conds)
+x.e.med <- aldex.effect(x.clr.med)
+x.t.med  <- aldex.ttest(x.clr.med)
 x.med.med <- data.frame(x.e.med, x.t.med)
 
 f2 <- paste(figs.dir, "Fig_2.pdf",sep="")
@@ -81,7 +79,7 @@ par(fig=c(0,0.5,0.5,1), new=TRUE)
 	points(x.iqlr.iqlr$diff.win[x.iqlr.iqlr$rab.all < rare], x.iqlr.iqlr$diff.btw[x.iqlr.iqlr$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.iqlr.iqlr$diff.win[called], x.iqlr.iqlr$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.iqlr.iqlr[true.set,"diff.win"], x.iqlr.iqlr[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	points(x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.win"], x.iqlr.iqlr[iqlr.feature.subset[[1]],"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
+	points(x.iqlr.iqlr[x.clr.iqlr@denom,"diff.win"], x.iqlr.iqlr[x.clr.iqlr@denom,"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)
@@ -100,7 +98,7 @@ par(fig=c(0.5,1,0.5,1), new=TRUE)
 	points(x.zero.zero$diff.win[x.zero.zero$rab.all < rare], x.zero.zero$diff.btw[x.zero.zero$rab.all < rare], col=rare.col, pch=rare.pch, cex=rare.cex)
 	points(x.zero.zero$diff.win[called], x.zero.zero$diff.btw[called], col=called.col, pch=called.pch, cex=called.cex)
 	points(x.zero.zero[true.set,"diff.win"], x.zero.zero[true.set,"diff.btw"], col=true.col, pch=true.pch, cex=true.cex)
-	points(x.zero.zero[zero.feature.subset[[1]],"diff.win"], x.zero.zero[zero.feature.subset[[1]],"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
+	points(x.zero.zero[x.clr.zero@denom,"diff.win"], x.zero.zero[x.clr.zero@denom,"diff.btw"], col=rgb(0.8,0.7,0.5,0.5), pch=true.pch, cex=true.cex)
 
 	abline(0,1, col=thres.line.col, lty=2, lwd=thres.lwd)
 	abline(0,-1, col=thres.line.col, lty=2, lwd=thres.lwd)

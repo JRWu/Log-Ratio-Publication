@@ -1,15 +1,15 @@
 ################################################################################
 ##### Fig1.R
-##### Author: Jia Rong Wu
+##### Author: Jia Rong Wu, modified by Greg Gloor
 ##### jwu424 (at) gmail.com
 #####
 ##### DESCRIPTION: Generalized R script in order to generate supporting figures
-##### for the paper IQLR. Code for Figure 1 a/b.
+##### for the paper IQLR. Code for Figure 1.
 #####
 ##### USAGE: Rscript --vanilla Fig1.R
 #####
 ##### LICENSE
-##### Copyright (c) 2016 Jia Rong Wu
+##### Copyright (c) 2016,2019 Jia Rong Wu, GBG
 #####
 ##### Permission is hereby granted, free of charge, to any person obtaining a
 ##### copy of this software and associated documentation files (the "Software"),
@@ -42,20 +42,20 @@ conds <- c(rep("A", 10), rep("B", 10))
 
 ##### Read table and generate conditions
 x.clr <- aldex.clr(reads, conds, mc.samples, verbose=FALSE, denom="all")
-x.e <- aldex.effect(x.clr, conds)
-x.t  <- aldex.ttest(x.clr, conds)
+x.e <- aldex.effect(x.clr)
+x.t  <- aldex.ttest(x.clr)
 x.all <- data.frame(x.e, x.t)
 
 ##### Use assymmetric datasets
 
 x.clr.0 <- aldex.clr(reads.0, conds, mc.samples, verbose=FALSE, denom="all")
-x.e.0 <- aldex.effect(x.clr.0, conds)
-x.t.0  <- aldex.ttest(x.clr.0, conds)
+x.e.0 <- aldex.effect(x.clr.0)
+x.t.0  <- aldex.ttest(x.clr.0)
 x.all.0 <- data.frame(x.e.0, x.t.0)
 
 x.clr.30 <- aldex.clr(reads.30, conds, mc.samples, verbose=FALSE, denom="all"	)
-x.e.30 <- aldex.effect(x.clr.30, conds)
-x.t.30  <- aldex.ttest(x.clr.30, conds)
+x.e.30 <- aldex.effect(x.clr.30)
+x.t.30  <- aldex.ttest(x.clr.30)
 x.all.30 <- data.frame(x.e.30, x.t.30)
 
 

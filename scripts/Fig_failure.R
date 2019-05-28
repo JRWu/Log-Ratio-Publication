@@ -1,15 +1,15 @@
 ################################################################################
-##### Fig5.R
-##### Author: Jia Rong Wu
+##### Fig_failure.R
+##### Author: Jia Rong Wu, Greg Gloor
 ##### jwu424 (at) gmail.com
 #####
 ##### DESCRIPTION: Generalized R script in order to generate supporting figures
 ##### for the paper IQLR. Code for Figure 5.
 #####
-##### USAGE: Rscript --vanilla Fig5.R
+##### USAGE: Rscript --vanilla Fig_failure.R
 #####
 ##### LICENSE
-##### Copyright (c) 2016 Jia Rong Wu
+##### Copyright (c) 2016, 2019 Jia Rong Wu, Greg Gloor
 #####
 ##### Permission is hereby granted, free of charge, to any person obtaining a
 ##### copy of this software and associated documentation files (the "Software"),
@@ -39,7 +39,7 @@ source("scripts/Variables.R")
 ##### systematic variation.
 ################################### FIGURE 5 ###################################
 data.dir <- "data/"
-##### Read IQR Transformation Data
+##### Read IQLR Transformation Data
 instance.median <- unlist(read.table(file=paste(data.dir,"Instance_Diff_Btw_Medians.txt",sep=""), header=T, row.names=1, sep="\t"))
 instance.mean <- unlist(read.table(file=paste(data.dir,"Instance_Diff_Btw_Mean.txt",sep=""), header=T, row.names=1, sep="\t"))
 
@@ -70,12 +70,12 @@ xlb <- "Percent Asymmetric Sparsity"
 man <- paste(ylb, "  vs. ", xlb, sep="")
 
 darkness <- 0.5
-pch <- c(15,16,17,19,5,19)
-col <- c( rgb(0,0,1,darkness),rgb(1,0,0,darkness), rgb(0,1,1,darkness),rgb(1,0.3,0,1),rgb(0,0,0,1))
+pch <- c(17,16,15,19,18,19)
+col <- c( rgb(0,1,1,darkness),rgb(1,0,0,darkness), rgb(0,0,1,darkness),rgb(1,0.3,0,1),rgb(0,0,0,1))
 leg <- c("CLR","NZLR","IQLR","MED","LVHA")
 
 fig.name <- paste(figs.dir,"Fig_failure.pdf",sep="")
-pdf(fig.name, height=5, width=8)
+pdf(fig.name, height=6, width=6)
 
 ##### Generate an Empty Plot
 plot(NULL,xlim=c(0,50),ylim=c(ymin,ymax), xlab=xlb, ylab=ylb) #, main=man)
@@ -84,7 +84,7 @@ plot(NULL,xlim=c(0,50),ylim=c(ymin,ymax), xlab=xlb, ylab=ylb) #, main=man)
 points(zero.median[1:50], pch=pch[2], col=col[2], type="b")
 points(original.median[1:50], pch=pch[1], col=col[1], type="b")
 points(med.median[1:50], pch=pch[4], col=col[4], type="b")
-points(lvha.median[1:50], pch=pch[5], col=col[5], type="b",cex=1.2)
+points(lvha.median[1:50], pch=pch[5], col=col[5], type="b",cex=1)
 points(instance.median[1:50], pch=pch[3], col=col[3], type="b")
 #points(des.median[1:50], pch=pch[6], col="black", type="b",cex=1.2)
 
