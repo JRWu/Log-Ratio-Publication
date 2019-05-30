@@ -520,13 +520,23 @@ This transformation uses as the denominator the median of the clr-transformed va
 
 \begin{backmatter}
 
-\section*{Competing interests}
-  The authors declare that they have no competing interests.
+\section*{Declarations} 
+\subsection*{Ethics approval and consent to participate}
+All data used in this publication was 
+\subsection*{Consent for publication}
+
+\subsection*{Availability of data and material}
+All data used in this publication are publicly available. The raw data for the yeast genome was drawn from the reference \em{Saccharomyces cerevisiae} genome at: https://www.ncbi.nlm.nih.gov/genome/?term=txid4932. The raw data for Figure 5 was obtained from : https://www.ebi.ac.uk/metagenomics/studies/MGYS00001863. All R scripts for figure generation and analysis are located on a public GitHub repository at: 
+\subsection*{Competing interests}
+ The authors declare that they have no competing interests.
+  
+\subsection*{Funding}
+This work was supported by a grant from the Natural Sciences and Engineering Research Council of Canada grant RGPIN-2015-03878 to GBG
 
 \section*{Author's contributions}
-    Designed the experiments GBG, JRW, BLG. Generated the meta-transcriptome dataset JM, GBG. Developed and applied corrections BLG, JRW, GBG, JM. Wrote the manuscript, GBG. Edited and approved the manuscript JRW, JM, BLG, GBG.
+    Designed the experiments GBG, JRW, BLG. Generated the meta-transcriptome dataset JM, GBG. Developed and applied corrections BLG, JRW, GBG, JM. Wrote the manuscript, GBG. All authors have read and approved the manuscript.
 
-\section*{Acknowledgements}
+\subsection*{Acknowledgements}
   Text for this section \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
@@ -545,7 +555,7 @@ This transformation uses as the denominator the median of the clr-transformed va
 
 % if your bibliography is in bibtex format, use those commands:
 \bibliographystyle{bmc-mathphys} % Style BST file (bmc-mathphys, vancouver, spbasic).
-\bibliography{bmc_article.bbl}      % Bibliography file (usually '*.bib' )
+\bibliography{bmc_article.bib}      % Bibliography file (usually '*.bib' )
 % for author-year bibliography (bmc-mathphys or spbasic)
 % a) write to bib file (bmc-mathphys only)
 % @settings{label, options="nameyear"}
@@ -598,7 +608,7 @@ This transformation uses as the denominator the median of the clr-transformed va
 \end{figure}
 
 \begin{figure}[h!]
-%\includegraphics[width=5in]{twtyfr.pdf}
+%\includegraphics[width=5in]{mgnify.pdf}
 \caption{\csentence{Sparsity and asymmetry in a meta-transcriptome dataset of vaginal samples.}  The top left panel (denom=all) shows an effect plot of the data using the CLR values. Each point is a SEED function \cite{Mitra:2011,Macklaim:2018aa} and they are coloured in light brown if no sample contains a 0 value (non-sparse), dark brown if at least one sample contains a 0 count, blue if annotated as an ribosomal protein or magenta if annotated as a glycolytic function. The median displacement of the ribosomal and glycolytic functions from 0 is given in the top left of the plot. The data were then adjusted using the IQLR, LVHA, or a set of user-defined functions. In this case the user-defined functions were those annotated as ribosomal proteins in the SEED output. All three corrections place the ribosomal protein functions and glycolytic functions closer to zero, as desired, but the asymmetry is best addressed by the LVHA  adjustment.  }
 \label{Fig:bv}
 \end{figure}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 MAY 2019 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  30 MAY 2019 14:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -476,9 +476,12 @@ b-a-bil-ity vec-tor, $[]$,
  []
 
 [11] [12] (./bmc_article.bbl [13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1014) has occurred while \output is active []
 
  [14])
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -495,8 +498,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  3152 strings out of 493089
- 38667 string characters out of 6134842
- 112460 words of memory out of 5000000
+ 38671 string characters out of 6134842
+ 121163 words of memory out of 5000000
  6601 multiletter control sequences out of 15000+600000
  21292 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -524,7 +527,7 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bmc_article.pdf (16 pages, 295824 bytes).
+Output written on bmc_article.pdf (16 pages, 295901 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  106 compressed objects within 2 object streams

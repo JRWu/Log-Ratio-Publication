@@ -85,14 +85,12 @@
 \citation{fernandes:2013}
 \newlabel{eq:iqlr}{{6}{12}}
 \bibstyle{bmc-mathphys}
-\bibdata{bmc_article.bbl}
-\bibcite{Auer:2010aa}{1}
-\bibcite{Anders:2013aa}{2}
+\bibdata{bmc_article.bib}
 \newlabel{eq:vale}{{7}{13}}
 \newlabel{eq:iqlr}{{8}{13}}
 \newlabel{eq:iqlr}{{9}{13}}
-\thanksnewlabel{aff1thanks}{{1}{13}}
-\thanksnewlabel{aff2thanks}{{2}{13}}
+\bibcite{Auer:2010aa}{1}
+\bibcite{Anders:2013aa}{2}
 \bibcite{Macklaim:2015aa}{3}
 \bibcite{Hummelen:2010}{4}
 \bibcite{Gajer:2012}{5}
@@ -116,19 +114,21 @@
 \bibcite{McMurdie:2014a}{23}
 \bibcite{barcelo:2001}{24}
 \bibcite{Scott:2010}{25}
+\thanksnewlabel{aff1thanks}{{1}{14}}
+\thanksnewlabel{aff2thanks}{{2}{14}}
 \bibcite{Loven:2012aa}{26}
 \bibcite{altman:1983}{27}
 \bibcite{gloor:effect}{28}
-\bibcite{Halsey:2015aa}{29}
-\bibcite{Cumming:2008aa}{30}
-\bibcite{Gloor:2016cjm}{31}
-\bibcite{gloor2016s}{32}
-\bibcite{Newey:1994}{33}
-\bibcite{Jaynes:2003}{34}
-\bibcite{polyester:2016}{35}
-\bibcite{bowtie2}{36}
-\bibcite{Ravel:2010}{37}
-\bibcite{Quinn:2017}{38}
+\bibcite{polyester:2016}{29}
+\bibcite{bowtie2}{30}
+\bibcite{Ravel:2010}{31}
+\bibcite{Quinn:2017}{32}
+\bibcite{Halsey:2015aa}{33}
+\bibcite{Cumming:2008aa}{34}
+\bibcite{Gloor:2016cjm}{35}
+\bibcite{gloor2016s}{36}
+\bibcite{Newey:1994}{37}
+\bibcite{Jaynes:2003}{38}
 \bibcite{Mitra:2011}{39}
 \citation{Mitra:2011}
 \citation{Macklaim:2018aa}
@@ -136,8 +136,8 @@
 \newlabel{Fig:f1a}{{1}{15}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\mathversion  {bold}\bfseries  Effect plots of simulated asymmetric data with transformations that can result in a more accurate centring of the data.} Denominators were chosen for ALDEx2 using the iqlr, non-zero, lvha, or median option. The user defined denominator was 100 randomly chosen features known not to be different between groups. Points are coloured as in Figure 1\hbox {}, with the points used for the denominator in each case coloured in orange.}}{15}}
 \newlabel{Fig:f2a}{{2}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\mathversion  {bold}\bfseries  The behaviour of each transformations for datasets with varying sparsity.} Each point represents the median between condition difference for a given transformation in a dataset with a specified sparsity. Points closer to the location y=0 are favourable. The CLR transformation fails as soon as asymmetric sparsity is introduced. The IQLR and LVHA transformations are effective on datasets with up to 25\% asymmetric sparsity from zeroes or extreme count features. The NZLR transformation is effective on datasets with up to 50\% sparsity, but the asymmetry must be from zeroes exclusively. Replacing the geometric mean with the median in Equation 1\hbox {}, is an improvement, but results in a generally small shift in midpoint. The user defined correction was not applied as it is trivial to identify one or more invariant features in modelled data regardless of the percent sparsity.}}{15}}
-\newlabel{Fig:failure}{{3}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\mathversion  {bold}\bfseries  The behaviour of each transformations for datasets with varying sparsity.} Each point represents the median between condition difference for a given transformation in a dataset with a specified sparsity. Points closer to the location y=0 are favourable. The CLR transformation fails as soon as asymmetric sparsity is introduced. The IQLR and LVHA transformations are effective on datasets with up to 25\% asymmetric sparsity from zeroes or extreme count features. The NZLR transformation is effective on datasets with up to 50\% sparsity, but the asymmetry must be from zeroes exclusively. Replacing the geometric mean with the median in Equation 1\hbox {}, is an improvement, but results in a generally small shift in midpoint. The user defined correction was not applied as it is trivial to identify one or more invariant features in modelled data regardless of the percent sparsity.}}{16}}
+\newlabel{Fig:failure}{{3}{16}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\mathversion  {bold}\bfseries  The behaviour of each transformations for datasets with varying 2\% asymmetry where the asymmetric count value is 1.} The top left panel shows that it is not sparsity that is the problem, but rather the asymmetry between groups since an asymmetry caused by a count of 1 also induces false positive identifications, shown in red below the dashed line. Both the IQLR and the LVHA transformations are able to centre the data appropriately. However, the zero-adjustment method fails because the problem is not sparsity but low counts.}}{16}}
 \newlabel{Fig:ones}{{4}{16}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\mathversion  {bold}\bfseries  Sparsity and asymmetry in a meta-transcriptome dataset of vaginal samples.} The top left panel (denom=all) shows an effect plot of the data using the CLR values. Each point is a SEED function \cite  {Mitra:2011,Macklaim:2018aa} and they are coloured in light brown if no sample contains a 0 value (non-sparse), dark brown if at least one sample contains a 0 count, blue if annotated as an ribosomal protein or magenta if annotated as a glycolytic function. The median displacement of the ribosomal and glycolytic functions from 0 is given in the top left of the plot. The data were then adjusted using the IQLR, LVHA, or a set of user-defined functions. In this case the user-defined functions were those annotated as ribosomal proteins in the SEED output. All three corrections place the ribosomal protein functions and glycolytic functions closer to zero, as desired, but the asymmetry is best addressed by the LVHA adjustment. }}{16}}

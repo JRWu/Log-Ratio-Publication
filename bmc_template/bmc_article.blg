@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: bmc_article.aux
+The style file: bmc-mathphys.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bmc_article.bib.bib
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 39 entries,
+            7128 wiz_defined-function locations,
+            1424 strings with 19302 characters,
+and the built_in function-call counts, 344352 in all, are:
+= -- 46913
+> -- 1768
+< -- 927
++ -- 16191
+- -- 576
+* -- 24058
+:= -- 66494
+add.period$ -- 72
+call.type$ -- 39
+change.case$ -- 451
+chr.to.int$ -- 1842
+cite$ -- 39
+duplicate$ -- 4636
+empty$ -- 17160
+format.name$ -- 2177
+if$ -- 78209
+int.to.chr$ -- 1
+int.to.str$ -- 92
+missing$ -- 1539
+newline$ -- 1394
+num.names$ -- 198
+pop$ -- 2003
+preamble$ -- 1
+purify$ -- 169
+quote$ -- 78
+skip$ -- 23695
+stack$ -- 0
+substring$ -- 45906
+swap$ -- 1567
+text.length$ -- 625
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1737
+warning$ -- 0
+while$ -- 1693
+width$ -- 0
+write$ -- 2102
